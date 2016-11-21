@@ -11,6 +11,19 @@ if [[ $EUID -ne 0 ]]; then
 fi
 # ...
 
+# Set timezone
+rm -R /etc/timezone
+ln -s /usr/share/Europe/London /etc/timezone
+
+# Set hwclock to UTC.
+hwclock --utc
+
+# Date timestamp.
+datestamp() {
+  date +"%D"
+}
+echo 'The date is' & datestamp
+
 # Enable root access.
 su
 
