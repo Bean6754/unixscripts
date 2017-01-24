@@ -1,0 +1,11 @@
+# 
+
+# deb cdrom:[Debian GNU/Linux stretch-DI-rc1 _Stretch_ - Official Snapshot amd64 xfce-CD Binary-1 20170113-10:18]/ stretch main
+
+# deb cdrom:[Debian GNU/Linux stretch-DI-rc1 _Stretch_ - Official Snapshot amd64 xfce-CD Binary-1 20170113-10:18]/ stretch main
+
+deb http://mirror.ox.ac.uk/debian/ stretch main contrib non-free
+deb-src http://mirror.ox.ac.uk/debian/ stretch main contrib non-free
+
+deb http://security.debian.org/debian-security stretch/updates main contrib non-free
+deb-src http://security.debian.org/debian-security stretch/updates main contrib non-free
