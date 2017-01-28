@@ -19,8 +19,8 @@ apt update -y
 apt upgrade -y
 apt dist-upgrade -y
 apt install -y firmware-linux sudo ssh vim git wget curl build-essential openjdk-8-jdk ffmpeg net-tools cifs-utils libdvdcss2 transmission-gtk nmap steam gtk2-engines-murrine murrine-themes gstreamer1.0-*
-
 # NOTE. You'll have to install nvidia drivers, intel microcode, amd64-microcode, etc.., yourself.
+dpkg-reconfigure libdvd-pkg
 
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
