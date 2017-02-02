@@ -21,6 +21,7 @@ echo 'CPU_FLAGS_X86="mmx sse sse2"' >> /etc/portage/make.conf
 echo 'PORTDIR="/usr/portage"' >> /etc/portage/make.conf
 echo 'DISTDIR="${PORTDIR}/distfiles"' >> /etc/portage/make.conf
 echo 'PKGDIR="${PORTDIR}/packages"' >> /etc/portage/make.conf
+#cat /proc/cpuinfo | grep processor | wc -l >> /etc/portage/make.conf
 echo 'MAKEOPTS="-j4"' >> /etc/portage/make.conf
 echo 'GENTOO_MIRRORS="ftp://mirror.bytemark.co.uk/gentoo/ http://mirror.bytemark.co.uk/gentoo/ rsync://mirror.bytemark.co.uk/gentoo/"' >> /etc/portage/make.conf
 
@@ -35,6 +36,6 @@ locale-gen
 eselect locale set 3
 env-update && source /etc/profile
 
-emerge sudo gcc
+emerge --verbose app-admin/sudo dev-util/cmake dev-vcs/git sys-devel/autoconf sys-devel/autogen sys-devel/automake sys-devel/binutils sys-devel/m4 sys-devel/make sys-devel/patch sys-devel/gcc
 
 exit 0
