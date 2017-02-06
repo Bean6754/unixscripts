@@ -13,7 +13,7 @@ fi
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
-apt install -y aptitude vim wget curl git build-essential vlc libdvdcss2 libdvdnav4 libdvdread4 qt5-default
+apt install -y aptitude vim wget curl git build-essential vlc libdvdcss2 libdvdnav4 libdvdread4 qt5-default openjdk-9-jdk kubuntu-restricted-extras kubuntu-restricted-addons
 
 add-apt-repository -y ppa:kdenlive/kdenlive-stable
 apt update -y
