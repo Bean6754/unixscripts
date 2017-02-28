@@ -16,7 +16,7 @@ fi
 echo 'CFLAGS="-march=native -O2 -pipe"' > /etc/portage/make.conf
 echo 'CXXFLAGS="${CFLAGS}"' >> /etc/portage/make.conf
 echo 'CHOST="x86_64-pc-linux-gnu"' >> /etc/portage/make.conf
-echo 'USE="gtk qt4 qt5 -kde -gnome dvd alsa cdr"' >> /etc/portage/make.conf
+echo 'USE="bindlist dbus -gtk -qt4 -qt5 -kde -gnome dvd alsa cdr"' >> /etc/portage/make.conf
 echo 'CPU_FLAGS_X86="mmx sse sse2"' >> /etc/portage/make.conf
 echo 'PORTDIR="/usr/portage"' >> /etc/portage/make.conf
 echo 'DISTDIR="${PORTDIR}/distfiles"' >> /etc/portage/make.conf
