@@ -10,6 +10,11 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# Disable PC Speaker now and at bootup.
+rmmod pcspkr
+mkdir -p /etc/modprobe.d
+echo 'blacklist pcspkr' > /etc/modprobe.d/pcspkr.conf
+
 rm -rf /etc/apt/sources.list
 cp -r sources.list /etc/apt/sources.list
 
