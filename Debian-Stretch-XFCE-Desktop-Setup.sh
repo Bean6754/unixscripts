@@ -18,7 +18,7 @@ dpkg --add-architecture i386
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
-apt install -y firmware-linux sudo ssh vim git wget curl build-essential openjdk-8-jdk ffmpeg net-tools cifs-utils libdvdcss2 transmission-gtk nmap steam gtk2-engines-murrine murrine-themes gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly
+apt install -y *firmware* sudo ssh neovim git wget curl build-essential aptitude openjdk-8-jdk ffmpeg net-tools cifs-utils libdvdcss2 transmission-gtk nmap steam gtk2-engines-murrine murrine-themes gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly qt5-default
 # NOTE. You'll have to install nvidia drivers, intel microcode, amd64-microcode, etc.., yourself.
 dpkg-reconfigure libdvd-pkg
 
