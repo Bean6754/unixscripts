@@ -13,6 +13,7 @@ fi
 # Disable PC Speaker now and at bootup.
 rmmod pcspkr
 mkdir -p /etc/modprobe.d
+touch /etc/modprobe.d/pcspkr.conf
 echo 'blacklist pcspkr' > /etc/modprobe.d/pcspkr.conf
 
 rm -rf /etc/apt/sources.list
