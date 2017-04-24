@@ -1,6 +1,6 @@
 #!/bin/sh
 
-while: 
+while true
 do
   eject
 done
