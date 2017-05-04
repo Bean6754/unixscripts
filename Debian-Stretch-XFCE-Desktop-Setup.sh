@@ -34,5 +34,14 @@ make install
 cd ..
 rm -rf neofetch
 
+while true; do
+   read -p "Do you want to compile the latest kernel? NOTE: This could take a few hours on older systems." yn
+   case $yn in
+      [Yy]* ) mkdir -p /usr/src && cd /usr/src/ && curl https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.tar.xz -o linux-4.11.tar.xz && tar -xvf linux-4.11.tar.xz && rm -rf linux-4.11.tar.xz && cd linux-4.11 && apt install -y ncurses-dev && make menuconfig && make && make modules_install && make install && break;;
+      [Nn]* ) exit;;
+      * ) echo "Please answer yes or no.";;
+   esac
+done
+
 clear
 neofetch
