@@ -41,8 +41,9 @@ locale-gen
 eselect locale set 3
 env-update && source /etc/profile
 
-emerge -v app-admin/sudo dev-util/cmake dev-vcs/git sys-devel/autoconf sys-devel/autogen sys-devel/automake sys-devel/binutils sys-devel/m4 sys-devel/make sys-devel/patch sys-devel/gcc x11-base/xorg-x11 media-fonts/droid media-fonts/noto www-client/firefox unrar rar zip unzip p7zip xarchiver urxvt rofi feh redshift i3 i3lock i3status i3blocks media-libs/alsa-lib media-sound/alsa-utils media-plugins/alsa-plugins media-sound/pulseaudio pavucontrol htop
+emerge -v app-admin/sudo dev-util/cmake dev-vcs/git sys-devel/autoconf sys-devel/autogen sys-devel/automake sys-devel/binutils sys-devel/m4 sys-devel/make sys-devel/patch sys-devel/gcc x11-base/xorg-x11 media-fonts/droid media-fonts/noto www-client/firefox unrar rar zip unzip p7zip xarchiver urxvt rofi feh redshift i3 i3lock i3status i3blocks media-libs/alsa-lib media-sound/alsa-utils media-plugins/alsa-plugins media-sound/pulseaudio pavucontrol htop dbus
 
+rc-update add dbus default
 rc-update add consolekit default
 
 #gpasswd -d $USER audio
