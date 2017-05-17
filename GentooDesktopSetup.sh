@@ -25,6 +25,8 @@ echo 'PKGDIR="${PORTDIR}/packages"' >> /etc/portage/make.conf
 echo 'MAKEOPTS="-j4"' >> /etc/portage/make.conf
 echo 'GENTOO_MIRRORS="ftp://mirror.bytemark.co.uk/gentoo/ http://mirror.bytemark.co.uk/gentoo/ rsync://mirror.bytemark.co.uk/gentoo/"' >> /etc/portage/make.conf
 echo 'VIDEO_CARDS="nvidia"' >> /etc/portage/make.conf
+echo 'ACCEPT_LICENSE="*"' >> /etc/portage/make.conf
+echo 'ABI_X86="amd64"' >> /etc/portage/make.conf
 
 eselect profile set 1
 emerge --update --deep --newuse @world
