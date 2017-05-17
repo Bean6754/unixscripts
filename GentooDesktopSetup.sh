@@ -21,6 +21,8 @@ echo 'CPU_FLAGS_X86="mmx sse sse2"' >> /etc/portage/make.conf
 echo 'PORTDIR="/usr/portage"' >> /etc/portage/make.conf
 echo 'DISTDIR="${PORTDIR}/distfiles"' >> /etc/portage/make.conf
 echo 'PKGDIR="${PORTDIR}/packages"' >> /etc/portage/make.conf
+emerge -v app-portage/cpuid2cpuflags
+cpuinfo2cpuflags-x86 >> /etc/portage/make.conf
 #cat /proc/cpuinfo | grep processor | wc -l >> /etc/portage/make.conf
 echo 'MAKEOPTS="-j4"' >> /etc/portage/make.conf
 echo 'GENTOO_MIRRORS="ftp://mirror.bytemark.co.uk/gentoo/ http://mirror.bytemark.co.uk/gentoo/ rsync://mirror.bytemark.co.uk/gentoo/"' >> /etc/portage/make.conf
