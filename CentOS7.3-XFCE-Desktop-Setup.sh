@@ -13,10 +13,12 @@ fi
 # Update system.
 yum update -y
 # Install stuff.
-yum install -y epel-release microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop libbluray firefox libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol
+yum install -y epel-release
+yum update -y
+yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop libbluray firefox libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol
 yum groupinstall -y "X Window system" "Xfce" "Development Tools"
 
-# Start GDM at boot.
+# Start GDM or Lightdm at boot.
 systemctl set-default graphical.target
 
 # Install neofetch and run it.
