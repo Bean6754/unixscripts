@@ -22,6 +22,6 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y development-tools
 # Singular packages.
-dnf install -y git wget curl htop nmap ruby gem gcc gcc-c++ python perl java-1.8.0-openjdk java-1.8.0-openjdk-devel vim transmission-cli
+dnf install -y git wget curl htop nmap ruby gem gcc gcc-c++ python perl java-1.8.0-openjdk java-1.8.0-openjdk-devel vim transmission-cli iftop
 
 exit 0
