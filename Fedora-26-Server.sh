@@ -14,6 +14,8 @@ fi
 
 # RPM Fusion:   (Optional, not needed.)
 # dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Negativo17 multimedia: (Needed for p7zip, rar and unrar.)
+dnf config-manager --add-repo=http://negativo17.org/repos/fedora-multimedia.repo -y
 
 ## Packages.
 
