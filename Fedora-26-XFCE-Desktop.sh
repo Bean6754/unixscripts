@@ -28,4 +28,9 @@ dnf groupinstall -y development-tools security-lab
 # Singular packages.
 dnf install -y git wget curl htop nmap ruby gem gcc gcc-c++ python perl java-1.8.0-openjdk java-1.8.0-openjdk-devel gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free gstreamer1-plugins-bad-freeworld gstreamer1-plugins-bad-free-extras ffmpeg libdvdnav libdvdread libdvdcss steam libreoffice gimp vim firefox transmission transmission-cli transmission-gtk iftop
 
+# Enable firewalld at boot (and start it).
+systemctl enable firewalld && systemctl start firewalld
+firewall-cmd --runtime-to-permanent
+firewalld
+
 exit 0
