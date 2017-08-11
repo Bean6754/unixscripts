@@ -12,9 +12,9 @@ fi
 
 ## Repositories.
 
-# RPM Fusion: 
-dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-# Negativo1 multimedia: 
+# RPM Fusion: (Optional, not needed.)
+# dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+# Negativo1 multimedia: (Has nvidia drivers with it.)
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-multimedia.repo -y
 # Negativo1 steam: 
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-steam.repo -y
