@@ -32,5 +32,11 @@ dnf install -y git wget curl htop nmap ruby gem gcc gcc-c++ python perl java-1.8
 systemctl enable firewalld && systemctl start firewalld
 firewall-cmd --runtime-to-permanent
 firewalld
+echo '#!/bin/sh' > /etc/init.d/firewalld
+echo >> /etc/init.d/firewalld
+echo 'firewalld' >> /etc/init.d/firewalld
+echo >> /etc/init.d/firewalld
+echo 'exit 0' >> /etc/init.d/firewalld
+chmod +x /etc/init.d/firewalld
 
 exit 0
