@@ -24,4 +24,9 @@ dnf groupinstall -y development-tools
 # Singular packages.
 dnf install -y git wget curl htop nmap ruby gem gcc gcc-c++ python perl java-1.8.0-openjdk java-1.8.0-openjdk-devel vim transmission-cli iftop
 
+# Enable firewalld at boot (and start it).
+systemctl enable firewalld && systemctl start firewalld
+firewall-cmd --runtime-to-permanent
+firewalld
+
 exit 0
