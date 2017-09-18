@@ -20,7 +20,7 @@ systemctl disable wpa_supplicant
 systemctl stop wpa_supplicant
 
 # Set WiFi interface to down.
-ip link set wlo1 down
+ip link set wlp2s0 down
 # Start WiFi-Menu to do all of the WiFi for us.
 wifi-menu
 # Exit program sucessfully.
