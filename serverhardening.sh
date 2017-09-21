@@ -4,7 +4,7 @@
 
 # iptables and ssh server hardening
 
-echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection'.
+echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection'."
 
 /sbin/iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
 echo "Added rule: 1. Drop invalid packets."
