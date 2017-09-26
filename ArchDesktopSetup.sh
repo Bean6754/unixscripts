@@ -36,14 +36,14 @@ cd /etc/
 cp -r pacman.conf pacman.conf.old
 curl (insert pacman.conf url here) -o pacman.conf
 pacman -Syyu
-pacman -S xorg xorg-xinit i3 yaourt 
+pacman -S xorg xorg-xinit i3 yaourt aurvote customizepkg rsync
 
 # Disable root access for the AUR.
 exit
 
 yaourt -S cower-git pacaur-git
 pacaur -Rsnc yaourt
-pacaur -S vlc libdvdcss links ranger w3m ttf-liberation ttf-dejavu i3blocks
+pacaur -S vlc libdvdcss links ranger w3m ttf-liberation ttf-dejavu ttf-freefont i3blocks lemonbar-git feh git curl wget htop strace lsof
 
 # Change to user home folder.
 cd ~/
