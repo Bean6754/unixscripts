@@ -20,7 +20,14 @@ zypper install -y make cmake git curl wget vim python2 python3 ruby gcc gcc-c++ 
 echo Type 'a' then press the enter key
 zypper ar -f http://opensuse-guide.org/repo/openSUSE_Tumbleweed/ libdvdcss
 zypper ref
-zypper install -y libdvdcss2 ffmpeg lame gstreamer-plugins-libav gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-ugly-orig-addon vlc vlc-codecs flash-player flash-player-ppapi libxine2 libxine2-codecs
+zypper install -y libdvdcss2 ffmpeg lame gstreamer-plugins-libav gstreamer-plugins-bad gstreamer-plugins-ugly gstreamer-plugins-ugly-orig-addon vlc vlc-codecs libxine2 libxine2-codecs
+
+# Adobe Flash.
+zypper ar --check --refresh http://linuxdownload.adobe.com/linux/x86_64/ adobe
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+zypper ref
+# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+zypper install adobe-release-x86_64 flash-plugin
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
