@@ -16,8 +16,8 @@ mkdir -p /etc/modprobe.d
 touch /etc/modprobe.d/pcspkr.conf
 echo 'blacklist pcspkr' > /etc/modprobe.d/pcspkr.conf
 
-rm -rf /etc/apt/sources.list
-cp -r sources.list /etc/apt/sources.list
+# rm -rf /etc/apt/sources.list
+# cp -r sources.list /etc/apt/sources.list
 
 apt update -y
 dpkg --add-architecture i386
@@ -27,6 +27,16 @@ apt dist-upgrade -y
 apt install -y firmware-linux* sudo ssh vim git wget curl build-essential devscripts fakeroot lua5.3 open-cobol gfortran-6 aptitude p7zip-full rar unrar unzip zip openjdk-8-jdk ffmpeg net-tools cifs-utils htop scrot libdvdread4 libdvdnav4 libdvdcss2 transmission-gtk nmap steam gtk2-engines-murrine murrine-themes gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly qt5-default wireshark-gtk zenmap handbrake-cli handbreak 
 # NOTE. You'll have to install nvidia drivers, intel microcode, amd64-microcode, etc.., yourself.
 dpkg-reconfigure libdvd-pkg
+
+# xfpanel-switch
+apt install -y intltool intltool-debian
+wget https://launchpad.net/xfpanel-switch/1.0/1.0.4/+download/xfpanel-switch-1.0.4.tar.bz2
+tar xvf xfpanel-switch-1.0.4.tar.bz2
+cd xfpanel-switch-1.0.4
+make
+make install
+cd ..
+rm -rf xfpanel-switch-1.0.4*
 
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
