@@ -17,6 +17,8 @@ yum install -y epel-release
 yum update -y
 yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump net-tools libbluray firefox libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol
 yum groupinstall -y "X Window system" "Xfce" "Development Tools"
+# XFCE4 extras.
+yum install -y xfce4-*-plugin xfce4-about xfce4-vala
 
 # Start GDM or Lightdm at boot.
 systemctl set-default graphical.target
