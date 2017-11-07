@@ -20,7 +20,7 @@ dnf groupinstall -y "Development-Tools" "Security-Lab"
 # Low level.
 dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip
 # High level.
-dnf install -y transmission vlc vlc-extras pavucontrol
+dnf install -y gimp transmission vlc vlc-extras pavucontrol
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
