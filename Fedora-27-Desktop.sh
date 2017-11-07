@@ -18,7 +18,7 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools" "Security-Lab"
 # Low level.
-dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim transmission-cli gcc-c++ ruby nmap ibdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip
+dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip
 # High level.
 dnf install -y transmission vlc vlc-extras pavucontrol
 # Adobe Flash.
