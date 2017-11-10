@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
@@ -12,7 +11,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 ## Make sure free, non-free and contrib are enabled.
-
 dpkg --add-architecture i386
 apt update
 apt upgrade -y
