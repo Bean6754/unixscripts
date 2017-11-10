@@ -21,8 +21,10 @@ apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip str
 # High-level
 apt install -y wireshark qbittorrent gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
+# Flash player.
+apt install -y browser-plugin-freshplayer-pepperflash
 # Qt development.
-apt install -y qt5-default qt4-default qtdeclarative5-dev
+apt install -y qt5-default qtdeclarative5-dev
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
