@@ -21,5 +21,8 @@ apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip str
 # High-level
 apt install -y wireshark qbittorrent gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
+apt purge -y openjdk*
+apt autoremove -y
+apt install -y openjdk-9-jdk
 
 exit 0
