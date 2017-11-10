@@ -19,7 +19,7 @@ apt dist-upgrade -y
 # Low-level
 apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential tshark intel-microcode open-cobol lua5.3 gfortran-7
 # High-level
-apt install -y wireshark qbittorrent gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2
+apt install -y wireshark qbittorrent gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift plasma-applet-redshift-control
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
