@@ -24,7 +24,7 @@ dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
 # Qt development.
-apt install -y qt5-default qtdeclarative5-dev
+apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
