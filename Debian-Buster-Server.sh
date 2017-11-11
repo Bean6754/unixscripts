@@ -22,5 +22,7 @@ apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip str
 apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-9-jdk
+# Server specific stuff.
+apt install -y mariadb-server mariadb-client php7.1 php-pear php7.1-mysql
 
 exit 0
