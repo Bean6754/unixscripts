@@ -16,10 +16,11 @@ yum update -y
 yum install -y epel-release
 yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
 yum update -y
-yum install -y dnf microcode_ctl kernel-devel dkms zip unzip p7zip p7zip-plugins git wget curl htop strace lof nc tcpdump net-tools libbluray firefox libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp vlc vlc-extras qt5-qtbase qt5-qtconfiguration transmission transmission-cli wireshark wireshark-gnome
-yum groupinstall -y "X Window system" "Xfce" "Development Tools"
-# XFCE4 extras.
-yum install -y xfce4-*-plugin xfce4-about xfce4-vala
+yum install -y dnf microcode_ctl kernel-devel dkms zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump net-tools libbluray chromium libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp vlc vlc-extras qt5-qtbase qt5-qtconfiguration transmission transmission-cli wireshark wireshark-gnome
+yum groupinstall -y "X Window system" "Development Tools"
+# i3 stuff.
+yum install -y i3 i3lock i3status redshift dmenu rofi rxvt-unicode
+echo Remember to compile and install feh.
 
 # Steam.
 # Dependancies.
@@ -32,7 +33,7 @@ yum install -y xfce4-*-plugin xfce4-about xfce4-vala
 # rm -rf steam
 
 # Start GDM or Lightdm at boot.
-systemctl set-default graphical.target
+# systemctl set-default graphical.target
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch
