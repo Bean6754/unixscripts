@@ -18,7 +18,7 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools" "Security-Lab"
 # Low level.
-dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip wireshark wireshark-cli
+dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip wireshark wireshark-cli
 # High level.
 dnf install -y gimp transmission vlc vlc-extras pavucontrol wireshark-gtk gnome-tweak-tool steam
 # Adobe Flash.
