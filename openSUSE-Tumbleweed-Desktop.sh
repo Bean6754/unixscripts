@@ -12,7 +12,7 @@ fi
 
 # Install development tools.
 zypper install -t pattern devel_basis
-zypper install -y make cmake git curl wget vim python2 python3 ruby gcc gcc-c++ lua tcl
+zypper install -y make cmake git curl wget vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl
 
 # Networking tools.
 # zypper install -y 
