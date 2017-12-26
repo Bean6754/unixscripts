@@ -16,7 +16,7 @@ yum update -y
 yum install -y epel-release
 yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
 yum update -y
-yum install -y dnf microcode_ctl kernel-devel dkms zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox libbluray chromium libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp parole xfce4-netload-plugin xfce4-weather-plugin ristretto transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk
+yum install -y dnf microcode_ctl kernel-devel dkms zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox libbluray chromium libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp parole xfce4-netload-plugin xfce4-weather-plugin ristretto transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany
 yum groupinstall -y "X Window system" "Development Tools" "Xfce"
 
 # Steam.
@@ -30,7 +30,9 @@ yum groupinstall -y "X Window system" "Development Tools" "Xfce"
 # rm -rf steam
 
 # Start GDM or Lightdm at boot.
-# systemctl set-default graphical.target
+yum remove -y gdm
+yum install -y lightdm
+systemctl set-default graphical.target
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch
