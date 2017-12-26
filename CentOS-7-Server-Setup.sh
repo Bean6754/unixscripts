@@ -15,7 +15,7 @@ yum update -y
 # Install stuff.
 yum install -y epel-release
 yum update -y
-yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump net-tools
+yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox
 yum groupinstall -y "Development Tools"
 
 # Install neofetch and run it.
