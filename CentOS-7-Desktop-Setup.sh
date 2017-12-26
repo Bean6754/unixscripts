@@ -33,6 +33,7 @@ yum groupinstall -y "X Window system" "Development Tools" "Xfce"
 yum remove -y gdm
 yum install -y lightdm
 systemctl set-default graphical.target
+systemctl enable lightdm
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch
