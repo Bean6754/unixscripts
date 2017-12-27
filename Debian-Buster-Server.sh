@@ -17,11 +17,11 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-level
-apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential tshark intel-microcode open-cobol lua5.3 gfortran-7 gdisk
+apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential tshark intel-microcode open-cobol lua5.3 gfortran-7 gdisk
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
-apt install -y openjdk-9-jdk
+apt install -y openjdk-8-jdk icedtea-web icedtea-netx
 # Server specific stuff.
 apt install -y mariadb-server mariadb-client php7.1 php-pear php7.1-mysql
 
