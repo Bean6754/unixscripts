@@ -19,15 +19,17 @@ apt dist-upgrade -y
 # Low-level
 apt install -y aptitude git curl wget vim sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential tshark intel-microcode open-cobol lua5.3 gfortran-7 gdisk
 # High-level
-apt install -y wireshark qbittorrent gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift plasma-applet-redshift-control
+apt purge -y firefox-esr
+apt autoremove -y
+apt install -y wireshark-gtk transmission transmission-cli gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift redshift-gtk geany pidgin hv3 firefox-esr-webdeveloper firefox-esr-l10n-en-gb
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
 # Qt development.
-apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
+# apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
-apt install -y openjdk-9-jdk
+apt install -y openjdk-8-jdk icedtea-web icedtea-netx
 
 exit 0
