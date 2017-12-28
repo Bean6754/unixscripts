@@ -21,7 +21,7 @@ apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
-apt install -y openjdk-8-jdk icedtea-web icedtea-netx
+apt install -y openjdk-8-jdk icedtea-plugin icedtea-netx
 # Server specific stuff.
 apt install -y mariadb-server mariadb-client php7.1 php7.1-mysql
 
