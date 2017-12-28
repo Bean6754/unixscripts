@@ -23,6 +23,6 @@ apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk icedtea-web icedtea-netx
 # Server specific stuff.
-apt install -y mariadb-server mariadb-client php7.1 php-pear php7.1-mysql
+apt install -y mariadb-server mariadb-client php7.1 php7.1-mysql
 
 exit 0
