@@ -19,4 +19,3 @@ do
   var=$(( $var + 1 ))
   pkill $var
 done
-exit 0
