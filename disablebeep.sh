@@ -15,5 +15,3 @@ rmmod pcspkr
 mkdir -p /etc/modprobe.d
 touch /etc/modprobe.d/pcspkr.conf
 echo 'blacklist pcspkr' > /etc/modprobe.d/pcspkr.conf
-
-exit 0
