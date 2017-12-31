@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cd ~
-mkdir -p lol
+mkdir -v lol
 cd lol
 
 while(true)
