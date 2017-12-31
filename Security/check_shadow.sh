@@ -13,4 +13,3 @@ fi
 
 grep "ENCRYPT_METHOD" /etc/login.defs
 
-exit 0
