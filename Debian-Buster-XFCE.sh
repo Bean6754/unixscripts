@@ -28,6 +28,6 @@ apt install -y browser-plugin-freshplayer-pepperflash
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
-apt install -y openjdk-8-jdk icedtea-web icedtea-netx
+apt install -y openjdk-8-jdk icedtea-8-plugin
 
 exit 0
