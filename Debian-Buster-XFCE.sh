@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
@@ -29,5 +29,3 @@ apt install -y browser-plugin-freshplayer-pepperflash
 apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk icedtea-8-plugin
-
-exit 0
