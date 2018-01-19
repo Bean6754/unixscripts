@@ -19,7 +19,7 @@ apt dist-upgrade -y
 # Low-level
 apt install -y aptitude git curl wget vim emacs sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode open-cobol lua5.3 gfortran-7 gdisk lftp ftp tcpdump
 # High-level
-apt install -y wireshark-gtk transmission transmission-gtk transmission-cli gimp vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift redshift-gtk geany pidgin firefox-esr firefox-esr-l10n-en-gb filezilla
+apt install -y wireshark-gtk transmission transmission-gtk transmission-cli gimp gparted vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift redshift-gtk geany pidgin firefox-esr firefox-esr-l10n-en-gb filezilla
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
