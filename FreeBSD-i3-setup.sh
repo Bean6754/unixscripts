@@ -7,7 +7,7 @@ portsnap update
 pkg update
 pkg upgrade -y
 
-pkg install -y vim sudo p7zip rar unrar zip unzip xorg xinit i3 i3status i3lock feh rofi xarchiver firefox vlc libdvdcss libdvdnav libdvdread
+pkg install -y vim sudo p7zip rar unrar zip unzip xorg xinit rxvt-unicode i3 i3status i3lock feh rofi xarchiver firefox vlc libdvdcss libdvdnav libdvdread
 
 echo 'proc /proc procfs rw,noauto 0 0' >> /etc/fstab
 
