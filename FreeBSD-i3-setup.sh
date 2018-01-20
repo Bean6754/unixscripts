@@ -16,6 +16,8 @@ echo 'dbus_enable="YES"' >> /etc/rc.conf
 echo 'hald_enable="YES"' >> /etc/rc.conf
 
 # NVIDIA-Driver Stuff.
+# kldload linux
+# kldload linux64
 # pkg install -y nvidia-driver nvidia-settings nvidia-xconfig nvidia-texture-tools
 # echo 'nvidia_load="YES"' >> /boot/loader.conf
 # echo 'nvidia_name="nvidia"' >> /boot/loader.conf
