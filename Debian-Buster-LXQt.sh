@@ -17,7 +17,7 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-level
-apt install -y aptitude git curl wget vim emacs sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump
+apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump
 # High-level
 # Find Qt alternative for gparted, geany and filezilla
 apt install -y wireshark-qt transmission-qt transmission-cli krita mpv libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift quassel firefox-esr firefox-esr-l10n-en-gb
