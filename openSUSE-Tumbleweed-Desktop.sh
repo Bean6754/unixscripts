@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
@@ -10,12 +10,15 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# Update system.
+zypper up -y
+
 # Install development tools.
 zypper install -t pattern devel_basis
 zypper install -y make cmake git curl wget vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl
 
 # Networking tools.
-# zypper install -y 
+zypper in -y wireshark tcpdump
 
 # Multimedia codecs.
 echo Type 'a' then press the enter key
@@ -38,5 +41,3 @@ cd ..
 rm -rf neofetch
 clear
 neofetch
-
-exit 0
