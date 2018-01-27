@@ -24,7 +24,7 @@ zypper in -y wireshark tcpdump
 echo Type 'a' then press the enter key
 zypper ar -f http://opensuse-guide.org/repo/openSUSE_Tumbleweed/ libdvdcss
 zypper ref
-zypper install -y libdvdnav4 libdvdread4 libdvdcss2 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly vlc vlc-codec-gstreamer simplescreenrecorder kdenlive
+zypper install -y libdvdnav4 libdvdread4 libdvdcss2 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
 
 # Adobe Flash.
 zypper ar --check --refresh http://linuxdownload.adobe.com/linux/x86_64/ adobe
