@@ -11,6 +11,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Update system.
+zypper ref
 zypper up -y
 
 # Install development tools.
