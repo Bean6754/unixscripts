@@ -16,9 +16,9 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-Level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential openjdk-9-jdk tshark tcpdump transmission-cli
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential openjdk-9-jdk tshark tcpdump transmission-cli gdisk
 # High-Level.
-apt install -y gimp parole wireshark-gtk transmission-gtk redshift redshift-gtk libdvdcss2 libdvdnav4 libdvdread4 xubuntu-restricted-extras xubuntu-restricted-addons
+apt install -y gimp parole wireshark-gtk transmission-gtk gparted geany geany-plugins redshift redshift-gtk libdvdcss2 libdvdnav4 libdvdread4 xubuntu-restricted-extras xubuntu-restricted-addons
 dpkg-reconfigure libdvd-pkg
 
 git clone https://github.com/dylanaraps/neofetch
