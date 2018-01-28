@@ -10,19 +10,18 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+# Update system.
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
-apt install -y aptitude vim wget curl git build-essential vlc libdvdcss2 libdvdnav4 libdvdread4 qt5-default openjdk-9-jdk kubuntu-restricted-extras kubuntu-restricted-addons
 
-add-apt-repository -y ppa:kdenlive/kdenlive-stable
-apt update -y
-apt install -y kdenlive
+# Low-Level.
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox build-essential tshark tcpdump transmission-cli
+# High-Level.
+apt install -y gimp parole wireshark-gtk transmission-gtk libdvdcss2 libdvdnav4 libdvdread4 openjdk-9-jdk xubuntu-restricted-extras xubuntu-restricted-addons
 
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
 make install
 cd ..
 rm -rf neofetch
-
-exit 0
