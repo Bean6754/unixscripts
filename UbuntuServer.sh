@@ -16,7 +16,7 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-Level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox build-essential openjdk-9-jdk tshark tcpdump transmission-cli
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential openjdk-9-jdk tshark tcpdump transmission-cli
 
 git clone https://github.com/dylanaraps/neofetch
 cd neofetch
