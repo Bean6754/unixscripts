@@ -21,6 +21,17 @@ zypper install -y make cmake git curl wget vim emacs-nox python2 python3 ruby gc
 # Networking tools.
 zypper in -y wireshark tcpdump
 
+# LAMP.
+zypper in -y apache2 php7 php7-mysql apache2-mod_php7 mariadb mariadb-tools
+
+systemctl enable apache2
+systemctl start apache2
+a2enmod php7
+systemctl restart apache2
+systemctl enable mysql
+systemctl start mysql
+mysql_secure_installation
+
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
 cd neofetch
