@@ -15,7 +15,7 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools"
 # Low level.
-dnf install -y kernel-devel kernel-headers strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip wireshark wireshark-cli
+dnf install -y kernel-devel kernel-headers strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # Autoremove any unneeded dependancies.
