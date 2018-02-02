@@ -22,7 +22,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam gnome-builder geany polari pitivi recordmydesktop gtk-recordmydesktop
+dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam gnome-builder geany gparted polari pitivi recordmydesktop gtk-recordmydesktop
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
