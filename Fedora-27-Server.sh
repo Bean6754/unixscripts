@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
@@ -10,14 +10,13 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-# Repos.
-# RPMFusion.
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # Update repositories and any potential packages.
 dnf update -y
 # Group packages.
-dnf groupinstall -y "Development-Tools" "Security-Lab"
+dnf groupinstall -y "Development-Tools"
 # Low level.
-dnf install -y kernel-devel strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip wireshark wireshark-cli
-
-exit 0
+dnf install -y kernel-devel kernel-headers strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip wireshark wireshark-cli
+# Network monitoring tools.
+dnf install -y nethogs iftop
+# Autoremove any unneeded dependancies.
+dnf autoremove -y
