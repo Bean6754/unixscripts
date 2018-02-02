@@ -13,6 +13,7 @@ fi
 # Repos.
 # Negativo17 Steam.
 dnf config-manager --add-repo=https://negativo17.org/repos/fedora-steam.repo
+dnf config-manager --add-repo=https://negativo17.org/repos/fedora-multimedia.repo
 # Update repositories and any potential packages.
 dnf update -y
 # Group packages.
@@ -27,5 +28,7 @@ dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk stea
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
 dnf install flash-plugin alsa-plugins-pulseaudio libcurl
+# Multimedia.
+dnf install -y HandBrake-gui HandBrake-cli makemkv libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
