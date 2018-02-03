@@ -27,7 +27,7 @@ dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk stea
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
-dnf install flash-plugin alsa-plugins-pulseaudio libcurl
+dnf install -y flash-plugin alsa-plugins-pulseaudio libcurl
 # Multimedia.
 dnf install -y HandBrake-gui HandBrake-cli makemkv libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # Autoremove any unneeded dependancies.
