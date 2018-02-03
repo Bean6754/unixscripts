@@ -32,6 +32,6 @@ dnf install -y flash-plugin alsa-plugins-pulseaudio libcurl
 dnf install -y HandBrake-gui HandBrake-cli makemkv libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # Wine.
 dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/26/winehq.repo
-dnf install -y winehq-staging
+dnf install -y playonlinux
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
