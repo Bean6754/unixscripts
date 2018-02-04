@@ -36,5 +36,7 @@ dnf install -y playonlinux
  # git clone https://github.com/RPM-Outpost/discord.git
  # cd discord
  # ./create-package.sh canary
+ # # To fix discord-desktop issue.
+ # mv /opt/discord-stable /opt/discord-canary
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
