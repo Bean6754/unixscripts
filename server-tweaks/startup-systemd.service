@@ -1,0 +1,11 @@
+[Unit]
+Description=Startup script
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/startup start
+ExecStop=/usr/local/bin/startup stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
