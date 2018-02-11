@@ -17,10 +17,10 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-level
-apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump
+apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump qbittorrent-nox
 # High-level
 # Find Qt alternative for gparted and filezilla
-apt install -y wireshark-qt qbittorrent qbittorrent-nox krita kdenlive simplescreenrecorder mpv libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift quassel qtcreator firefox-esr firefox-esr-l10n-en-gb
+apt install -y wireshark-qt qbittorrent krita kdenlive simplescreenrecorder vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift quassel qtcreator firefox-esr firefox-esr-l10n-en-gb
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
