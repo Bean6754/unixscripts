@@ -24,6 +24,8 @@ apt install -y wireshark-qt qbittorrent qupzilla krita kdenlive simplescreenreco
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
+# Emoji and other fonts.
+apt install -y fonts-noto-color-emoji fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-noto
 # Qt development.
 apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
