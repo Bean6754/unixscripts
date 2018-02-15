@@ -16,7 +16,7 @@ zypper up -y
 
 # Install development tools.
 zypper install -t pattern devel_basis
-zypper install -y make cmake git curl wget vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel
+zypper install -y make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel
 
 # Networking tools.
 zypper in -y wireshark tcpdump
