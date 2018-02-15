@@ -11,5 +11,6 @@ zypper install-new-recommends
 
 
 # For KDE (Plasma 5)
-systemctl disable sddm
-systemctl set-default multi-user.target
+# systemctl disable sddm
+# systemctl set-default multi-user.target
+# Breaks X.
