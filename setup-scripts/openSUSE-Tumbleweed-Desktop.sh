@@ -14,18 +14,18 @@ fi
 zypper ref
 zypper up -y
 
-# Install development tools.
+# Low-level and development tools.
 zypper install -t pattern devel_basis
 zypper install -y make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel qbittorrent-nox
 
 # Networking tools.
 zypper in -y wireshark tcpdump
 
-# Multimedia codecs.
+# High-level and multimedia codecs.
 echo Type 'a' then press the enter key
 zypper ar -f http://opensuse-guide.org/repo/openSUSE_Tumbleweed/ libdvdcss
 zypper ref
-zypper install -y libdvdnav4 libdvdread4 libdvdcss2 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
+zypper install -y libdvdnav4 libdvdread4 libdvdcss2 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
 
 # Adobe Flash.
 zypper ar --check --refresh http://linuxdownload.adobe.com/linux/x86_64/ adobe
