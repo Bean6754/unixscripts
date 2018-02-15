@@ -29,10 +29,10 @@ zypper install -y libdvdnav4 libdvdread4 libdvdcss2 ffmpeg lame gstreamer gstrea
 
 # Adobe Flash.
 zypper ar --check --refresh http://linuxdownload.adobe.com/linux/x86_64/ adobe
-# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+echo Type 'yes' then press the enter key
 zypper ref
-# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
-zypper install adobe-release-x86_64 flash-plugin
+zypper in -y adobe-release-x86_64 flash-plugin
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
