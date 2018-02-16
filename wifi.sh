@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
@@ -23,5 +23,3 @@ systemctl stop wpa_supplicant
 ip link set wlp2s0 down
 # Start WiFi-Menu to do all of the WiFi for us.
 wifi-menu
-# Exit program sucessfully.
-exit 0
