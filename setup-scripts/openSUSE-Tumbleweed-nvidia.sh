@@ -8,9 +8,3 @@ echo Then on the licensing pages press 'q', then type yes. Twice!
 sleep 4
 
 zypper install-new-recommends
-
-
-# For KDE (Plasma 5)
-# systemctl disable sddm
-# systemctl set-default multi-user.target
-# Breaks X.
