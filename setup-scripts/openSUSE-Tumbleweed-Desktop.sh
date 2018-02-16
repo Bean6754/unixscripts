@@ -33,6 +33,7 @@ echo Type 'yes' then press the enter key
 zypper ref
 zypper in adobe-release-x86_64 flash-plugin
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+zypper ref
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
