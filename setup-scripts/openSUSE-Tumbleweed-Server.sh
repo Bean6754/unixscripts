@@ -31,9 +31,8 @@ systemctl enable apache2
 systemctl start apache2
 a2enmod php7
 systemctl restart apache2
-systemctl enable mysql
-systemctl start mysql
-mysql_secure_installation
+systemctl enable mariadb
+systemctl restart mariadb
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
