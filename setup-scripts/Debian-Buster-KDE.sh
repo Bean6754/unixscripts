@@ -17,17 +17,20 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-level
-apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump qbittorrent-nox
+apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-nox
 # High-level
 # Find Qt alternative for gparted and filezilla
-apt install -y wireshark-qt qbittorrent pavucontrol-qt qupzilla krita kdenlive simplescreenrecorder vlc libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift plasma-applet-redshift-control quassel qtcreator firefox-esr firefox-esr-l10n-en-gb
+apt install -y wireshark-gtk transmission pavucontrol xarchiver geany geany-plugins gimp libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift pidgin firefox-esr firefox-esr-l10n-en-gb
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
 # Emoji and other fonts.
 apt install -y fonts-noto-color-emoji fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-noto
+# Remove VLC and install Parole
+apt purge -y vlc && apt autoremove -y
+apt install -y parole
 # Qt development.
-apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
+# apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
