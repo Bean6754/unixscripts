@@ -24,6 +24,9 @@ zypper in -y wireshark tcpdump
 # LAMP.
 zypper in -y apache2 php7 php7-mysql apache2-mod_php7 mariadb mariadb-tools
 
+rcmysql start
+/usr/bin/mysql_secure_installation
+
 systemctl enable apache2
 systemctl start apache2
 a2enmod php7
