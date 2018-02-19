@@ -19,8 +19,9 @@ apt dist-upgrade -y
 # Low-level
 apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli
 # High-level
-# Find Qt alternative for gparted and filezilla
-apt install -y wireshark-gtk transmission-gtk pavucontrol xarchiver geany geany-plugins gimp libdvdnav4 libdvdread4 libdvdcss2 libbluray2 redshift pidgin firefox-esr firefox-esr-l10n-en-gb
+apt install -y wireshark-gtk transmission-gtk pavucontrol xarchiver geany geany-plugins filezilla gparted gimp  redshift pidgin firefox-esr firefox-esr-l10n-en-gb
+# Codecs
+apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
