@@ -41,3 +41,6 @@ brew install unzip
 brew install vim --override-system-vi
 brew install macvim --override-system-vim --custom-system-icons
 brew install zsh
+
+# git curl wget python, already selected
+brew install htop lua python2 python3
