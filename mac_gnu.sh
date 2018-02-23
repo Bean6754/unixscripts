@@ -1,16 +1,19 @@
 #!/bin/bash
 
-# Xcode dependancies
+# Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
-sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools
+sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
+# Install Homebrew.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.bash_profile
 # echo 'export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.zshrc
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.bash_profile
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.zshrc
+# Fix Vim backspace issue.
+echo "set backspace=2" >> ~/.vimrc
 
 brew install coreutils
 brew install binutils
@@ -45,8 +48,8 @@ brew install python
 brew install rsync
 brew install svn
 brew install unzip
-brew install vim --override-system-vi
-brew install macvim --with-override-system-vim --custom-system-icons
+brew install vim --with-override-system-vi
+# brew install macvim --with-override-system-vim --custom-system-icons
 brew install zsh
 
 # git curl wget python, already selected
