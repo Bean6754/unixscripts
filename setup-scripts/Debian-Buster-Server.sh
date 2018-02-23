@@ -17,7 +17,7 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-level
-apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli
+apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli nethogs iftop
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
