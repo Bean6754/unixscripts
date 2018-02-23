@@ -27,9 +27,9 @@ dpkg-reconfigure libdvd-pkg
 apt install -y browser-plugin-freshplayer-pepperflash
 # Emoji and other fonts.
 apt install -y fonts-noto-color-emoji fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-noto
-# Remove VLC and install Parole
+# Remove VLC and install mpv
 apt purge -y vlc && apt autoremove -y && apt purge -y libqt5core5a libqt5gui5 vlc-plugin-qt && apt autoremove -y
-apt install -y parole
+apt install -y mpv
 # Qt development.
 # apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
