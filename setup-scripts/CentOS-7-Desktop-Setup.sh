@@ -15,7 +15,8 @@ yum update -y
 # Repos.
 yum install -y epel-release
 yum-config-manager --add-repo=https://negativo17.org/repos/epel-multimedia.repo
-yum-config-manager --add-repo=https://negativo17.org/repos/epel-nvidia.repo
+# nvidia is broken :(
+# yum-config-manager --add-repo=https://negativo17.org/repos/epel-nvidia.repo
 yum-config-manager --add-repo=https://negativo17.org/repos/epel-steam.repo
 yum update -y
 # Low-level.
@@ -23,7 +24,9 @@ yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git 
 # High-level.
 yum install -y libbluray chromium libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp parole xfce4-netload-plugin xfce4-weather-plugin ristretto transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany firefox filezilla recordmydesktop gtk-recordmydesktop liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle
 # Repo based.
-yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart steam mpv 
+# nvidia is broken :(
+# yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart 
+yum install -y steam mpv 
 yum groupinstall -y "X Window System" "Development Tools" "Xfce"
 
 # Steam.
