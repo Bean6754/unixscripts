@@ -12,13 +12,18 @@ fi
 
 # Update system.
 yum update -y
-# Install stuff.
+# Repos.
 yum install -y epel-release
+yum-config-manager --add-repo=https://negativo17.org/repos/epel-multimedia.repo
+yum-config-manager --add-repo=https://negativo17.org/repos/epel-nvidia.repo
+yum-config-manager --add-repo=https://negativo17.org/repos/epel-steam.repo
 yum update -y
 # Low-level.
 yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
-# yum localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm
+# High-level.
 yum install -y libbluray chromium libreoffice firewall-config pulseaudio alsa-plugins-pulseaudio alsa-utils dvd+rw-tools pulseaudio-module-x11 pulseaudio-utils pavucontrol xarchiver mousepad gimp parole xfce4-netload-plugin xfce4-weather-plugin ristretto transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany
+# Repo based.
+yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart steam mpv 
 yum groupinstall -y "X Window System" "Development Tools" "Xfce"
 
 # Steam.
