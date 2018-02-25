@@ -36,11 +36,9 @@ yum groupinstall -y "X Window System" "Development Tools" "Xfce"
 # cd ..
 # rm -rf steam
 
-# Start GDM or Lightdm at boot.
 yum remove -y gdm
-yum install -y lightdm
-systemctl set-default graphical.target
-systemctl enable lightdm
+yum autoremove -y
+systemctl set-default multi-user.target
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch
