@@ -30,7 +30,7 @@ apt install -y browser-plugin-freshplayer-pepperflash
 # Emoji and other fonts.
 apt install -y fonts-noto-color-emoji fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-noto
 # Themes.
-apt install -y moka-icon-theme
+apt install -y moka-icon-theme chameleon-cursor-theme
 # Remove VLC and install mpv
 apt purge -y vlc && apt autoremove -y && apt purge -y libqt5core5a libqt5gui5 vlc-plugin-qt && apt autoremove -y
 apt install -y mpv
