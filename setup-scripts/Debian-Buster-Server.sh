@@ -15,6 +15,8 @@ dpkg --add-architecture i386
 apt update
 apt upgrade -y
 apt dist-upgrade -y
+apt full-upgrade -y
+apt autoremove -y
 
 # Low-level
 apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli nethogs iftop
