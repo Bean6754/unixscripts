@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
@@ -26,5 +26,6 @@ apt autoremove -y
 apt install -y openjdk-8-jdk
 # Server specific stuff.
 apt install -y mariadb-server mariadb-client php7.1 php7.1-mysql
-
-exit 0
+systemctl enable apache2
+systemctl enable mariadb
+mysql_secure_installation
