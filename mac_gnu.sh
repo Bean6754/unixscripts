@@ -53,4 +53,4 @@ brew install vim --with-override-system-vi
 brew install zsh
 
 # git curl wget python, already selected
-brew install htop lua python2 python3 nmap nethogs iftop arping arpoison arp-scan
+brew install htop lua python2 python3 nmap nethogs iftop arping arpoison arp-scan tmux
