@@ -3,23 +3,29 @@
 start() {
 	PASSWD="password"
 	
-	echo -n $PASSWD | cryptsetup luksOpen /dev/mapper/storage1_darknet--server-lvol0 storage1_crypt -d -
-	echo -n $PASSWD | cryptsetup luksOpen /dev/mapper/storage2_darknet--server-lvol0 storage2_crypt -d -
+	echo -n $PASSWD | cryptsetup luksOpen /dev/sda1 storage1_crypt -d -
+	echo -n $PASSWD | cryptsetup luksOpen /dev/sdb1 storage2_crypt -d -
 	
-	mount /dev/mapper/storage1_crypt /mnt/storage1
-	mount /dev/mapper/storage2_crypt /mnt/storage2
+	vgscan --mknodes
+	vgchange -ay
 	
-	systemctl start httpd
+	mount /dev/storage1_vg/storage1 /mnt/storage1
+	mount /dev/storage2_vg/storage2 /mnt/storage2
+	
+	systemctl start apache2
 }
 
 stop() {
 	umount /mnt/storage1
 	umount /mnt/storage2
 	
+	lvchange -an -v /dev/storage1_vg/storage1
+	lvchange -an -v /dev/storage2_vg/storage2
+	
 	cryptsetup luksClose storage1_crypt
 	cryptsetup luksClose storage2_crypt
 	
-	systemctl stop httpd
+	systemctl stop apache2
 }
 
 case $1 in
