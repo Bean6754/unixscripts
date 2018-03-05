@@ -25,7 +25,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y qt5-qtconfiguration inkscape inkscape-psd krita qbittorrent pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla
+dnf install -y qt5-qtconfiguration inkscape inkscape-psd krita qbittorrent pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla VirtualBox  VirtualBox-guest-additions
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
@@ -45,4 +45,13 @@ dnf install -y playonlinux
  # # To fix discord-desktop issue.
  # mv /opt/discord-stable /opt/discord-canary
 # Autoremove any unneeded dependancies.
+# VirtualBox.
+wget https://www.virtualbox.org/download/oracle_vbox.asc
+rpm --import oracle_vbox.asc
+wget https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo -O /etc/yum.repos.d/virtualbox.repo
+dnf update -y
+dnf install -y VirtualBox-5.2
+# Extention-pack (run as regular user).
+# wget https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
+# Open: Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
 dnf autoremove -y
