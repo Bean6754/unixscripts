@@ -54,4 +54,7 @@ dnf install -y VirtualBox-5.2
 # Extention-pack (run as regular user).
 # wget https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
 # Open: Oracle_VM_VirtualBox_Extension_Pack-5.2.8-121009.vbox-extpack
+# For me (ckb-next, Corsair K70 RGB driver and manager).
+# dnf copr enable johanh/ckb
+# dnf install -y ckb-next
 dnf autoremove -y
