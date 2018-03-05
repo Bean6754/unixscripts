@@ -25,7 +25,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y qt5-qtconfiguration inkscape inkscape-psd krita qbittorrent pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla VirtualBox  VirtualBox-guest-additions
+dnf install -y qt5-qtconfiguration inkscape inkscape-psd krita qbittorrent pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
