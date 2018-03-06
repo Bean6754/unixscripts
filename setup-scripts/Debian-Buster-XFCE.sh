@@ -21,7 +21,7 @@ apt autoremove -y
 # Low-level
 apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common
 # High-level
-apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver geany geany-plugins baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl
+apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver geany geany-plugins baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl glade
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
