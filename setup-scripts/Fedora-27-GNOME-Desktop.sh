@@ -21,11 +21,11 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools" "Security-Lab"
 # Low level.
-dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
+dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany gparted polari pitivi kdenlive simplescreenrecorder filezilla redshift redshift-gtk
+dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany gparted guvcview polari pitivi kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
