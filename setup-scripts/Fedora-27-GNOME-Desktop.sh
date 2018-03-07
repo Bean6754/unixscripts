@@ -25,7 +25,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany gparted guvcview polari pitivi qt5ct kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
+dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi qt5ct kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
    echo
 else
