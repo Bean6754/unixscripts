@@ -38,6 +38,8 @@ dnf install -y flash-plugin alsa-plugins-pulseaudio libcurl
 dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # PlayOnLinux.
 dnf install -y playonlinux
+# Discord (thanks RPMFusion!)
+dnf install -y discord
  # Discord. (Run as user)
  # git clone https://github.com/RPM-Outpost/discord.git
  # cd discord
