@@ -17,7 +17,8 @@ apt autoremove -y
 # Low-level
 apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick
 # Security.
-apt install -y chkrootkit clamav snort
+apt install -y chkrootkit clamav snort suricata
+suricata-oinkmaster-updater
 # High-level
 apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver menulibre geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl
 # Codecs
