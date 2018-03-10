@@ -55,5 +55,4 @@ brew install zsh
 # git curl wget python, already selected
 brew install htop lua python2 python3 nmap nethogs iftop arping arpoison arp-scan tmux
 # Security.
-brew install chkrootkit clamav snort
-sudo chmod o+r /dev/bpf*
+brew install clamav suricata
