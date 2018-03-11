@@ -19,7 +19,10 @@ dnf install -y nvidia-driver nvidia-xconfig nvidia-settings kernel-devel akmod-n
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
 
-echo 'omit_drivers+="nouveau"' > /etc/dracut.conf.d/blacklist-nouveau.conf
-mkinitrd --force /boot/initramfs-$(uname -r).img $(uname -r)
-reboot
-/usr/sbin/akmods --force
+# Most likely not needed after a reboot.
+# echo 'omit_drivers+="nouveau"' > /etc/dracut.conf.d/blacklist-nouveau.conf
+# mkinitrd --force /boot/initramfs-$(uname -r).img $(uname -r)
+# reboot
+
+clear
+echo "RUN: '/usr/sbin/akmods --force', AFTER a REBOOT. In order to rebuild initramfs after nouveau is disabled."
