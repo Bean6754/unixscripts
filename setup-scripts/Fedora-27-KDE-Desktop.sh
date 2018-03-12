@@ -21,7 +21,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # High level.
-dnf install -y qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
+dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
 # GNOME: dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi qt5ct kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 setsebool -P selinuxuser_execheap 1
 if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
