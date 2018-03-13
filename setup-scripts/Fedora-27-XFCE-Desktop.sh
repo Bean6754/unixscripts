@@ -20,11 +20,15 @@ dnf groupinstall -y "Development-Tools" "Security-Lab"
 dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
 # Network monitoring tools.
 dnf install -y nethogs iftop
+# Security.
+dnf install -y chkrootkit clamav clamav-update bro suricata
+freshclam
 # High level.
 # KDE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
 # GNOME: dnf install -y gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi qt5ct kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp transmission-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
 setsebool -P selinuxuser_execheap 1
+dnf remove -y leafpad ; dnf install -y mousepad
 if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
    echo
 else
