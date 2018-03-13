@@ -21,7 +21,7 @@ dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl 
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # Security.
-dnf install -y chkrootkit clamav clamav-update bro suricata
+dnf install -y chkrootkit clamav clamav-update bro
 freshclam
 # High level.
 # KDE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
