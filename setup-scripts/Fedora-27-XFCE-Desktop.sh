@@ -16,6 +16,7 @@ dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$
 dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools" "Security-Lab"
+dnf install -y security-menus
 # Low level.
 dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
 # Network monitoring tools.
