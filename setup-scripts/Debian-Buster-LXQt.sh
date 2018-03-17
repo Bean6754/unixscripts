@@ -22,7 +22,7 @@ suricata-oinkmaster-updater
 # High-level
 apt purge -y mpv smplayer smtube
 apt autoremove -y
-apt install -y wireshark-qt transmission-qt vlc pavucontrol-qt xarchiver filezilla partitionmanager gimp redshift quassel firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb kcolorchooser conky-all guvcview simplescreenrecorder wmctrl
+apt install -y wireshark-qt transmission-qt vlc pavucontrol-qt xarchiver filezilla partitionmanager gimp redshift quassel firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb kcolorchooser conky-all guvcview simplescreenrecorder wmctrl
 #GTK: apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver menulibre geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
