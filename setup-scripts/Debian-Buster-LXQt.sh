@@ -37,6 +37,11 @@ apt install -y moka-icon-theme chameleon-cursor-theme
 # Qt development.
 # RIP: QtCreator ;(
 apt install -y qt5-default qt5ct qtdeclarative5-dev qml-module-qtquick-xmllistmodel
+if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
+   echo
+else
+   echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
+fi
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
