@@ -46,3 +46,7 @@ fi
 apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk icedtea-8-plugin
+# LXQt specific.
+apt purge -y *xfce* *xfwm*
+apt autoremove -y
+apt install -y openbox obconf-qt
