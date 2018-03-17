@@ -24,7 +24,8 @@ apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk
 # Server specific stuff.
-apt install -y mariadb-server mariadb-client php7.1 php7.1-mysql
-systemctl enable apache2
+apt install -y mariadb-server mariadb-client php7.1 php7.1-mysql nginx
+systemctl disable apache2
+systemctl enable nginx
 systemctl enable mariadb
 mysql_secure_installation
