@@ -17,7 +17,8 @@ apt autoremove -y
 # Low-level
 apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick
 # Security.
-apt install -y clamav
+apt install -y clamav chkrootkit rkhunter lynis
+freshclam
 # High-level
 apt purge -y mpv smplayer smtube
 apt autoremove -y
