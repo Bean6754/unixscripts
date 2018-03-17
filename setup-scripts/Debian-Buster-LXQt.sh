@@ -36,7 +36,7 @@ apt install -y moka-icon-theme chameleon-cursor-theme
 # GTK: apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
 # Qt development.
 # RIP: QtCreator ;(
-apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
+apt install -y qt5-default qt5ct qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
