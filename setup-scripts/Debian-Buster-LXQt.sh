@@ -20,18 +20,23 @@ apt install -y aptitude git curl wget vim emacs-nox sudo fakeroot p7zip-full zip
 apt install -y clamav suricata
 suricata-oinkmaster-updater
 # High-level
-apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver menulibre geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl
+apt purge -y mpv smplayer smtube
+apt autoremove -y
+apt install -y wireshark-qt transmission-qt vlc pavucontrol-qt xarchiver filezilla partitionmanager gimp redshift quassel firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb kcolorchooser conky-all guvcview simplescreenrecorder wmctrl
+#GTK: apt install -y wireshark-gtk transmission-gtk vlc pavucontrol xarchiver menulibre geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb gpick software-properties-gtk synaptic gdebi conky-all guvcview simplescreenrecorder wmctrl
 # Codecs
-apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
+apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
 # Emoji and other fonts.
 apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-dejavu-extra
 # Themes.
-apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
+apt install -y moka-icon-theme chameleon-cursor-theme
+# GTK: apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
 # Qt development.
-apt install -y qt5-default qtcreator qtdeclarative5-dev qml-module-qtquick-xmllistmodel
+# RIP: QtCreator ;(
+apt install -y qt5-default qtdeclarative5-dev qml-module-qtquick-xmllistmodel
 # Java.
 apt purge -y openjdk*
 apt autoremove -y
