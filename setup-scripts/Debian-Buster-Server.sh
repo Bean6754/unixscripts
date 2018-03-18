@@ -14,6 +14,11 @@ apt dist-upgrade -y
 apt full-upgrade -y
 apt autoremove -y
 
+# Tasksel stuff.
+tasksel install print-server
+tasksel install ssh-server
+tasksel install web-server
+
 # Low-level
 apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
 # Security.
@@ -24,7 +29,6 @@ apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk
 # Server specific stuff.
-tasksel install web-server
 systemctl stop apache2
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
 systemctl disable apache2
