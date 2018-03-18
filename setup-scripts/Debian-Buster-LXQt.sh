@@ -14,6 +14,12 @@ apt dist-upgrade -y
 apt full-upgrade -y
 apt autoremove -y
 
+# Tasksel stuff.
+tasksel install lxqt-desktop
+tasksel install print-server
+tasksel install ssh-server
+tasksel install web-server
+
 # Low-level
 apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
 # Security.
@@ -45,3 +51,14 @@ apt install -y openjdk-8-jdk icedtea-8-plugin
 apt purge -y *xfce* *xfwm*
 apt autoremove -y
 apt install -y openbox obconf-qt lxappearance lxappearance-obconf breeze-gtk-theme
+# Server specific stuff.
+systemctl stop apache2
+apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
+systemctl disable apache2
+systemctl enable php7.2-fpm
+systemctl enable nginx
+systemctl enable mariadb
+mysql_secure_installation
+
+# Don't autostart nginx, workstation/laptop security.
+systemctl disable nginx
