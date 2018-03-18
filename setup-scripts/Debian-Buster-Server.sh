@@ -24,6 +24,7 @@ apt purge -y openjdk*
 apt autoremove -y
 apt install -y openjdk-8-jdk
 # Server specific stuff.
+tasksel install web-server
 systemctl stop apache2
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
 systemctl disable apache2
