@@ -54,11 +54,17 @@ apt install -y openbox obconf-qt lxappearance lxappearance-obconf breeze-gtk-the
 # Server specific stuff.
 systemctl stop apache2
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
+# Don't autostart services, workstation/laptop security.
 systemctl disable apache2
-systemctl enable php7.2-fpm
-systemctl enable nginx
-systemctl enable mariadb
+systemctl disable php7.2-fpm
+systemctl disable nginx
+systemctl disable mariadb
 mysql_secure_installation
 
-# Don't autostart nginx, workstation/laptop security.
-systemctl disable nginx
+touch ~/web.sh
+echo '#!/bin/bash' > ~/web.sh
+echo >> ~/web.sh
+echo 'systemctl start php7.2-fpm' >> ~/web.sh
+echo 'systemctl start nginx' >> ~/web.sh
+echo 'systemctl start mariadb' >> ~/web.sh
+chmod +x ~/web.sh
