@@ -50,7 +50,7 @@ apt install -y openjdk-8-jdk icedtea-8-plugin
 # LXQt specific.
 apt purge -y *xfce* *xfwm*
 apt autoremove -y
-apt install -y openbox obconf-qt lxappearance lxappearance-obconf breeze-gtk-theme
+apt install -y openbox obconf-qt lxappearance lxappearance-obconf breeze-gtk-theme gworldclock tzwatch
 # Server specific stuff.
 systemctl stop apache2
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
