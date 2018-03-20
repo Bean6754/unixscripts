@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Needs Bash for Homebrew script to run.
+
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
