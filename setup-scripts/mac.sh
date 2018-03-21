@@ -14,6 +14,7 @@ echo "set backspace=2" >> ~/.vimrc
 
 # Update MacPorts.
 sudo /opt/local/bin/port -v selfupdate
+sudo /opt/local/bin/port -v upgrade outdated
 # Install software.
 sudo /opt/local/bin/port -v install arping arp-scan clamav dsniff ettercap iftop htop lua nmap python27 python36 tcsh tmux vim
 # Setup python2 and python3.
