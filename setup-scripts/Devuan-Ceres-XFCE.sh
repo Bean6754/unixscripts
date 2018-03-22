@@ -58,3 +58,7 @@ echo 'service php7.0-fpm start' >> ~/web.sh
 echo 'service nginx start' >> ~/web.sh
 echo 'service mysql start' >> ~/web.sh
 chmod +x ~/web.sh
+
+# file-roller > xarchiver (old) (RAR support).
+apt purge -y xarchiver
+apt install -y file-roller
