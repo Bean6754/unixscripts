@@ -52,21 +52,23 @@ update-rc.d -f mysql remove
 mysql_secure_installation
 
 touch ~/web.sh
-echo '#!/bin/bash' > ~/web.sh
-echo >> ~/web.sh
-echo 'start() {' >> ~/web.sh
-echo '  service php7.0-fpm start' >> ~/web.sh
-echo '  service nginx start' >> ~/web.sh
-echo '  service mysql start' >> ~/web.sh
-echo '}' >> ~/web.sh
-echo >> ~/web.sh
-echo 'stop() {' >> ~/web.sh
-echo '  service php7.0-fpm stop' >> ~/web.sh
-echo '  service nginx stop' >> ~/web.sh
-echo '  service mysql stop' >> ~/web.sh
-echo '}' >> ~/web.sh
-echo >> ~/web.sh
-echo 'case $1 in' >> ~/web.sh
-echo '  start|stop) "$1" ;;' >> ~/web.sh
-echo 'esac' >> ~/web.sh
+cat >~/web.sh << EOL
+#!/bin/bash
+
+start() {
+  service php7.0-fpm start
+  service nginx start
+  service mysql start
+}
+
+stop() {
+  service php7.0-fpm stop
+  service nginx stop
+  service mysql stop
+}
+
+case $1 in
+  start|stop) "$1" ;;
+esac
+EOL
 chmod +x ~/web.sh
