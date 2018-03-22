@@ -37,7 +37,7 @@ apt install -y browser-plugin-freshplayer-pepperflash
 # Emoji and other fonts.
 apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-dejavu-extra
 # Themes.
-apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
+apt install -y arc-theme chameleon-cursor-theme moka-icon-theme xfwm4-themes
 # Java.
 apt install -y openjdk-8-jdk icedtea-8-plugin
 # Server specific stuff.
