@@ -54,7 +54,19 @@ mysql_secure_installation
 touch ~/web.sh
 echo '#!/bin/bash' > ~/web.sh
 echo >> ~/web.sh
-echo 'service php7.0-fpm start' >> ~/web.sh
-echo 'service nginx start' >> ~/web.sh
-echo 'service mysql start' >> ~/web.sh
+echo 'start() {' >> ~/web.sh
+echo '  service php7.0-fpm start' >> ~/web.sh
+echo '  service nginx start' >> ~/web.sh
+echo '  service mysql start' >> ~/web.sh
+echo '}' >> ~/web.sh
+echo >> ~/web.sh
+echo 'stop() {' >> ~/web.sh
+echo '  service php7.0-fpm stop' >> ~/web.sh
+echo '  service nginx stop' >> ~/web.sh
+echo '  service mysql stop' >> ~/web.sh
+echo '}' >> ~/web.sh
+echo >> ~/web.sh
+echo 'case $1 in' >> ~/web.sh
+echo '  start|stop) "$1" ;;' >> ~/web.sh
+echo 'esac' >> ~/web.sh
 chmod +x ~/web.sh
