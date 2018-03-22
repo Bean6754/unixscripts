@@ -21,7 +21,7 @@ apt autoremove -y
 # tasksel install web-server
 
 # Low-level
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full p7zip-rar zip unzip rar unrar scanmem strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip rar unrar scanmem strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
