@@ -21,14 +21,14 @@ apt autoremove -y
 # tasksel install web-server
 
 # Low-level
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip strace scanmem lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # High-level
 apt purge -y vlc
 apt autoremove -y
-apt install -y wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux gnome-boxes
+apt install -y wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux gnome-boxes
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
 dpkg-reconfigure libdvd-pkg
