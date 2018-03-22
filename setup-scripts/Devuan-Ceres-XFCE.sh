@@ -39,8 +39,6 @@ apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbol
 # Themes.
 apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
 # Java.
-apt purge -y openjdk*
-apt autoremove -y
 apt install -y openjdk-8-jdk icedtea-8-plugin
 # Server specific stuff.
 systemctl stop apache2
