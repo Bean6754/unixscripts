@@ -48,7 +48,7 @@ apt install -y mariadb-server mariadb-client php7.0 php-pear php7.0-fpm php7.0-m
 update-rc.d -f apache2 remove
 update-rc.d -f php7.0-fpm remove
 update-rc.d -f nginx remove
-update-rc.d -f mariadb remove
+update-rc.d -f mysql remove
 mysql_secure_installation
 
 touch ~/web.sh
@@ -56,5 +56,5 @@ echo '#!/bin/bash' > ~/web.sh
 echo >> ~/web.sh
 echo 'service php7.0-fpm start' >> ~/web.sh
 echo 'service nginx start' >> ~/web.sh
-echo 'service mariadb start' >> ~/web.sh
+echo 'service mysql start' >> ~/web.sh
 chmod +x ~/web.sh
