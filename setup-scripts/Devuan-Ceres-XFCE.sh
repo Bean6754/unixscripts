@@ -41,7 +41,7 @@ apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
 # Java.
 apt install -y openjdk-8-jdk icedtea-8-plugin
 # Server specific stuff.
-systemctl stop apache2
+service apache2 stop
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
 # Don't autostart services, workstation/laptop security.
 # To enable service: update-rc.d apache2 defaults
