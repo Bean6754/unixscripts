@@ -25,8 +25,6 @@ apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # Java.
-apt purge -y openjdk*
-apt autoremove -y
 apt install -y openjdk-8-jdk
 # Server specific stuff.
 service apache2 stop
