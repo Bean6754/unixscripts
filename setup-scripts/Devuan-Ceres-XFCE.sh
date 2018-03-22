@@ -42,11 +42,11 @@ apt install -y moka-icon-theme chameleon-cursor-theme xfwm4-themes
 apt install -y openjdk-8-jdk icedtea-8-plugin
 # Server specific stuff.
 service apache2 stop
-apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
+apt install -y mariadb-server mariadb-client php7.0 php-pear php7.0-fpm php7.0-mysql nginx
 # Don't autostart services, workstation/laptop security.
 # To enable service: update-rc.d apache2 defaults
 update-rc.d -f apache2 remove
-update-rc.d -f php7.2-fpm remove
+update-rc.d -f php7.0-fpm remove
 update-rc.d -f nginx remove
 update-rc.d -f mariadb remove
 mysql_secure_installation
@@ -54,7 +54,7 @@ mysql_secure_installation
 touch ~/web.sh
 echo '#!/bin/bash' > ~/web.sh
 echo >> ~/web.sh
-echo 'service php7.2-fpm start' >> ~/web.sh
+echo 'service php7.0-fpm start' >> ~/web.sh
 echo 'service nginx start' >> ~/web.sh
 echo 'service mariadb start' >> ~/web.sh
 chmod +x ~/web.sh
