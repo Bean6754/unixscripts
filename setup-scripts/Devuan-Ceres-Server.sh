@@ -36,3 +36,24 @@ update-rc.d php7.0-fpm defaults
 update-rc.d nginx defaults
 update-rc.d mysql defaults
 mysql_secure_installation
+
+cat >~/web.sh << EOL
+#!/bin/bash
+
+start() {
+  service php7.0-fpm start
+  service nginx start
+  service mysql start
+}
+
+stop() {
+  service php7.0-fpm stop
+  service nginx stop
+  service mysql stop
+}
+
+case $1 in
+  start|stop) "$1" ;;
+esac
+EOL
+chmod +x ~/web.sh
