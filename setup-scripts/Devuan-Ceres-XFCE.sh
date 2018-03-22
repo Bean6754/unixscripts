@@ -44,16 +44,17 @@ apt install -y openjdk-8-jdk icedtea-8-plugin
 systemctl stop apache2
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
 # Don't autostart services, workstation/laptop security.
-systemctl disable apache2
-systemctl disable php7.2-fpm
-systemctl disable nginx
-systemctl disable mariadb
+# To enable service: update-rc.d apache2 defaults
+update-rc.d -f apache2 remove
+update-rc.d -f php7.2-fpm remove
+update-rc.d -f nginx remove
+update-rc.d -f mariadb remove
 mysql_secure_installation
 
 touch ~/web.sh
 echo '#!/bin/bash' > ~/web.sh
 echo >> ~/web.sh
-echo 'systemctl start php7.2-fpm' >> ~/web.sh
-echo 'systemctl start nginx' >> ~/web.sh
-echo 'systemctl start mariadb' >> ~/web.sh
+echo 'service php7.2-fpm start' >> ~/web.sh
+echo 'service nginx start' >> ~/web.sh
+echo 'service mariadb start' >> ~/web.sh
 chmod +x ~/web.sh
