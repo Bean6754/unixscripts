@@ -7,6 +7,4 @@ cd lol
 while(true)
 do
   mkdir $[ $RANDOM % 999999999 ]
-done&
-
-exit 0
+done
