@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 while true
 do
@@ -10,5 +10,3 @@ do
 	# wc -c /mnt/Win10_1703_English_x64.iso | awk '{print $1}'
 	sleep 6
 done
-
-exit 0
