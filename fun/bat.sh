@@ -1,11 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 alias bat='cat /sys/class/power_supply/BAT0/capacity'
-bat
-for (( ;; ))
+
+while true
 do
-  sleep 5
   clear
   bat
+  sleep 5
 done
-exit 0
