@@ -12,7 +12,7 @@ start() {
 	mount /dev/storage1_vg/storage1 /mnt/storage1
 	mount /dev/storage2_vg/storage2 /mnt/storage2
 	
-	systemctl start apache2
+	service nginx start
 }
 
 stop() {
@@ -25,7 +25,7 @@ stop() {
 	cryptsetup luksClose storage1_crypt
 	cryptsetup luksClose storage2_crypt
 	
-	systemctl stop apache2
+	service nginx stop
 }
 
 case $1 in
