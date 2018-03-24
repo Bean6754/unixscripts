@@ -14,7 +14,10 @@ pkg update
 pkg upgrade -y
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
-pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv p7zip rar rofi rxvt-unicode sudo unrar unzip vim-lite xarchiver xinit xorg zip
+# Low-level.
+pkg install -y curl git p7zip rar sudo unrar unzip vim-lite zip
+# High-level.
+pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv playonbsd rofi rxvt-unicode xarchiver xinit xorg
 
 echo 'proc /proc procfs rw,noauto 0 0' >> /etc/fstab
 
