@@ -13,7 +13,8 @@ portsnap update
 pkg update
 pkg upgrade -y
 
-pkg install -y vim-lite sudo p7zip rar unrar zip unzip xorg xinit rxvt-unicode i3 i3status i3lock feh rofi xarchiver firefox mpv libdvdcss libdvdnav libdvdread
+# https://www.textfixer.com/tools/alphabetize-text-words.php
+pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv p7zip rar rofi rxvt-unicode sudo unrar unzip vim-lite xarchiver xinit xorg zip
 
 echo 'proc /proc procfs rw,noauto 0 0' >> /etc/fstab
 
