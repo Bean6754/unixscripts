@@ -15,7 +15,7 @@ pkg upgrade -y
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
 # Low-level.
-pkg install -y curl git neofetch p7zip rar sudo unrar unzip vim-lite zip
+pkg install -y curl git neofetch p7zip rar sudo tmux unrar unzip vim-lite zip
 # High-level.
 pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv playonbsd rofi rxvt-unicode xarchiver xinit xorg
 
