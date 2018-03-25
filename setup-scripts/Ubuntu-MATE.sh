@@ -17,3 +17,5 @@ apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p
 # High-Level.
 apt install -y gimp vlc wireshark-gtk transmission-gtk gparted geany geany-plugins glade libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 dpkg-reconfigure libdvd-pkg
+# Themes.
+apt install -y chameleon-cursor-theme moka-icon-theme qt5ct
