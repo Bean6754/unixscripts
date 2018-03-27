@@ -16,7 +16,7 @@ echo "set backspace=2" >> ~/.vimrc
 sudo /opt/local/bin/port -v selfupdate
 sudo /opt/local/bin/port -v upgrade outdated
 # Install software.
-sudo /opt/local/bin/port -v install arping arp-scan clamav dsniff ettercap iftop htop lua neofetch nmap python27 python36 tcsh tmux vim
+sudo /opt/local/bin/port -v install arping arp-scan clamav dsniff ettercap iftop iterm2 htop lua neofetch nmap python27 python36 tcsh tmux vim
 # Setup python2 and python3.
 sudo /opt/local/bin/port select --set python python27
 sudo /opt/local/bin/port select --set python3 python36
