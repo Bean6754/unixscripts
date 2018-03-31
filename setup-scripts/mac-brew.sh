@@ -10,6 +10,10 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command 
 # Install Homebrew.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Update system.
+brew update
+brew upgrade
+
 # Fix Vim backspace issue.
 echo "set backspace=2" >> ~/.vimrc
 
