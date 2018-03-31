@@ -78,8 +78,6 @@ echo "alias gcc='/usr/local/bin/gcc-7'" >> ~/.zshrc
 echo "alias gcc='/usr/local/bin/g++-7'" >> ~/.zshrc
 # Rust tools.
 brew install exa fd rust rustc-completion
-# iOS development.
-brew install autoconf automake ideviceinstaller libimobiledevice libtool pkg-config
 # Security.
 brew install clamav
 # Cask(room) stuff. Usually graphical applications.
