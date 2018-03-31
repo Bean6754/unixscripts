@@ -3,7 +3,7 @@
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+# sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 # Install MacPorts.
 curl -L -O https://github.com/macports/macports-base/releases/download/v2.4.2/MacPorts-2.4.2.tar.bz2
