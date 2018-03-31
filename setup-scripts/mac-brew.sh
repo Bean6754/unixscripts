@@ -70,9 +70,10 @@ chsh -s /usr/local/bin/bash
 
 
 # git curl wget python, already installed from Xcode utils.
-brew install arping arpoison arp-scan ettercap htop iftop lua neofetch nmap nethogs python2 python3 telnet tmux zsh
+brew install arping arpoison arp-scan bash-completion ettercap htop iftop lua neofetch nmap nethogs python2 python3 telnet tmux zsh
+brew link bash-completion
 # Rust tools.
-brew install exa fd
+brew install exa fd rust rustc-completion
 # Security.
 brew install clamav
 # Cask(room) stuff. Usually graphical applications.
