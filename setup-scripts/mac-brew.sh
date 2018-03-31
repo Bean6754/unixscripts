@@ -15,7 +15,7 @@ echo "set backspace=2" >> ~/.vimrc
 
 brew install vim --with-override-system-vi
 
-# git curl wget python, already installed from XCode utils.
+# git curl wget python, already installed from Xcode utils.
 brew install zsh neofetch htop lua python2 python3 telnet nmap nethogs iftop arping arpoison arp-scan tmux
 # Security.
 brew install clamav
