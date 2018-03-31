@@ -5,7 +5,7 @@
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
-sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+# sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 # Install Homebrew.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
