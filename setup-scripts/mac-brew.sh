@@ -60,11 +60,11 @@ brew install vim --with-override-system-vi
 brew install zsh
 
 # Setup bash for local user.
-sudo cat /etc/shells << EOF
+sudo bash -c 'cat >> /etc/shells << EOF
 
 # Brew.
 /usr/local/bin/bash
-EOF
+EOF'
 chsh -s /usr/local/bin/bash
 
 
