@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### THIS SCRIPT IS UNMAINTAINED!!
+### PLEASE USE mac-ports.sh INSTEAD!
+
 # Needs Bash for Homebrew script to run.
 
 # Xcode dependancies.
