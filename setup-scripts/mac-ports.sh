@@ -25,7 +25,7 @@ sudo rm -rf /opt/local/var/macports/registry/.registry.lock
 sudo /opt/local/bin/port -v selfupdate
 sudo /opt/local/bin/port -v upgrade outdated
 # Install software.
-sudo /opt/local/bin/port -v install arping arp-scan autoconf automake clamav dsniff ettercap iftop htop libplist lua neofetch nmap python27 python36 tcsh tmux vim
+sudo /opt/local/bin/port -v install arping arp-scan autoconf automake clamav dsniff ettercap iftop htop libplist lua neofetch nmap python27 python36 tcsh texlive tmux vim
 # Get mpv, iTerm2 and transmission online, they selfupdate.
 # Setup python2 and python3.
 sudo /opt/local/bin/port select --set python2 python27
