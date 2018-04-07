@@ -1,20 +1,15 @@
 #!/bin/bash
 
-# Make sure only root can run our script
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
+# Make sure user is running script, not root!
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
+   echo
+else
+  echo "You must not be root while running this script!"
+  exit 1
 fi
 
-pacman -Syyu
-pacman -S xorg xorg-xinit i3 i3lock i3status yaourt aurvote customizepkg rsync
-
-# Disable root access for the AUR.
-exit
+su -c 'pacman -Syyu'
+su -c 'pacman -S xorg xorg-xinit i3 i3lock i3status yaourt aurvote customizepkg rsync'
 
 yaourt -S cower-git pacaur-git
 pacaur -Rsnc yaourt
