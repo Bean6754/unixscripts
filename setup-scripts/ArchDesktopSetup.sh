@@ -8,6 +8,17 @@ else
   exit 1
 fi
 
+# Check archlinuxfr is already installed or not.
+# su -c 'pacman -Syyu' | grep archlinuxfr
+# downloading archlinuxfr.db...
+
+# Enable archlinuxfr repo to get yaourt.
+su -c 'echo >> /etc/pacman.conf'
+su -c 'echo "[archlinuxfr]" >> /etc/pacman.conf'
+su -c 'echo "SigLevel = Never" >> /etc/pacman.conf'
+su -c 'echo "Server = https://repo.archlinux.fr/$arch" >> /etc/pacman.conf'
+
+# Update system.
 su -c 'pacman -Syyu'
 su -c 'pacman -S xorg xorg-xinit i3 i3lock i3status yaourt aurvote customizepkg rsync'
 
