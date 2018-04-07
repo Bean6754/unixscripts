@@ -25,3 +25,5 @@ echo 'startx' >> ~/.bashrc
 
 # NVIDIA.
 # su -c 'pacman -S nvidia nvidia-settings opencl-nvidia'
+# Intel microcode.
+# su -c 'pacman -S intel-ucode'
