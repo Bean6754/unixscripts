@@ -19,8 +19,6 @@ pacaur -S gimp gimp-help-en_gb libreoffice-fresh libreoffice-fresh-en-GB hunspel
 # For i3blocks.
 pacaur -S acpi bc lm_sensors openvpn playerctl alsa-utils sysstat
 
-# Change to user home folder.
-cd ~
-touch .xinitrc
-echo 'exec i3' > .xinitrc
-echo 'startx' >> .bashrc
+touch ~/.xinitrc
+echo 'exec i3' > ~/.xinitrc
+echo 'startx' >> ~/.bashrc
