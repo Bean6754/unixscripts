@@ -10,11 +10,11 @@ start() {
 	echo -n $PASSWD | cryptsetup luksOpen /dev/mapper/vg02-storage2_crypt storage2_crypt -d -
 	
 	# Make folders (just in case).
-	mkdir -p/mnt/storage1
+	mkdir -p /mnt/storage1
 	mkdir -p /mnt/storage2
 	
 	mount /dev/mapper/storage1_crypt /mnt/storage1
-	mount /dev/storage2_vg/storage2 /mnt/storage2
+	mount /dev/mapper/storage2_crypt /mnt/storage2
 	
 	systemctl restart httpd
 	systemctl restart nginx
