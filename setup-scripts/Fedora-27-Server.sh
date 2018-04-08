@@ -21,5 +21,7 @@ dnf install -y nethogs iftop
 # Security.
 dnf install -y chkrootkit clamav clamav-update bro
 freshclam
+# Server specific.
+dnf install -y nginx
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
