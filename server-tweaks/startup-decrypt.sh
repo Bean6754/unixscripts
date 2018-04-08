@@ -27,8 +27,8 @@ stop() {
 	cryptsetup luksClose storage1_crypt
 	cryptsetup luksClose storage2_crypt
 	
-	lvchange -an -v /dev/sda1
-	lvchange -an -v /dev/sdb1
+	lvchange -an -v /dev/vg01/storage1_crypt
+	lvchange -an -v /dev/vg02/storage2_crypt
 	
 	systemctl stop httpd
 	systemctl stop nginx
