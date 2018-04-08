@@ -26,15 +26,18 @@ dnf install -y chkrootkit clamav clamav-update bro
 freshclam
 # High level.
 # KDE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
-dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
+dnf install -y setroubleshoot libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 # XFCE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp transmission-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
 setsebool -P selinuxuser_execheap 1
 # XFCE: dnf remove -y leafpad ; dnf install -y mousepad
-if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
-   echo
-else
-   echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
-fi
+
+#KDE: 
+#if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
+#   echo
+#else
+#   echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
+#fi
+
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts google-noto-mono-fonts google-noto-cjk-fonts-common google-noto-mono-fonts google-noto-sans-fonts google-noto-serif-fonts
 # Themes.
@@ -46,7 +49,7 @@ rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
 dnf install -y flash-plugin alsa-plugins-pulseaudio libcurl
 # Multimedia.
-dnf install -y HandBrake-gui HandBrake-cli makemkv mpv vlc libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
+dnf install -y HandBrake-gui HandBrake-cli makemkv mpv libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # PlayOnLinux.
 dnf install -y playonlinux
 # Discord (thanks RPMFusion!)
