@@ -18,5 +18,8 @@ dnf groupinstall -y "Development-Tools"
 dnf install -y kernel-devel kernel-headers strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel
 # Network monitoring tools.
 dnf install -y nethogs iftop
+# Security.
+dnf install -y chkrootkit clamav clamav-update bro
+freshclam
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
