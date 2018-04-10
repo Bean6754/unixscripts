@@ -26,7 +26,7 @@ zypper in -y wireshark tcpdump
 wget http://download.opensuse.org/repositories/home:/smarty12:/libraries/openSUSE_Leap_15.0/x86_64/libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 rpm -i libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 rm -rf ibdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
-zypper install -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
+zypper install -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config steam steamtricks steamcmd
 
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
