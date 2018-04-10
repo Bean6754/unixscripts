@@ -1,6 +1,6 @@
 #!/bin/bash
 
-zypper addrepo --refresh http://http.download.nvidia.com/opensuse/tumbleweed NVIDIA
+zypper addrepo --refresh http://http.download.nvidia.com/opensuse/leap/15.0 NVIDIA
 
 clear
 echo On the next command, type 'a' and press enter.
