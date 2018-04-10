@@ -13,6 +13,7 @@ fi
 # Update system.
 zypper ref
 zypper up -y
+zypper dup
 
 # Low-level and development tools.
 zypper install -t pattern devel_basis
