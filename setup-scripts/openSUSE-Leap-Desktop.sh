@@ -18,11 +18,12 @@ zypper install -y make cmake git curl wget lsof strace htop vim emacs-nox python
 # Networking tools.
 zypper in -y wireshark tcpdump
 
-# High-level and multimedia codecs.
+# High-level, multimedia codecs and fonts.
 wget http://download.opensuse.org/repositories/home:/smarty12:/libraries/openSUSE_Leap_15.0/x86_64/libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 rpm -i libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 rm -rf ibdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
-zypper install -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config steam steamtricks steamcmd
+zypper in -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
+zypper in -y steam steamtricks steamcmd partitionmanager falkon chromium noto-coloremoji-fonts noto-emoji-fonts
 
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
