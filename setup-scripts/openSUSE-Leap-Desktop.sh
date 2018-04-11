@@ -16,7 +16,7 @@ zypper install -t pattern devel_basis
 zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-11-openjdk java-11-openjdk-devel qbittorrent-nox
 
 # Networking tools.
-zypper in -y wireshark tcpdump
+zypper in -y wireshark tcpdump nmap ufw
 
 # High-level, multimedia codecs and fonts.
 wget http://download.opensuse.org/repositories/home:/smarty12:/libraries/openSUSE_Leap_15.0/x86_64/libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
