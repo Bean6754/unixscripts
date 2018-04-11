@@ -25,6 +25,10 @@ rm -rf ibdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 zypper in -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
 zypper in -y discord steam steamtricks steamcmd partitionmanager falkon chromium noto-coloremoji-fonts noto-emoji-fonts pavucontrol-qt mpv youtube-dl
 
+# VirtualBox.
+zypper in -y virtualbox
+usermod -a -G vboxusers $USER
+
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
