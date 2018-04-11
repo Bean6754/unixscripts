@@ -23,13 +23,16 @@ wget http://download.opensuse.org/repositories/home:/smarty12:/libraries/openSUS
 rpm -i libdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 rm -rf ibdvdcss2-1.4.0+git2.2f12236-lp150.2.2.x86_64.rpm
 zypper in -y libdvdnav4 libdvdread4 ffmpeg lame gstreamer gstreamer-plugins-libav gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
-zypper in -y steam steamtricks steamcmd partitionmanager falkon chromium noto-coloremoji-fonts noto-emoji-fonts
+zypper in -y discord steam steamtricks steamcmd partitionmanager falkon chromium noto-coloremoji-fonts noto-emoji-fonts
 
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
 zypper ref
 zypper in -y adobe-release-x86_64 flash-plugin
+
+# Skype.
+rpm -ivh https://go.skype.com/skypeforlinux-64.rpm
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
@@ -39,3 +42,11 @@ cd ..
 rm -rf neofetch
 clear
 neofetch
+
+# ckb-next
+# git clone https://github.com/ckb-next/ckb-next.git
+# cd ckb-next
+# zypper in -y gcc gcc-c++ make cmake linux-glibc-devel zlib-devel libqt5-qtbase-devel libappindicator-devel systemd-devel libpulse-devel quazip-qt5-devel libudev-devel
+# ./quickinstall
+# cd ..
+# rm -rf ckb-next
