@@ -16,7 +16,7 @@ zypper install -t pattern devel_basis
 zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-11-openjdk java-11-openjdk-devel qbittorrent-nox
 
 # Networking tools.
-zypper in -y wireshark tcpdump nmap ufw
+zypper in -y wireshark tcpdump nmap ufw whois
 
 # LAMP.
 zypper in -y apache2 php7 php7-mysql apache2-mod_php7 mariadb mariadb-tools
