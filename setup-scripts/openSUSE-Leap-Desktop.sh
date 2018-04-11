@@ -13,7 +13,7 @@ zypper dup -y
 
 # Low-level and development tools.
 zypper install -t pattern devel_basis
-zypper install -y make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-11-openjdk java-11-openjdk-devel qbittorrent-nox
+zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-11-openjdk java-11-openjdk-devel qbittorrent-nox
 
 # Networking tools.
 zypper in -y wireshark tcpdump
@@ -28,6 +28,10 @@ zypper in -y discord steam steamtricks steamcmd partitionmanager falkon chromium
 # VirtualBox.
 zypper in -y virtualbox
 usermod -a -G vboxusers $USER
+
+# Google Chrome.
+# zypper in -y lsb-release
+rpm ivh https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 
 # Adobe Flash.
 rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
