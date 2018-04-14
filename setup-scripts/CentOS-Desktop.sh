@@ -19,7 +19,7 @@ yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git 
 # Groupinstall.
 yum groupinstall -y "Development Tools"
 # High-level.
-yum install -y libbluray chromium firewall-config dvd+rw-tools pavucontrol gimp transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany firefox filezilla recordmydesktop gtk-recordmydesktop
+yum install -y libbluray firewall-config dvd+rw-tools pavucontrol gimp transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany firefox filezilla recordmydesktop gtk-recordmydesktop
 # Fonts.
 yum install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
