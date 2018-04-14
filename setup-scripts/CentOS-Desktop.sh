@@ -23,10 +23,10 @@ yum install -y libbluray firewall-config dvd+rw-tools pavucontrol gimp transmiss
 # Fonts.
 yum install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
-yum install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle
+yum install -y adapta-gtk-theme arc-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme steamos-backgrounds
 # Repo based.
 # nvidia is broken :(
-# yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart 
+yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart 
 yum install -y steam mpv
 
 # Steam.
