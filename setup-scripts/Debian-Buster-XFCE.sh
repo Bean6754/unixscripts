@@ -26,11 +26,13 @@ apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # High-level
-apt purge -y vlc
-apt autoremove -y
-apt install -y wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux gnome-boxes
+apt install -y wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
+# VMware Workstation.
+curl https://www.vmware.com/go/getworkstation-linux -Lo VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
+chmod +x VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
+./VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
 # Codecs
-apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
+apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 apt install -y browser-plugin-freshplayer-pepperflash
@@ -42,13 +44,21 @@ apt install -y arc-theme chameleon-cursor-theme moka-icon-theme xfwm4-themes
 apt install -y openjdk-8-jdk icedtea-8-plugin
 # Server specific stuff.
 service apache2 stop
-apt install -y mariadb-server mariadb-client php7.0 php-pear php7.0-fpm php7.0-mysql nginx
+apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
 # Don't autostart services, workstation/laptop security.
+
 # To enable service: update-rc.d apache2 defaults
-update-rc.d -f apache2 remove
-update-rc.d -f php7.0-fpm remove
-update-rc.d -f nginx remove
-update-rc.d -f mysql remove
+# init.
+# update-rc.d -f apache2 remove
+# update-rc.d -f php7.0-fpm remove
+# update-rc.d -f nginx remove
+# update-rc.d -f mysql remove
+
+# systemd.
+systemctl disable apache2
+systemctl disable php7.2-fpm
+systemctl disable nginx
+systemctl disable mysql
 mysql_secure_installation
 
 touch ~/web.sh
@@ -56,15 +66,15 @@ cat >~/web.sh << EOL
 #!/bin/bash
 
 start() {
-  service php7.0-fpm start
-  service nginx start
-  service mysql start
+  systemctl start php7.2-fpm
+  systemctl start nginx
+  systemctl start mysql
 }
 
 stop() {
-  service php7.0-fpm stop
-  service nginx stop
-  service mysql stop
+  systemctl stop php7.2-fpm
+  systemctl stop nginx
+  systemctl stop mysql
 }
 
 case $1 in
