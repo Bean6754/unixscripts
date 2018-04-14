@@ -40,7 +40,7 @@ yum install -y steam mpv
 # rm -rf steam
 
 # Install neofetch and run it.
-git clone https://github.com/dylanaraps/neofetch
+git clone https://github.com/dylanaraps/neofetch.git
 cd neofetch
 make install
 cd ..
