@@ -12,7 +12,7 @@ yum update -y
 yum install -y epel-release
 yum update -y
 yum groupinstall -y "Development Tools"
-yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
+yum install -y microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch
