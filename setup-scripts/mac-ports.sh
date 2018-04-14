@@ -26,6 +26,7 @@ export port='/opt/local/bin/port'
 
 # Update MacPorts.
 sudo $port -v selfupdate
+# To view outdated packages: sudo $port -v outdated
 sudo $port -v upgrade outdated
 # Install software.
 sudo $port -v install arping arp-scan autoconf automake clamav dsniff ettercap iftop htop libplist lua neofetch nmap python27 python36 py27-pip py36-pip rsync screen tcsh texlive tmux vim
