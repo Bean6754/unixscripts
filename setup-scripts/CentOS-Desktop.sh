@@ -15,7 +15,7 @@ yum-config-manager --add-repo=https://negativo17.org/repos/epel-nvidia.repo
 yum-config-manager --add-repo=https://negativo17.org/repos/epel-steam.repo
 yum update -y
 # Low-level.
-yum install -y dnf microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
+yum install -y microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
 # Groupinstall.
 yum groupinstall -y "Development Tools"
 # High-level.
