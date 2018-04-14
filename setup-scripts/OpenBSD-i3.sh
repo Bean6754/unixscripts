@@ -12,10 +12,10 @@ pkg_add -Uu
 
 # Install packages.
 # Low-level.
-pkg_add -v curl-7.59.0 emacs-25.3p0-no_x11 git-2.16.2 htop-2.1.0 rsync-3.1.3 python-2.7.14p1 python-3.6.4p0 p7zip-16.02p3 7zip-rar-16.02p1 unrar-5.50v1 unzip-6.0p11 vim-8.0.1589-no_x11 zip-3.0p0
+pkg_add -v curl-7.59.0 emacs-25.3p0-no_x11 git-2.16.2 htop-2.1.0 rsync-3.1.3 python-2.7.14p1 python-3.6.4p0 p7zip-16.02p3 7zip-rar-16.02p1 unrar-5.50v1 unzip-6.0p11 vim-8.0.1589-no_x11 zip-3.0p0 wireshark-2.4.5
 
 # High-level.
-pkg_add -v dmenu-4.7 feh-2.23.1 firefox-59.0.2 firefox-i18n-en-GB-59.0.2 i3-4.14.1p1 i3lock-2.10 i3status-2.11p6 rofi-1.5.0p0 rxvt-unicode-9.22p5
+pkg_add -v dmenu-4.7 feh-2.23.1 firefox-59.0.2 firefox-i18n-en-GB-59.0.2 i3-4.14.1p1 i3lock-2.10 i3status-2.11p6 rofi-1.5.0p0 rxvt-unicode-9.22p5 wireshark-gtk-2.4.5
 
 # Setup 'python' to python3.6.
 ln -sf /usr/local/bin/python3.6 /usr/local/bin/python
