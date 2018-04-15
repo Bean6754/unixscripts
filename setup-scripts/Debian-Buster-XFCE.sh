@@ -41,7 +41,7 @@ apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbol
 # Themes.
 apt install -y arc-theme chameleon-cursor-theme moka-icon-theme xfwm4-themes
 # Java.
-apt install -y openjdk-8-jdk icedtea-8-plugin
+apt install -y openjdk-9-jdk
 # Server specific stuff.
 service apache2 stop
 apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
