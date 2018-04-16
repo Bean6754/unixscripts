@@ -15,7 +15,7 @@ pkg upgrade -y
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
 # Low-level.
-pkg install -y curl deb2targz doas git ImageMagick linux-c7 neofetch p7zip rar rpm2cpio sudo tmux unrar unzip vim-tiny wget zip
+pkg install -y curl deb2targz doas git ImageMagick linux-c6 neofetch p7zip rar rpm2cpio sudo tmux unrar unzip vim-tiny wget zip
 # High-level.
 pkg install -y chromium libbluray libdvdcss libdvdnav libdvdread playonbsd vlc x11/kde4 xinit xorg
 
