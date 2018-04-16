@@ -17,7 +17,7 @@ pkg upgrade -y
 # Low-level.
 pkg install -y curl deb2targz doas git ImageMagick linux-c6 neofetch p7zip rar rpm2cpio sudo tmux unrar unzip vim-tiny wget zip
 # High-level.
-pkg install -y chromium libbluray libdvdcss libdvdnav libdvdread playonbsd vlc x11/kde4 xinit xorg
+pkg install -y chromium libbluray libdvdcss libdvdnav libdvdread playonbsd vlc-qt4 x11/kde4 xinit xorg
 
 echo >> /boot/loader.conf
 echo 'loader_logo="beastie"' >> /boot/loader.conf
