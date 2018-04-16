@@ -31,6 +31,7 @@ apt install -y wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver
 curl https://www.vmware.com/go/getworkstation-linux -Lo VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
 chmod +x VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
 ./VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
+apt install -y linux-headers-4.15.0-2-amd64 # kernel-headers are needed.
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
