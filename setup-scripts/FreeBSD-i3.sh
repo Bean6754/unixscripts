@@ -19,6 +19,7 @@ pkg install -y curl git ImageMagick neofetch p7zip rar sudo tmux unrar unzip vim
 # High-level.
 pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv playonbsd rofi rxvt-unicode xarchiver xinit xorg
 
+echo >> /etc/fstab
 echo 'proc /proc procfs rw,noauto 0 0' >> /etc/fstab
 
 echo 'linux_enable="YES"' >> /etc/rc.conf
