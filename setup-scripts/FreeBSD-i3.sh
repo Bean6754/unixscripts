@@ -15,7 +15,7 @@ pkg upgrade -y
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
 # Low-level.
-pkg install -y curl git ImageMagick neofetch p7zip rar sudo tmux unrar unzip vim-lite wget zip
+pkg install -y curl git ImageMagick neofetch p7zip rar sudo tmux unrar unzip vim-tiny wget zip
 # High-level.
 pkg install -y feh firefox i3 i3lock i3status libbluray libdvdcss libdvdnav libdvdread mpv playonbsd rofi rxvt-unicode xarchiver xinit xorg
 
@@ -29,10 +29,8 @@ echo 'hald_enable="YES"' >> /etc/rc.conf
 # kldload linux
 # kldload linux64
 # pkg install -y nvidia-driver nvidia-settings nvidia-texture-tools nvidia-xconfig
+# echo >> /boot/loader.conf
 # echo 'nvidia_load="YES"' >> /boot/loader.conf
 # echo 'nvidia_name="nvidia"' >> /boot/loader.conf
 # echo 'nvidia_modeset_load="YES"' >> /boot/loader.conf
 # echo 'nvidia_modeset_name="nvidia-modeset"' >> /boot/loader.conf
-# echo 'kld_list="nvidia nvidia-modeset"' >> /etc/rc.conf
-# echo 'nvidia_name="nvidia"' >> /etc/rc.conf
-# echo 'nvidia_modeset_name="nvidia-modeset"' >> /etc/rc.conf
