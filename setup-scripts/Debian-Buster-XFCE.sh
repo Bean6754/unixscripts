@@ -27,16 +27,11 @@ apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # High-level
 apt install -y wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
-# VMware Workstation.
-curl https://www.vmware.com/go/getworkstation-linux -Lo VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
-chmod +x VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
-./VMware-Workstation-Full-14.1.1-7528167.x86_64.bundle
-apt install -y linux-headers-4.15.0-2-amd64 # kernel-headers are needed.
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
 # Flash player.
-apt install -y browser-plugin-freshplayer-pepperflash
+# apt install -y browser-plugin-freshplayer-pepperflash or flashplugin-nonfree
 # Emoji and other fonts.
 apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbola fonts-liberation fonts-liberation2 ttf-mscorefonts-installer fonts-dejavu fonts-dejavu-extra
 # Themes.
