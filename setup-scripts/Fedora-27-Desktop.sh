@@ -63,7 +63,7 @@ dnf install -y discord
  # mv /opt/discord-stable /opt/discord-canary
 # Autoremove any unneeded dependancies.
 # VirtualBox and qt-virt-manager.
-dnf install -y VirtualBox qt-virt-manager
+dnf install -y VirtualBox gnome-boxes virt-manager
 # Install VirtualBox extention pack.
 curl -LO https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
 VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
