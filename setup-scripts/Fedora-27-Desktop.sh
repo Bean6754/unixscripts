@@ -17,7 +17,7 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development-Tools"
 # Low level.
-dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap libdvdnav libdvdread libbluray p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel ruby neofetch
+dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip tftp wireshark wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel neofetch
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # Security.
@@ -50,7 +50,7 @@ curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.
 dnf install -y google-chrome-stable_current_x86_64.rpm
 # rm -rf google-chrome-stable_current_x86_64.rpm - not really needed and would be useful to keep package backed-up.
 # Multimedia.
-dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
+dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # PlayOnLinux.
 dnf install -y playonlinux
 # Discord (thanks RPMFusion!)
