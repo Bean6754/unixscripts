@@ -28,7 +28,7 @@ freshclam
 # High-level
 apt install -y chromium wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
 # Codecs
-apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
+apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
 dpkg-reconfigure libdvd-pkg
 # Flash player.
 # apt install -y browser-plugin-freshplayer-pepperflash or flashplugin-nonfree
@@ -37,10 +37,10 @@ apt install -y fonts-noto fonts-noto-mono fonts-symbola ttf-ancient-fonts-symbol
 # Themes.
 apt install -y arc-theme blackbird-gtk-theme chameleon-cursor-theme moka-icon-theme xfwm4-themes
 # Java.
-apt install -y openjdk-9-jdk
+apt install -y openjdk-8-jdk
 # Server specific stuff.
-service apache2 stop
-apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-mysql nginx
+systemctl stop apache2
+apt install -y mariadb-server mariadb-client php7.0 php-pear php7.0-fpm php7.0-mysql nginx
 # Don't autostart services, workstation/laptop security.
 
 # To enable service: update-rc.d apache2 defaults
@@ -48,12 +48,13 @@ apt install -y mariadb-server mariadb-client php7.2 php-pear php7.2-fpm php7.2-m
 # update-rc.d -f apache2 remove
 # update-rc.d -f php7.0-fpm remove
 # update-rc.d -f nginx remove
-# update-rc.d -f mysql remove
+# update-rc.d -f mariadb remove
 
 # systemd.
 systemctl disable apache2
-systemctl disable php7.2-fpm
+systemctl disable php7.0-fpm
 systemctl disable nginx
+systemctl disable mariadb
 systemctl disable mysql
 mysql_secure_installation
 
@@ -62,15 +63,15 @@ cat >~/web.sh << EOL
 #!/bin/bash
 
 start() {
-  systemctl start php7.2-fpm
+  systemctl start php7.0-fpm
   systemctl start nginx
-  systemctl start mysql
+  systemctl start mariadb
 }
 
 stop() {
-  systemctl stop php7.2-fpm
+  systemctl stop php7.0-fpm
   systemctl stop nginx
-  systemctl stop mysql
+  systemctl stop mariadb
 }
 
 case $1 in
