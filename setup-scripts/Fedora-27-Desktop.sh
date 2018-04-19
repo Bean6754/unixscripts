@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Repos.
-# Negativo17 Steam.
+# Negativo17 Steam and multimedia.
 dnf config-manager --add-repo=https://negativo17.org/repos/fedora-steam.repo
 dnf config-manager --add-repo=https://negativo17.org/repos/fedora-multimedia.repo
 # RPMFusion.
@@ -71,3 +71,6 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpac
 # dnf copr enable johanh/ckb
 # dnf install -y ckb-next
 dnf autoremove -y
+
+# curl https://raw.githubusercontent.com/Bean6754/home/master/.vimrc -o ~/.vimrc
+# curl https://raw.githubusercontent.com/Bean6754/home/master/.emacs -o ~/.vimrc
