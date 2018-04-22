@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/bash
 
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
@@ -22,7 +22,7 @@ echo "set backspace=2" >> ~/.vimrc
 sudo rm -rf /opt/local/var/macports/registry/.registry.lock
 
 # Port var. (temp)
-export port='/opt/local/bin/port'
+port='/opt/local/bin/port'
 
 # Update MacPorts.
 sudo $port -v selfupdate
