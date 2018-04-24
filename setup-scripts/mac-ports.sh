@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/tcsh
 
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
@@ -47,3 +47,10 @@ sudo $port -v uninstall leaves
 sudo $port -v uninstall leaves
 sudo $port -v uninstall leaves
 
+sudo bash -c 'cat >> /etc/shells << EOF
+
+# MacPorts.
+/opt/local/bin/tcsh
+EOF'
+chsh -s /opt/local/bin/tcsh
+sudo chsh -s /opt/local/bin/tcsh
