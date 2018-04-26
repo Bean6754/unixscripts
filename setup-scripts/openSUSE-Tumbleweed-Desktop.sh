@@ -16,13 +16,13 @@ zypper dup -y
 
 # Low-level and development tools.
 zypper install -t pattern devel_basis
-zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel qbittorrent-nox
+zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel transmission
 
 # Networking tools.
 zypper in -y wireshark tcpdump nmap ufw whois
 
 # High-level, multimedia codecs and fonts. FFMPEG AND gstreamer-plugins-libav ARE BROKEN!! :'(
-zypper in -y libdvdnav4 libdvdread4 lame gstreamer gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift qbittorrent vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
+zypper in -y libdvdnav4 libdvdread4 lame gstreamer gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift transmission-qt vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
 zypper in -y discord steam steamtricks steamcmd partitionmanager falkon noto-coloremoji-fonts noto-emoji-fonts pavucontrol-qt youtube-dl
 
 # VirtualBox.
