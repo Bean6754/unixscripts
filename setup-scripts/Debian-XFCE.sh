@@ -26,7 +26,15 @@ apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # High-level
-apt install -y chromium wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
+apt install -y kdenlive qt5-style-plugins wireshark-gtk transmission-gtk audacity vlc pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
+# Setup decent Qt4 and Qt5 theming.
+echo 'QT_QPA_PLATFORMTHEME=gtk2' >> /etc/environment
+echo 'QT_STYLE_OVERRIDE=gtk2' >> /etc/environment
+read -p 'Please enter your NON-ROOT username: ' username
+sudo -H -u $username bash -c 'echo >> ~/.config/Trolltech.conf'
+sudo -H -u $username bash -c 'echo "[Qt]" >> ~/.config/Trolltech.conf' 
+sudo -H -u $username bash -c 'echo "style=GTK+" >> ~/.config/Trolltech.conf'
+
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
 dpkg-reconfigure libdvd-pkg
