@@ -56,7 +56,16 @@ systemctl disable php7.0-fpm
 systemctl disable nginx
 systemctl disable mariadb
 systemctl disable mysql
+
+systemctl stop apache2
+systemctl stop php7.0-fpm
+systemctl stop nginx
+systemctl stop mariadb
+systemctl stop mysql
+
+systemctl start mariadb
 mysql_secure_installation
+systemctl stop mariadb
 
 touch ~/web.sh
 cat >~/web.sh << EOL
