@@ -38,6 +38,15 @@ sudo -H -u $username bash -c 'echo "style=GTK+" >> ~/.config/Trolltech.conf'
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray1
 dpkg-reconfigure libdvd-pkg
+# VirtualBox.
+curl -LO https://download.virtualbox.org/virtualbox/5.2.10/virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
+dpkg -i virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
+apt install -f # Just in case. ;)
+curl -LO https://download.virtualbox.org/virtualbox/5.2.10/Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
+VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
+rm -rf virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
+rm -rf Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
+
 # Flash player.
 # apt install -y browser-plugin-freshplayer-pepperflash or flashplugin-nonfree
 # Emoji and other fonts.
