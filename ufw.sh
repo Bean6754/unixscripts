@@ -22,5 +22,3 @@ ufw allow 443/tcp
 
 # Reload firewall.
 ufw reload
-
-exit 0
