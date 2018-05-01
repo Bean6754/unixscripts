@@ -13,6 +13,10 @@ systemctl start ufw
 # Enable firewall.
 ufw enable
 
+# Default rules.
+ufw default deny incoming
+ufw default allow outgoing
+
 # SSH.
 ufw allow 22/tcp
 # HTTP.
