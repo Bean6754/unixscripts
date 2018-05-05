@@ -18,4 +18,4 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-Level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk tshark tcpdump nmap transmission-cli hddtemp lm-sensors neofetch scanmem tmux
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk tshark tcpdump nmap transmission-cli hddtemp lm-sensors neofetch scanmem tmux ufw
