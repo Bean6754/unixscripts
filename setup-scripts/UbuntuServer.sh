@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# For Ubuntu 18.04.
+
 # Make sure only root can run our script
 if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
@@ -16,10 +18,4 @@ apt upgrade -y
 apt dist-upgrade -y
 
 # Low-Level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential openjdk-9-jdk tshark tcpdump transmission-cli gdisk
-
-git clone https://github.com/dylanaraps/neofetch
-cd neofetch
-make install
-cd ..
-rm -rf neofetch
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential openjdk-11-jdk tshark tcpdump transmission-cli gdisk neofetch
