@@ -3,8 +3,8 @@ Description=Startup script
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/startup.sh start
-ExecStop=/usr/local/bin/startup.sh stop
+ExecStart=/usr/local/bin/startup-decrypt.sh start
+ExecStop=/usr/local/bin/startup-decrypt.sh stop
 RemainAfterExit=yes
 
 [Install]
