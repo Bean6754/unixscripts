@@ -27,7 +27,7 @@ start() {
 	# mount /dev/mapper/storage1_crypt /mnt/storage1
 	# mount /dev/mapper/storage2_crypt /mnt/storage2
 	
-	systemctl restart httpd
+	systemctl restart apache2
 	#systemctl restart nginx
 }
 
@@ -42,7 +42,7 @@ stop() {
 	# lvchange -an -v /dev/vg01/storage1
 	# lvchange -an -v /dev/vg02/storage2
 	
-	systemctl stop httpd
+	systemctl stop apache2
 	#systemctl stop nginx
 }
 
