@@ -6,14 +6,14 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command 
 # sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 # Install MacPorts.
-curl -L -O https://github.com/macports/macports-base/releases/download/v2.4.2/MacPorts-2.4.2.tar.bz2
-tar xjvf MacPorts-2.4.2.tar.bz2
-cd MacPorts-2.4.2
+curl -L -O https://distfiles.macports.org/MacPorts/MacPorts-2.4.4.tar.bz2
+tar xjvf MacPorts-2.4.4.tar.bz2
+cd MacPorts-2.4.4
 ./configure
 make
 sudo make install
 cd ..
-rm -rf MacPorts-2.4.2*
+rm -rf MacPorts-2.4.4*
 
 # Fix Vim backspace issue.
 echo "set backspace=2" >> ~/.vimrc
