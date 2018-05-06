@@ -26,4 +26,4 @@ dpkg -i atom-amd64.deb
 apt install -f
 rm -rf atom-amd64.deb
 # Themes.
-apt install -y arc-theme oxygen-cursor-theme moka-icon-theme
+apt install -y sddm-theme-maldives oxygen-cursor-theme moka-icon-theme
