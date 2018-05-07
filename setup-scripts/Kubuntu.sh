@@ -15,7 +15,7 @@ apt dist-upgrade -y
 apt full-upgrade -y
 
 # Low-Level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk tshark tcpdump nmap qbittorrent-nox hddtemp lm-sensors neofetch scanmem tmux ufw
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk tshark tcpdump nmap qbittorrent-nox hddtemp lm-sensors neofetch scanmem tmux ufw net-tools
 # High-Level.
 apt install -y bleachbit krita inkscape inkscape-open-symbols vlc steam wine32-development wine64-development wireshark-qt qbittorrent partitionmanager qtcreator libbluray2 libdvdcss2 libdvdnav4 libdvdread4 kubuntu-restricted-extras kubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol-qt redshift plasma-applet-redshift-control simplescreenrecorder guvcview kdenlive virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
