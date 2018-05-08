@@ -51,7 +51,7 @@ echo "set backspace=2" >> ~/.vimrc
 #brew install make
 #brew install file-formula
 
-brew install wget bash emacs nano git openssh perl rsync svn unzip zsh
+brew install curl wget bash emacs nano git openssh perl rsync svn unzip zsh
 brew install vim --with-override-system-vi
 
 # Setup bash for local user.
