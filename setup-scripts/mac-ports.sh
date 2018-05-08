@@ -1,5 +1,8 @@
 #!/bin/tcsh
 
+### THIS SCRIPT IS UNMAINTAINED!!
+### PLEASE USE mac-brew.sh INSTEAD!
+
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
