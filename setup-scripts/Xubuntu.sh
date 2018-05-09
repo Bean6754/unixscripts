@@ -17,7 +17,7 @@ apt full-upgrade -y
 # Low-Level.
 apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk tshark tcpdump nmap transmission-cli hddtemp lm-sensors neofetch scanmem tmux ufw net-tools ssh
 # High-Level.
-apt install -y bleachbit gimp mpv steam wine32-development wine64-development wireshark-gtk transmission transmission-gtk gparted glade geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 xubuntu-restricted-extras xubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
+apt install -y bleachbit gimp mpv steam wine32-development wine64-development wireshark-gtk transmission transmission-gtk gparted baobab glade geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 xubuntu-restricted-extras xubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
 dpkg-reconfigure libdvd-pkg
 # Themes.
