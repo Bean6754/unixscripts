@@ -29,7 +29,7 @@ freshclam
 # High-level
 apt purge -y vlc
 apt autoremove
-apt install -y kdenlive qt4-default qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
+apt install -y kdenlive qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 # Setup decent Qt4 and Qt5 theming.
 echo 'QT_QPA_PLATFORMTHEME=gtk2' >> /etc/environment
 echo 'QT_STYLE_OVERRIDE=gtk2' >> /etc/environment
