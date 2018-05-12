@@ -29,7 +29,7 @@ freshclam
 # High-level
 apt purge -y vlc
 apt autoremove
-apt install -y kdenlive qt4-default qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux
+apt install -y kdenlive qt4-default qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 # Setup decent Qt4 and Qt5 theming.
 echo 'QT_QPA_PLATFORMTHEME=gtk2' >> /etc/environment
 echo 'QT_STYLE_OVERRIDE=gtk2' >> /etc/environment
@@ -41,15 +41,6 @@ sudo -H -u $username bash -c 'echo "style=GTK+" >> ~/.config/Trolltech.conf'
 # Codecs
 apt install -y ffmpeg libdvdnav4 libdvdread4 libdvdcss2 libbluray2
 dpkg-reconfigure libdvd-pkg
-# VirtualBox.
-curl -LO https://download.virtualbox.org/virtualbox/5.2.10/virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
-dpkg -i virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
-apt install -f # Just in case. ;)
-curl -LO https://download.virtualbox.org/virtualbox/5.2.10/Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
-VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
-rm -rf virtualbox-5.2_5.2.10-122088~Debian~stretch_amd64.deb
-rm -rf Oracle_VM_VirtualBox_Extension_Pack-5.2.10.vbox-extpack
-
 # Flash player.
 # apt install -y browser-plugin-freshplayer-pepperflash or flashplugin-nonfree
 # Emoji and other fonts.
