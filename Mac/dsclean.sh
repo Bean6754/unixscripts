@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Made for cleaning '.DS_Store' files.
+# A recursive '.DS_Store' cleaner.
 
 args=("$@")
 curdir="$(pwd)"
