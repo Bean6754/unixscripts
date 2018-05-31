@@ -17,8 +17,8 @@ brew upgrade
 # Setup GNU coreutils and similar.
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.bash_profile
 echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.zshrc
-echo 'MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.bash_profile
-echo 'MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.zshrc
+echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.bash_profile
+echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.zshrc
 echo "alias gcc='/usr/local/bin/gcc-7'" >> ~/.bash_profile
 echo "alias g++='/usr/local/bin/g++-7'" >> ~/.bash_profile
 echo "alias gcc='/usr/local/bin/gcc-7'" >> ~/.zshrc
