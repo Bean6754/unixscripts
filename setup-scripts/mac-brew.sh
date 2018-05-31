@@ -15,8 +15,8 @@ brew update
 brew upgrade
 
 # Setup GNU coreutils and similar.
-echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:$PATH"' >> ~/.bash_profile
-echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:/usr/local/opt/file-formula/bin:/usr/local/opt/m4/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:/usr/local/opt/file-formula/bin:/usr/local/opt/m4/bin:$PATH"' >> ~/.zshrc
 echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.bash_profile
 echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.zshrc
 echo "alias gcc='/usr/local/bin/gcc-7'" >> ~/.bash_profile
@@ -30,28 +30,28 @@ echo "alias gcc='/usr/local/bin/g++-7'" >> ~/.zshrc
 echo "set backspace=2" >> ~/.vimrc
 
 # GNU ist Liebe.
-brew install coreutils --with-default-names
-brew install binutils --with-default-names
-brew install diffutils --with-default-names
+brew install coreutils
+brew install binutils
+brew install diffutils
 brew install ed --with-default-names
 brew install findutils --with-default-names
-brew install gawk --with-default-names
+brew install gawk
 brew install gnu-indent --with-default-names
 brew install gnu-sed --with-default-names
 brew install gnu-tar --with-default-names
 brew install gnu-which --with-default-names
-brew install gnutls --with-default-names
+brew install gnutls
 brew install grep --with-default-names
-brew install gzip --with-default-names
-brew install screen --with-default-names
-brew install watch --with-default-names
-brew install wdiff --with-gettext --with-default-names
-brew install gdb  --with-default-names # gdb requires further actions to make it work. See `brew info gdb`.
-brew install gpatch --with-default-names
-brew install less --with-default-names
-brew install m4 --with-default-names
+brew install gzip
+brew install screen
+brew install watch
+brew install wdiff --with-gettext
+brew install gdb  # gdb requires further actions to make it work. See `brew info gdb`.
+brew install gpatch
+brew install less
+brew install m4
 brew install make --with-default-names
-brew install file-formula --with-default-names
+brew install file-formula
 brew install bc
 
 brew install curl wget bash emacs nano git openssh perl rsync svn unzip zsh
