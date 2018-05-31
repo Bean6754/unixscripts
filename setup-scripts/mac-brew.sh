@@ -15,8 +15,8 @@ brew update
 brew upgrade
 
 # Setup GNU coreutils and similar.
-echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.bash_profile
-echo 'export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/bc/bin:$PATH"' >> ~/.zshrc
 echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.bash_profile
 echo 'export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"' >> ~/.zshrc
 echo "alias gcc='/usr/local/bin/gcc-7'" >> ~/.bash_profile
@@ -52,6 +52,7 @@ brew install less --with-default-names
 brew install m4 --with-default-names
 brew install make --with-default-names
 brew install file-formula --with-default-names
+brew install bc
 
 brew install curl wget bash emacs nano git openssh perl rsync svn unzip zsh
 brew install vim --with-override-system-vi
