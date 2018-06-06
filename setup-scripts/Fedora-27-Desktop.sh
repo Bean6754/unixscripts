@@ -50,7 +50,7 @@ curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.
 dnf install -y google-chrome-stable_current_x86_64.rpm
 # rm -rf google-chrome-stable_current_x86_64.rpm - not really needed and would be useful to keep package backed-up.
 # Multimedia.
-dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
+dnf install -y HandBrake-gui HandBrake-cli makemkv mpv libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # PlayOnLinux.
 dnf install -y playonlinux
 # Discord (thanks RPMFusion!)
@@ -67,9 +67,6 @@ dnf install -y VirtualBox gnome-boxes virt-manager libvirt-daemon-config-network
 # Install VirtualBox extention pack.
 curl -LO https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
 VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
-# For me (ckb-next, Corsair K70 RGB driver and manager).
-# dnf copr enable johanh/ckb
-# dnf install -y ckb-next
 dnf autoremove -y
 
 # curl https://raw.githubusercontent.com/Bean6754/home/master/.vimrc -o ~/.vimrc
