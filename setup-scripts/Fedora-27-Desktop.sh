@@ -43,7 +43,7 @@ dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-com
 # Themes.
 # KDE/LXQt: dnf install -y plasma-breeze sddm-breeze sddm-themes
 # XFCE: dnf install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme tango-icon-theme tango-icon-theme-extras faience-icon-theme
-dnf install -y adwaita-cursor-theme adwaita-icon-theme arc-theme paper-icon-theme oxygen-cursor-theme f26-backgrounds-extras-gnome
+dnf install -y adwaita-cursor-theme adwaita-icon-theme arc-theme paper-icon-theme oxygen-cursor-themes f26-backgrounds-extras-gnome
 # Google Chrome (for Adobe Flash, WebRTC, etc.. support)
 dnf remove -y firefox && dnf autoremove -y # soz.
 curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
