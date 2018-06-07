@@ -24,9 +24,10 @@ apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persisten
 systemctl enable netfilter-persistent
 systemctl start netfilter-persistent
 # High-level.
-apt install -y bleachbit gimp mpv steam wine32-development wine64-development wireshark-gtk gufw transmission transmission-gtk gparted baobab glade geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso skypeforlinux
+apt install -y bleachbit gimp mpv steam wine32-development wine64-development wireshark-gtk gufw transmission transmission-gtk gparted baobab glade geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-guest-additions-iso skypeforlinux
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
 apt install -y chromium pepperflashplugin-nonfree
+apt purge -y firefox && apt autoremove -y
 dpkg-reconfigure libdvd-pkg
 # Themes.
 apt install -y oxygen-cursor-theme
