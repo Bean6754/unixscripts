@@ -20,7 +20,7 @@ apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p
 # Fun.
 apt install -y figlet toilet lolcat cowsay cowsay-off
 # Networking tools.
-apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persistent
+apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persistent macchanger
 systemctl enable netfilter-persistent
 systemctl start netfilter-persistent
 # High-level.
