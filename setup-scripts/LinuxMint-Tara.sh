@@ -28,7 +28,7 @@ apt install -y bleachbit gimp vlc steam wine32-development wine64-development wi
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
 apt install -y chromium-browser pepperflashplugin-nonfree
 apt purge -y firefox && apt autoremove -y && rm -rf /usr/lib/firefox /etc/firefox
-dpkg-reconfigure libdvd-pkg
+dpkg-reconfigure libdvd-pkg # Not needed anymore.
 # Themes.
 apt install -y oxygen-cursor-theme
 # Fonts.
