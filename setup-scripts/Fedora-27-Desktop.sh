@@ -17,7 +17,7 @@ dnf update -y
 # Group packages.
 dnf groupinstall -y "Development Tools" "C Development Tools and Libraries"
 # Low level.
-dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux transmission-cli gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip tftp wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel neofetch figlet toilet cowsay cmatrix
+dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux deluge-console deluge-daemon gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip tftp wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel neofetch figlet toilet cowsay cmatrix
 # Network monitoring tools.
 dnf install -y nethogs iftop
 # Security.
@@ -25,32 +25,19 @@ dnf install -y chkrootkit clamav clamav-update
 freshclam
 # High level.
 # KDE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp inkscape inkscape-psd krita transmission-qt pavucontrol-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager quassel kdenlive simplescreenrecorder filezilla redshift plasma-applet-redshift-control
-dnf install -y setroubleshoot chromium kdenlive libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
+# GNOME: dnf install -y setroubleshoot chromium kdenlive libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 # LXQt: dnf install -y setroubleshoot chromium libreoffice libreoffice-langpack-en gimp transmission-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager guvcview quassel simplescreenrecorder filezilla redshift conky conky-manager
-# XFCE: dnf install -y setroubleshoot qt5ct qt5-qtconfiguration libreoffice libreoffice-langpack-en gimp transmission-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
+dnf install -y setroubleshoot libreoffice libreoffice-langpack-en gimp deluge deluge-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
 setsebool -P selinuxuser_execheap 1
-# XFCE: dnf remove -y leafpad ; dnf install -y mousepad
-
-# LXQt/KDE: BREAKS SYSTEM (ON LXQt!!) :'(
-#if [[ $(grep QT_QPA_PLATFORMTHEME /etc/environment) = *QT_QPA_PLATFORMTHEME* ]]; then
-#   echo
-#else
-#   echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
-#fi
 
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts google-noto-mono-fonts google-noto-cjk-fonts-common google-noto-mono-fonts google-noto-sans-fonts google-noto-serif-fonts
 # Themes.
 # KDE/LXQt: dnf install -y plasma-breeze sddm-breeze sddm-themes
-# XFCE: dnf install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme tango-icon-theme tango-icon-theme-extras faience-icon-theme
-dnf install -y adwaita-cursor-theme adwaita-icon-theme arc-theme paper-icon-theme oxygen-cursor-themes f26-backgrounds-extras-gnome
-# Google Chrome (for Adobe Flash, WebRTC, etc.. support)
-dnf remove -y firefox && dnf autoremove -y # soz.
-curl -LO https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
-dnf install -y google-chrome-stable_current_x86_64.rpm
-# rm -rf google-chrome-stable_current_x86_64.rpm - not really needed and would be useful to keep package backed-up.
+dnf install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme tango-icon-theme tango-icon-theme-extras faience-icon-theme
+# GNOME: dnf install -y adwaita-cursor-theme adwaita-icon-theme arc-theme paper-icon-theme oxygen-cursor-themes f26-backgrounds-extras-gnome
 # Multimedia.
-dnf install -y HandBrake-gui HandBrake-cli makemkv mpv libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
+dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
 # PlayOnLinux.
 dnf install -y playonlinux
 # Discord (thanks RPMFusion!)
