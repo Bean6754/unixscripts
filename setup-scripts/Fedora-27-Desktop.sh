@@ -34,7 +34,7 @@ setsebool -P selinuxuser_execheap 1
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts google-noto-mono-fonts google-noto-cjk-fonts-common google-noto-mono-fonts google-noto-sans-fonts google-noto-serif-fonts
 # Themes.
 # KDE/LXQt: dnf install -y plasma-breeze sddm-breeze sddm-themes
-dnf install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme tango-icon-theme tango-icon-theme-extras faience-icon-theme
+dnf install -y adwaita-cursor-theme adwaita-gtk2-theme adwaita-icon-theme gtk-murrine-engine numix-gtk-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme tango-icon-theme tango-icon-theme-extras faience-icon-theme arc-theme oxygen-cursor-themes f26-backgrounds-extras-gnome
 # GNOME: dnf install -y adwaita-cursor-theme adwaita-icon-theme arc-theme paper-icon-theme oxygen-cursor-themes f26-backgrounds-extras-gnome
 # Multimedia.
 dnf install -y HandBrake-gui HandBrake-cli makemkv vlc libdvdnav libdvdread libdvdcss libbluray ffmpeg gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad gstreamer1-plugins-ugly gstreamer1-plugins-bad-free gstreamer1-plugins-ugly-free GraphicsMagick
