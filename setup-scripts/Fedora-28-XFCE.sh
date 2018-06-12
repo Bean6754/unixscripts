@@ -15,7 +15,7 @@ dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$
 # Update repositories and any potential packages.
 dnf update -y
 # Group packages.
-dnf groupinstall -y "Development Tools" "C Development Tools and Libraries"
+dnf groupinstall -y "Development Tools" "C Development Tools and Libraries" "Security Lab"
 # Low level.
 dnf install -y kernel-devel kernel-headers acpid dkms strace lsof htop git curl wget vim emacs-nox tmux deluge-console deluge-daemon gcc-c++ ruby nmap p7zip p7zip-plugins zip unzip tftp wireshark-cli java-1.8.0-openjdk java-1.8.0-openjdk-devel neofetch figlet toilet cowsay cmatrix
 # Network monitoring tools.
@@ -28,7 +28,7 @@ freshclam
 # GNOME: dnf install -y setroubleshoot chromium kdenlive libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 # LXQt: dnf install -y setroubleshoot chromium libreoffice libreoffice-langpack-en gimp transmission-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager guvcview quassel simplescreenrecorder filezilla redshift conky conky-manager
 dnf remove -y transmission && dnf autoremove -y
-dnf install -y qt4 qt5 qt5-qtconfiguration qt5ct setroubleshoot libreoffice libreoffice-langpack-en gimp deluge deluge-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted baobab guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
+dnf install -y security-menus qt4 qt5 qt5-qtconfiguration qt5ct setroubleshoot libreoffice libreoffice-langpack-en gimp deluge deluge-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted baobab guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
 setsebool -P selinuxuser_execheap 1
 echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
 
