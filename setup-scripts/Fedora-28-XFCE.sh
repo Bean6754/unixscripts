@@ -28,8 +28,9 @@ freshclam
 # GNOME: dnf install -y setroubleshoot chromium kdenlive libreoffice libreoffice-langpack-en gnome-tweak-tool gimp transmission pavucontrol wireshark-gtk steam vulkan vulkan.i686 gnome-builder geany glade gparted guvcview polari pitivi simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager
 # LXQt: dnf install -y setroubleshoot chromium libreoffice libreoffice-langpack-en gimp transmission-qt wireshark-qt steam vulkan vulkan.i686 qt-creator kde-partitionmanager guvcview quassel simplescreenrecorder filezilla redshift conky conky-manager
 dnf remove -y transmission && dnf autoremove -y
-dnf install -y setroubleshoot libreoffice libreoffice-langpack-en gimp deluge deluge-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted baobab guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
+dnf install -y qt4 qt5 qt5-qtconfiguration qt5ct setroubleshoot libreoffice libreoffice-langpack-en gimp deluge deluge-gtk pavucontrol wireshark-gtk steam vulkan vulkan.i686 geany glade gparted baobab guvcview kdenlive simplescreenrecorder filezilla redshift redshift-gtk conky conky-manager wmctrl
 setsebool -P selinuxuser_execheap 1
+echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
 
 # Fonts.
 dnf install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts google-noto-mono-fonts google-noto-cjk-fonts-common google-noto-mono-fonts google-noto-sans-fonts google-noto-serif-fonts
