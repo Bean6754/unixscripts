@@ -14,7 +14,7 @@ apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 
 # Server specific.
-apt install -y lighttpd mariadb-server php7.0-fpm php7.0-mysql certbot
+apt install -y lighttpd mariadb-server php7.0-fpm php7.0-mysql php7.0-xml
 
 systemctl enable lighttpd
 systemctl start lighttpd
