@@ -21,3 +21,12 @@ systemctl start lighttpd
 
 lighttpd-enable-mod fastcgi
 lighttpd-enable-mod fastcgi-php
+service lighttpd force-reload
+
+systemctl enable mariadb
+systemctl start mariadb
+
+mysql_secure_installation
+
+systemctl enable php7.0-fpm
+systemctl start php7.0-fpm
