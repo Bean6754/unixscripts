@@ -37,3 +37,6 @@ mysql_secure_installation
 
 systemctl enable php7.0-fpm
 systemctl start php7.0-fpm
+
+systemctl enable transmission-daemon
+systemctl start transmission-daemon
