@@ -29,6 +29,8 @@ ufw allow 139/tcp
 ufw allow 445/tcp
 ufw allow 137/udp
 ufw allow 138/udp
+# Transmission daemon/web interface.
+ufw allow 9091/tcp
 
 # Reload firewall.
 ufw reload
