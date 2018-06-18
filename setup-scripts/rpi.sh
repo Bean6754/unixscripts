@@ -21,7 +21,7 @@ apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 
 # Server specific.
-apt install -y apache2 mariadb-server php7.0-fpm php7.0-mysql php7.0-xml # Replaced lighttpd with apache2 for my setup.
+apt install -y apache2 mariadb-server php7.0-fpm php7.0-mysql php7.0-xml certbot python-certbot-apache # Replaced lighttpd with apache2 for my setup.
 
 systemctl enable apache2
 systemctl start apache2
@@ -30,6 +30,8 @@ systemctl start apache2
 # lighttpd-enable-mod fastcgi-php
 a2enmod proxy_fcgi setenvif
 a2enconf php7.0-fpm
+a2enmod ssl
+a2ensite default-ssl.conf
 systemctl restart apache2
 systemctl reload apache2
 
@@ -43,3 +45,7 @@ systemctl start php7.0-fpm
 
 systemctl enable transmission-daemon
 systemctl start transmission-daemon
+
+# Certbot (LetsEncrypt)
+certbot --authenticator webroot --installer apache
+certbot certonly --authenticator standalone --pre-hook "apachectl -k stop" --post-hook "apachectl -k start"
