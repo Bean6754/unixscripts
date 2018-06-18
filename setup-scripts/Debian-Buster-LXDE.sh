@@ -16,20 +16,21 @@ apt autoremove -y
 
 # Tasksel stuff.
 # tasksel install desktop
-# tasksel install xfce-desktop
+# tasksel install lxde-desktop
 # tasksel install print-server
 # tasksel install ssh-server
 # tasksel install web-server
 
 # Low-level
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip rar unrar scanmem strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip rar unrar scanmem strace lsof htop screen tmux nmap build-essential ruby tshark intel-microcode lua5.3 gdisk tftp ftp tcpdump transmission-cli net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 # High-level
-apt purge -y vlc
-apt autoremove
-apt install -y kdenlive qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity mpv pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin firefox-esr firefox-esr-l10n-en-gb thunderbird thunderbird-l10n-en-gb libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
+apt purge -y deluge deluge-common deluge-gtk
+apt purge -y mpv smplayer
+apt autoremove -y
+apt install -y kdenlive qt5-default qt5-style-plugins wireshark-gtk transmission-gtk audacity vlc youtube-dl pavucontrol xarchiver menulibre gameconqueror geany geany-plugins glade baobab filezilla gparted gimp redshift redshift-gtk pidgin libreoffice libreoffice-l10n-en-gb gpick conky-all guvcview simplescreenrecorder wmctrl playonlinux virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso
 # Setup decent Qt4 and Qt5 theming.
 echo 'QT_QPA_PLATFORMTHEME=gtk2' >> /etc/environment
 echo 'QT_STYLE_OVERRIDE=gtk2' >> /etc/environment
