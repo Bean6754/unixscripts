@@ -69,7 +69,8 @@ echo
 echo "Added rule: 10. Limit new TCP connections per second per source IP."
 echo
 
-/sbin/iptables -t raw -A PREROUTING -p tcp -m tcp --syn -j CT --notrack
+# For some reason this blocks the ability to port forward.
+# /sbin/iptables -t raw -A PREROUTING -p tcp -m tcp --syn -j CT --notrack
 /sbin/iptables -A INPUT -p tcp -m tcp -m conntrack --ctstate INVALID,UNTRACKED -j SYNPROXY --sack-perm --timestamp --wscale 7 --mss 1460
 /sbin/iptables -A INPUT -m conntrack --ctstate INVALID -j DROP
 echo "Added rule: 11. Use SYNPROXY on all ports. Disables connection limiting rule."
