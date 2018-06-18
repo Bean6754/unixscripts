@@ -21,14 +21,17 @@ apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 
 # Server specific.
-apt install -y lighttpd mariadb-server php7.0-fpm php7.0-mysql php7.0-xml
+apt install -y apache2 mariadb-server php7.0-fpm php7.0-mysql php7.0-xml # Replaced lighttpd with apache2 for my setup.
 
-systemctl enable lighttpd
-systemctl start lighttpd
+systemctl enable apache2
+systemctl start apache2
 
-lighttpd-enable-mod fastcgi
-lighttpd-enable-mod fastcgi-php
-service lighttpd force-reload
+# lighttpd-enable-mod fastcgi
+# lighttpd-enable-mod fastcgi-php
+a2enmod proxy_fcgi setenvif
+a2enconf php7.0-fpm
+systemctl restart apache2
+systemctl reload apache2
 
 systemctl enable mariadb
 systemctl start mariadb
