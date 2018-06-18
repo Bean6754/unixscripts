@@ -14,7 +14,7 @@ fi
 # 3. Setup lighttpd config.
 
 # Low-level.
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump deluge-console deluge-webui deluged net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
 
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
@@ -43,8 +43,8 @@ mysql_secure_installation
 systemctl enable php7.0-fpm
 systemctl start php7.0-fpm
 
-systemctl enable transmission-daemon
-systemctl start transmission-daemon
+systemctl enable deluged
+systemctl start deluged
 
 # Certbot (LetsEncrypt)
 certbot --authenticator webroot --installer apache
