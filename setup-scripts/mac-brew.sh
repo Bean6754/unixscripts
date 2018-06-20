@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Needs Bash for Homebrew script to run.
+### THIS SCRIPT IS UNMAINTAINED!!
+### PLEASE USE mac-brew.sh INSTEAD!
 
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
