@@ -58,5 +58,3 @@ sudo bash -c 'cat >> /etc/shells << EOF
 EOF'
 chsh -s /opt/local/bin/tcsh
 sudo chsh -s /opt/local/bin/tcsh
-
-pip-2.7 install -U cuckoo
