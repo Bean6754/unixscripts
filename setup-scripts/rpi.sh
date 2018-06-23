@@ -14,26 +14,26 @@ fi
 # 3. Setup lighttpd config.
 
 # Low-level.
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump deluge-console deluge-webui deluged net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
 
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 
 # Server specific.
-apt install -y apache2 mariadb-server php7.0-fpm php7.0-mysql php7.0-xml certbot python-certbot-apache # Replaced lighttpd with apache2 for my setup.
+apt install -y nginx mariadb-server php7.0-fpm php7.0-mysql php7.0-xml certbot python-certbot-apache # Replaced lighttpd with nginx for my setup.
 
-systemctl enable apache2
-systemctl start apache2
+systemctl enable nginx
+systemctl start nginx
 
 # lighttpd-enable-mod fastcgi
 # lighttpd-enable-mod fastcgi-php
-a2enmod proxy_fcgi setenvif
-a2enconf php7.0-fpm
-a2enmod ssl
-a2ensite default-ssl.conf
-systemctl restart apache2
-systemctl reload apache2
+# a2enmod proxy_fcgi setenvif
+# a2enconf php7.0-fpm
+# a2enmod ssl
+# a2ensite default-ssl.conf
+systemctl restart nginx
+systemctl reload nginx
 
 systemctl enable mariadb
 systemctl start mariadb
@@ -47,5 +47,5 @@ systemctl enable deluged
 systemctl start deluged
 
 # Certbot (LetsEncrypt)
-certbot --authenticator webroot --installer apache
-certbot certonly --authenticator standalone --pre-hook "apachectl -k stop" --post-hook "apachectl -k start"
+certbot --authenticator webroot --installer nginx
+# certbot certonly --authenticator standalone --pre-hook "apachectl -k stop" --post-hook "apachectl -k start"
