@@ -11,5 +11,5 @@ fi
 while (true)
 do
   killall -3 gnome-shell
-  sleep 20
+  sleep 60
 done
