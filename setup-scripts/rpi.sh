@@ -13,8 +13,15 @@ fi
 # 2. Install packages.
 # 3. Setup apache2 config.
 
+# Update system.
+apt update
+apt dist-upgrade -y
+apt upgrade -y
+apt full-upgrade -y
+apt autoremove -y
+
 # Low-level.
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump qbittorrent-nox net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
 
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
@@ -34,6 +41,8 @@ a2enmod proxy_fcgi setenvif
 a2enconf php7.0-fpm
 a2enmod ssl
 a2ensite default-ssl.conf
+systemctl reload apache2
+systemctl restart apache2
 # nginx.
 # systemctl restart nginx
 # systemctl reload nginx
@@ -46,9 +55,9 @@ mysql_secure_installation
 systemctl enable php7.0-fpm
 systemctl start php7.0-fpm
 
-systemctl enable qbittorrent-nox
-systemctl start qbittorrent-nox
+systemctl enable transmission-daemon
+systemctl start transmission-daemon
 
 # Certbot (LetsEncrypt)
 certbot --authenticator webroot --installer apache
-certbot certonly --authenticator standalone --pre-hook "apachectl -k stop" --post-hook "apachectl -k start"
+# certbot certonly --authenticator standalone --pre-hook "apachectl -k stop" --post-hook "apachectl -k start"
