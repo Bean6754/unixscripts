@@ -14,14 +14,14 @@ fi
 # 3. Setup lighttpd config.
 
 # Low-level.
-apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
+apt install -y aptitude neofetch git curl wget vim emacs-nox sudo fakeroot p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential ruby tshark lua5.3 gdisk tftp ftp tcpdump qbittorrent-nox net-tools nethogs iftop software-properties-common ntp exif imagemagick lm-sensors hddtemp tree
 
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
 freshclam
 
 # Server specific.
-apt install -y nginx mariadb-server php7.0-fpm php7.0-mysql php7.0-xml certbot python-certbot-apache # Replaced lighttpd with nginx for my setup.
+apt install -y nginx mariadb-server php7.0-fpm php7.0-mysql php7.0-xml certbot python-certbot-nginx # Replaced lighttpd with nginx for my setup.
 
 systemctl enable nginx
 systemctl start nginx
@@ -43,8 +43,8 @@ mysql_secure_installation
 systemctl enable php7.0-fpm
 systemctl start php7.0-fpm
 
-systemctl enable deluged
-systemctl start deluged
+systemctl enable qbittorrent-nox
+systemctl start qbittorrent-nox
 
 # Certbot (LetsEncrypt)
 certbot --authenticator webroot --installer nginx
