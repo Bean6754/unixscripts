@@ -100,7 +100,7 @@ echo "Now for part 2."
 echo "Added rule 1. Force SYN packets check."
 echo
 
-/sbin/iptables iptables -A INPUT -f -j DROP
+/sbin/iptables -A INPUT -f -j DROP
 echo "Added rule 2. Force Fragments packets check."
 echo
 
