@@ -108,7 +108,7 @@ echo
 echo "Added rule 3. Drop incoming malformed XMAS packets."
 echo
 
-iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+/sbin/iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
 echo "Added rule 3. Drop incoming malformed NULL packets.
 echo
 
