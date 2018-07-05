@@ -90,12 +90,12 @@ echo
 echo "Added rule: Extra. Protection against port scanning."
 echo
 
-echo "Done part1!"
+echo "Done part1."
 
 echo 
 
 echo "Now for part 2."
-# Part 2! "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html"
+# Part 2. "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html"
 /sbin/iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
 echo "Added rule 1. Force SYN packets check."
 echo
@@ -112,5 +112,5 @@ echo
 echo "Added rule 3. Drop incoming malformed NULL packets.
 echo
 
-echo "Done part 2!"
-echo "Done altogether!!"
+echo "Done part 2."
+echo "Done altogether."
