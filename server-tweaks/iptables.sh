@@ -1,10 +1,12 @@
-## This script would not be made possible if it weren't for the article over at "https://javapipe.com/iptables-ddos-protection".
+## This script would not be made possible if it weren't for the article over at "https://javapipe.com/iptables-ddos-protection" and for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html".
 
 #!/bin/bash
 
 # iptables and ssh server hardening
 
-echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection'."
+echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection' and for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html'."
+echo
+echo "Part 1."
 
 /sbin/iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
 echo "Added rule: 1. Drop invalid packets."
@@ -88,4 +90,27 @@ echo
 echo "Added rule: Extra. Protection against port scanning."
 echo
 
-echo "Done!"
+echo "Done part1!"
+
+echo 
+
+echo "Now for part 2."
+# Part 2! "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html"
+/sbin/iptables -A INPUT -p tcp ! --syn -m state --state NEW -j DROP
+echo "Added rule 1. Force SYN packets check."
+echo
+
+/sbin/iptables iptables -A INPUT -f -j DROP
+echo "Added rule 2. Force Fragments packets check."
+echo
+
+/sbin/iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
+echo "Added rule 3. Drop incoming malformed XMAS packets."
+echo
+
+iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+echo "Added rule 3. Drop incoming malformed NULL packets.
+echo
+
+echo "Done part 2!"
+echo "Done altogether!!"
