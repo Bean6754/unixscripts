@@ -29,10 +29,8 @@ ufw allow 139/tcp
 ufw allow 445/tcp
 ufw allow 137/udp
 ufw allow 138/udp
-# qBittorrent-nox daemon/web interface. (Edit: '~/.config/qBittorrent/qBittorrent.conf'.)
-ufw allow 8081/tcp
-# qBittorrent-nox daemon/web interface proxy port. (Edit: '~/.config/qBittorrent/qBittorrent.conf'.)
-ufw allow 8082/tcp
+# Transmission daemon/web interface.
+ufw allow 9091/tcp
 
 # Reload firewall.
 ufw reload
