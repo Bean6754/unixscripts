@@ -26,7 +26,7 @@ zypper in -y libdvdnav4 libdvdread4 lame gstreamer gstreamer-plugins-good gstrea
 zypper in -y discord steam steamtricks steamcmd gparted gnome-disk-utility noto-coloremoji-fonts noto-emoji-fonts pavucontrol youtube-dl
 
 # VirtualBox.
-zypper in -y virtualbox
+zypper in -y virtualbox gnome-boxes
 usermod -a -G vboxusers $USER
 
 # Google Chrome.
