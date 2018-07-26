@@ -20,4 +20,5 @@ echo On the next command, type 'a' and press enter.
 echo Then on the licensing pages press 'q', then type yes. Twice!
 sleep 4
 
-zypper install-new-recommends
+# zypper install-new-recommends
+zypper in -y nvidia-glG04
