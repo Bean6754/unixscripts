@@ -1,8 +1,5 @@
 #!/bin/bash
 
-### THIS SCRIPT IS UNMAINTAINED!!
-### PLEASE USE mac-brew.sh INSTEAD!
-
 # Xcode dependancies.
 xcode-select --install # Install Command Line Tools if you haven't already.
 sudo xcode-select --switch /Library/Developer/CommandLineTools # Enable command line tools.
@@ -67,5 +64,5 @@ EOF'
 chsh -s /usr/local/bin/bash
 
 # git curl wget python, already installed from Xcode utils.
-brew install arping arpoison arp-scan bash-completion ettercap htop iftop lua neofetch nmap nethogs python2 python3 telnet tmux zsh
+brew install arping arpoison arp-scan bash-completion ettercap htop iftop lua neofetch nmap nethogs telnet tmux zsh
 brew link bash-completion
