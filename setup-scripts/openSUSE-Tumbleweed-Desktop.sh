@@ -22,8 +22,8 @@ zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emac
 zypper in -y wireshark tcpdump nmap ufw whois
 
 # High-level, multimedia codecs and fonts. FFMPEG AND gstreamer-plugins-libav ARE BROKEN!! :'(
-zypper in -y libdvdnav4 libdvdread4 lame gstreamer gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift transmission-qt vlc vlc-codec-gstreamer simplescreenrecorder kdenlive firewall-config
-zypper in -y discord steam steamtricks steamcmd partitionmanager falkon noto-coloremoji-fonts noto-emoji-fonts pavucontrol-qt youtube-dl
+zypper in -y libdvdnav4 libdvdread4 lame gstreamer gstreamer-plugins-good gstreamer-plugins-bad gstreamer-plugins-ugly redshift transmission-gtk mpv simplescreenrecorder kdenlive firewall-config
+zypper in -y discord steam steamtricks steamcmd gparted gnome-disk-utility noto-coloremoji-fonts noto-emoji-fonts pavucontrol youtube-dl
 
 # VirtualBox.
 zypper in -y virtualbox
@@ -34,13 +34,13 @@ usermod -a -G vboxusers $USER
 # rpm ivh https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 
 # Adobe Flash.
-rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
-rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
-zypper ref
-zypper in -y adobe-release-x86_64 flash-plugin
+# rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-x86_64-1.0-1.noarch.rpm
+# rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+# zypper ref
+# zypper in -y adobe-release-x86_64 flash-plugin
 
 # Skype.
-rpm -ivh https://go.skype.com/skypeforlinux-64.rpm
+# rpm -ivh https://go.skype.com/skypeforlinux-64.rpm
 
 # Install neofetch and run it.
 git clone https://github.com/dylanaraps/neofetch.git
