@@ -16,7 +16,7 @@ zypper dup -y
 
 # Low-level and development tools.
 zypper install -t pattern devel_basis
-zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-1_8_0-openjdk java-1_8_0-openjdk-devel transmission
+zypper install -y lsb-release make cmake git curl wget lsof strace htop vim emacs-nox python2 python3 ruby gcc gcc-c++ lua tcl java-11-openjdk java-11-openjdk-devel transmission
 
 # Networking tools.
 zypper in -y wireshark tcpdump nmap ufw whois
