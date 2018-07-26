@@ -68,3 +68,5 @@ chsh -s /usr/local/bin/bash
 # git curl wget python, already installed from Xcode utils.
 brew install arping arpoison arp-scan bash-completion ettercap htop iftop lua neofetch nmap nethogs telnet tmux zsh
 brew link bash-completion
+# Fun.
+brew install cowsay figlet lolcat toilet
