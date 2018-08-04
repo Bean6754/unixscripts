@@ -14,9 +14,9 @@ sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer # Enable co
 brew update
 brew upgrade
 
-## Is default in '/etc/paths'.
-# echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-# echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.zshrc
+## Some are default in '/etc/paths'.
+echo 'export PATH="$PATH:/usr/local/bin:/usr/local/sbin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/usr/local/bin:/usr/local/sbin"' >> ~/.zshrc
 # Fix Vim backspace issue.
 echo "set backspace=2" >> ~/.vimrc
 
