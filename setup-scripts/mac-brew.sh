@@ -35,3 +35,5 @@ brew install arping arpoison arp-scan bash-completion cmus ettercap htop iftop l
 brew link bash-completion
 # Fun.
 brew install cowsay figlet lolcat toilet
+# Web-server.
+# brew install apache2 php
