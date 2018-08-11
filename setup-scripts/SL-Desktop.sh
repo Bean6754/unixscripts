@@ -26,6 +26,7 @@ yum install -y oxygen-cursor-themes
 # nvidia is broken :(
 # yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart
 yum install -y steam vlc youtube-dl
+yum remove -y dragon && yum autoremove -y
 
 # Steam.
 # Dependancies.
