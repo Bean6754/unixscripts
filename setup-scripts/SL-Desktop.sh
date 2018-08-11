@@ -17,7 +17,7 @@ yum install -y microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget
 # Groupinstall.
 yum groupinstall -y "Development Tools"
 # High-level.
-yum install -y libdvdread libdvdnav libdvdcss libbluray firewall-config dvd+rw-tools pavucontrol-qt gimp transmission-qt transmission-cli wireshark wireshark-gnome redshift redshift-gtk quassel qt-creator firefox filezilla obs-studio
+yum install -y libdvdread libdvdnav libdvdcss libbluray firewall-config dvd+rw-tools pavucontrol-qt gimp transmission-qt transmission-cli wireshark wireshark-gnome redshift kde-plasma-redshift quassel qt-creator firefox filezilla obs-studio
 # Fonts.
 yum install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
