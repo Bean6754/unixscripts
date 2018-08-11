@@ -10,24 +10,22 @@ fi
 yum update -y
 # Repos.
 yum install -y epel-release
-yum-config-manager --add-repo=https://negativo17.org/repos/epel-multimedia.repo
-yum-config-manager --add-repo=https://negativo17.org/repos/epel-nvidia.repo
-yum-config-manager --add-repo=https://negativo17.org/repos/epel-steam.repo
+rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
 yum update -y
 # Low-level.
 yum install -y microcode_ctl kernel-devel zip unzip p7zip p7zip-plugins git wget curl htop strace lsof nc tcpdump vim emacs-nox nethogs iftop
 # Groupinstall.
 yum groupinstall -y "Development Tools"
 # High-level.
-yum install -y libbluray firewall-config dvd+rw-tools pavucontrol gimp transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany firefox filezilla recordmydesktop gtk-recordmydesktop
+yum install -y libbluray firewall-config dvd+rw-tools pavucontrol gimp transmission transmission-cli wireshark wireshark-gnome redshift redshift-gtk pidgin geany firefox filezilla obs-studio
 # Fonts.
 yum install -y liberation-fonts-common dejavu-fonts-common google-noto-fonts-common google-noto-emoji-fonts
 # Themes.
 yum install -y adapta-gtk-theme arc-theme numix-icon-theme numix-icon-theme-circle paper-icon-theme steamos-backgrounds
 # Repo based.
 # nvidia is broken :(
-yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart
-yum install -y steam mpv
+# yum install -y nvidia-driver kernel-devel dkms-nvidia nvidia-driver-libs nvidia-driver-libs.i686 nvidia-xconfig nvidia-settings cuda nvidia-driver-cuda cuda-devel cuda-cudart
+yum install -y steam vlc
 
 # Steam.
 # Dependancies.
