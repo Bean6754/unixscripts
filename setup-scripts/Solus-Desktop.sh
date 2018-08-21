@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# up = upgrade
+# it = install
+
 eopkg up -y
-eopkg is -c -y system.devel
-eopkg is -y emacs vim steam
+eopkg it -y -c system.devel
+eopkg it -y emacs vim neofetch
+# nvidia-glx-driver
+eopkg it -y steam
