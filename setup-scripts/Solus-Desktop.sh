@@ -5,6 +5,6 @@
 
 eopkg up -y
 eopkg it -y -c system.devel
-eopkg it -y emacs neofetch nmap tcpdump vim
+eopkg it -y emacs neofetch nmap tcpdump vim wine wine-32bit
 # nvidia-glx-driver-current
-eopkg it -y gimp putty steam virtualbox-current wireshark
+eopkg it -y audacity gimp lutris pavucontrol putty steam virtualbox-current wireshark
