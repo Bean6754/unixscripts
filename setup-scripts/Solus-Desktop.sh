@@ -14,7 +14,7 @@ eopkg dc
 eopkg up -y
 eopkg it -y -c system.devel
 eopkg it -y cmus curl emacs git htop lsof neofetch nmap strace tcpdump vim wget wine wine-32bit
-# nvidia-glx-driver-current
+# intel-microcode nvidia-glx-driver-current nvidia-glx-driver-32bit
 eopkg it -y audacity bleachbit gimp guvcview lutris pavucontrol putty redshift steam virtualbox-current mpv wireshark
 # Codecs.
 eopkg it -y libbluray libdvdcss libdvdnav libdvdread
