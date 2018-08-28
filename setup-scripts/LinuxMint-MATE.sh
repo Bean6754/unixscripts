@@ -10,24 +10,21 @@ fi
 
 # Update system.
 apt update
-apt dist-upgrade -y
-apt upgrade -y
 apt full-upgrade -y
 apt autoremove -y
 
 # Low-level.
 apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk transmission-cli hddtemp lm-sensors neofetch scanmem tmux youtube-dl
 # Fun.
-apt install -y figlet toilet lolcat cowsay cowsay-off fortune-mod fortunes fortunes-off
+# apt install -y figlet toilet lolcat cowsay cowsay-off fortune-mod fortunes fortunes-off
 # Networking tools.
 apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persistent macchanger
 systemctl enable netfilter-persistent
 systemctl start netfilter-persistent
 # High-level.
-apt install -y bleachbit gimp vlc steam wine32-development wine64-development wine32 wine64 wireshark-gtk gufw transmission transmission-gtk gparted baobab glade geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons mint-meta-codecs gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-guest-additions-iso skypeforlinux putty
+apt install -y bleachbit gimp vlc steam wine32-development wine64-development wine32 wine64 wireshark-gtk gufw transmission transmission-gtk gparted baobab glade geany geany-plugins qtcreator libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons mint-meta-codecs gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol redshift redshift-gtk simplescreenrecorder guvcview kdenlive virtualbox virtualbox-qt virtualbox-ext-pack virtualbox-guest-additions-iso skypeforlinux putty
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
-apt install -y chromium-browser pepperflashplugin-nonfree
-apt purge -y firefox && apt autoremove -y && rm -rf /usr/lib/firefox /etc/firefox
+# apt purge -y firefox && apt autoremove -y && rm -rf /usr/lib/firefox /etc/firefox
 dpkg-reconfigure libdvd-pkg # Not needed anymore.
 # Themes.
 apt install -y oxygen-cursor-theme
