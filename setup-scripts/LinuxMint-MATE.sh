@@ -16,7 +16,7 @@ apt autoremove -y
 # Low-level.
 apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk transmission-cli hddtemp lm-sensors neofetch scanmem tmux youtube-dl
 # Fun.
-# apt install -y figlet toilet lolcat cowsay cowsay-off fortune-mod fortunes fortunes-off
+apt install -y figlet toilet lolcat cowsay cowsay-off fortune-mod fortunes fortunes-off cmatrix
 # Networking tools.
 apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persistent macchanger
 systemctl enable netfilter-persistent
