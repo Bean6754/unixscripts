@@ -27,7 +27,7 @@ apt install -y playonlinux # Install after 'wine32-development' and 'wine64-deve
 # apt purge -y firefox && apt autoremove -y && rm -rf /usr/lib/firefox /etc/firefox
 dpkg-reconfigure libdvd-pkg # Not needed anymore.
 # Themes.
-apt install -y oxygen-cursor-theme
+apt install -y chameleon-cursor-theme
 # Fonts.
 apt install -y ttf-mscorefonts-installer ttf-dejavu fonts-liberation fonts-liberation2 fonts-noto
 # Discord.
