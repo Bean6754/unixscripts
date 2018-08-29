@@ -14,7 +14,7 @@ apt full-upgrade -y
 apt autoremove -y
 
 # Low-level.
-apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk transmission-cli hddtemp lm-sensors neofetch scanmem tmux youtube-dl
+apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p7zip-full build-essential default-jdk transmission-cli hddtemp lm-sensors cu neofetch scanmem tmux youtube-dl
 # Fun.
 apt install -y figlet toilet lolcat cowsay cowsay-off fortune-mod fortunes fortunes-off cmatrix
 # Networking tools.
