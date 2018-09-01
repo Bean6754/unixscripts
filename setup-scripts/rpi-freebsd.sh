@@ -21,7 +21,7 @@ freebsd-update fetch install
 # portsnap extract
 # portsnap update
 
-pkg update
+pkg update -y
 pkg upgrade -y
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
