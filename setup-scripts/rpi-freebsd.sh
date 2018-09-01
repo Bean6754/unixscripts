@@ -26,6 +26,7 @@ pkg install -y curl git htop neofetch p7zip rar sudo tmux unrar unzip vim-lite w
 pkg install -y nmap tshark
 # Server.
 pkg install -y nginx
+echo 'nginx_enable="YES"' >> /etc/rc.conf
 
 # Linux emulation not availible for aarch64 (RPi).
 # echo 'proc /proc procfs rw,noauto 0 0' >> /etc/fstab
