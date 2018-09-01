@@ -30,6 +30,8 @@ pkg upgrade -y    # To upgrade all system packages.
 pkg install -y curl git htop neofetch p7zip sudo tmux unrar unzip vim-console wget zip
 # Networking.
 pkg install -y nmap tshark
+# To download free GeoIP databases.
+/usr/local/bin/geoipupdate.sh
 # Server.
 pkg install -y nginx
 echo 'nginx_enable="YES"' >> /etc/rc.conf
