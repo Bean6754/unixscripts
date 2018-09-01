@@ -21,8 +21,9 @@ freebsd-update fetch install
 # portsnap extract
 # portsnap update
 
-pkg update -y
-pkg upgrade -y
+pkg update -y     # To fetch 'pkg'.
+pkg update        # To update system.
+pkg upgrade -y    # To upgrade all system packages.
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
 # Low-level.
