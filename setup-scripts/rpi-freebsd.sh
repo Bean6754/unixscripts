@@ -27,7 +27,7 @@ pkg upgrade -y    # To upgrade all system packages.
 
 # https://www.textfixer.com/tools/alphabetize-text-words.php
 # Low-level.
-pkg install -y curl git htop neofetch p7zip rar sudo tmux unrar unzip vim-lite wget zip
+pkg install -y curl git htop neofetch p7zip sudo tmux unrar unzip vim-console wget zip
 # Networking.
 pkg install -y nmap tshark
 # Server.
