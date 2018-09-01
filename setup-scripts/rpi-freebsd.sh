@@ -6,6 +6,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+echo >> /etc/rc.conf
+echo "# Custom." >> /etc/rc.conf
 # Check date and time first!
 # https://www.cyberciti.biz/tips/freebsd-timeclock-synchronization-with-ntp-server.html
 ntpdate -s time.nist.gov
