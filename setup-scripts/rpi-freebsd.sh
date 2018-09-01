@@ -7,7 +7,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Check date and time first!
+# https://www.cyberciti.biz/tips/freebsd-timeclock-synchronization-with-ntp-server.html
 ntpdate -s time.nist.gov
+echo 'ntpdate_enable="YES"' >> /etc/rc.conf
+echo 'ntpdate_hosts="time.nist.gov"' >> /etc/rc.conf
 
 freebsd-update fetch install
 
