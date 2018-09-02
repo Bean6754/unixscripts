@@ -7,8 +7,10 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Enable then start service at boot.
-systemctl enable ufw
-systemctl start ufw
+# systemctl enable ufw
+# systemctl start ufw
+update-rc.d ufw defaults
+service ufw start
 
 # Enable firewall.
 ufw enable
