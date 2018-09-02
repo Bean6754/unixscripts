@@ -8,8 +8,9 @@ fi
 
 ## NOTE: This is a very personal setup, just like all of my other scripts.
 
+# Remember, when writing to files, copy the original as 'name.old'.
 # Personal instructions.
-# 1. Setup static IP though `/etc/dhcpcd.conf`.
+# 1. Setup static IP though `/etc/dhcp/dhcpcd.conf`.
 # 2. Install packages.
 # 3. Setup apache2 config.
 
