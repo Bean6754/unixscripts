@@ -10,9 +10,16 @@ fi
 
 # Remember, when writing to files, copy the original as 'name.old'.
 # Personal instructions.
-# 1. Setup static IP though `/etc/dhcp/dhcpcd.conf`.
-# 2. Install packages.
-# 3. Setup apache2 config.
+# 1.  Change root password from 'toor' to anything else. >__>
+# 2.  Setup static IP though `/etc/network/interfaces`. (Copy to `"".old`.)
+# 3.  Restart networking via `service networking stop ; service networking start` (restart is depreciated).
+# 4.  Relogin via new IP over SSH.
+# 5.  Add a user (`adduser bean`).
+# 6.  Add user to `/etc/sudoers`. (Copy to `"".old`.)
+# 7.  Disable root login over SSH. (Copy `/etc/ssh/sshd_config` to `/etc/ssh/sshd_config.old`.)
+# 8.  Restart SSH: `service ssh restart`.
+# 9.  Install packages.
+# 10. Setup apache2 config.
 
 # Update system.
 apt update
@@ -22,7 +29,7 @@ apt full-upgrade -y
 apt autoremove -y
 
 # Low-level.
-apt install -y man-db aptitude neofetch git curl wget vim emacs-nox sudo p7zip-full zip unzip scanmem strace lsof htop screen tmux nmap build-essential tshark gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop ntp lm-sensors hddtemp tree ufw
+apt install -y man-db aptitude neofetch git curl wget vim emacs-nox sudo p7zip-full zip unzip scanmem strace htop screen tmux nmap build-essential tshark gdisk tftp ftp tcpdump transmission-cli transmission-daemon net-tools nethogs iftop ntp lm-sensors hddtemp tree ufw
 
 # Security.
 apt install -y clamav chkrootkit rkhunter lynis
