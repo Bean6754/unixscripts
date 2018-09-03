@@ -13,9 +13,9 @@ fi
 # Update system.
 dnf update -y
 # Install repo.
-dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # Install drivers and CUDA.
-dnf install -y nvidia-driver nvidia-xconfig nvidia-settings kernel-devel akmod-nvidia vulkan vulkan.i686 nvidia-driver-libs nvidia-driver-libs.i686 cuda nvidia-driver-cuda cuda-devel cuda-cudart
+dnf install -y xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
 
