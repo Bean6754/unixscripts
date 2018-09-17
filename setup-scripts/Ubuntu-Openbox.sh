@@ -19,6 +19,8 @@ apt install -y aptitude wget curl git strace lsof htop vim emacs-nox zip unzip p
 apt install -y tshark tcpdump nmap ufw net-tools ssh iptables iptables-persistent
 systemctl enable netfilter-persistent
 systemctl start netfilter-persistent
+# Install xorg and openbox.
+apt install -y xorg xinit openbox
 # High-Level.
 apt install -y chromium-browser terminator bleachbit gimp mpv steam wine32-development wine64-development wireshark-qt gufw transmission transmission-qt gparted baobab glade qtcreator geany geany-plugins libbluray2 libdvdcss2 libdvdnav4 libdvdread4 ubuntu-restricted-extras ubuntu-restricted-addons gameconqueror kdenlive libreoffice libreoffice-l10n-en-gb pavucontrol-qt redshift simplescreenrecorder guvcview kdenlive virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso software-properties-gtk lxappearance
 apt install -y playonlinux # Install after 'wine32-development' and 'wine64-development', just in case.
