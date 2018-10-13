@@ -6,13 +6,10 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-echo "You must have libdvdcss and Packman repo enabled! (20 secs)"
-sleep 20
-
 # Update system.
 zypper ref
-zypper up -y
-zypper dup -y
+zypper up -y --auto-agree-with-licenses
+zypper dup -y --auto-agree-with-licenses
 
 # Low-level and development tools.
 zypper install -t pattern devel_basis
@@ -50,11 +47,3 @@ cd ..
 rm -rf neofetch
 clear
 neofetch
-
-# ckb-next
-# git clone https://github.com/ckb-next/ckb-next.git
-# cd ckb-next
-# zypper in -y gcc gcc-c++ make cmake linux-glibc-devel zlib-devel libqt5-qtbase-devel libappindicator-devel systemd-devel libpulse-devel quazip-qt5-devel libudev-devel
-# ./quickinstall
-# cd ..
-# rm -rf ckb-next
