@@ -13,9 +13,9 @@ fi
 # Update system.
 dnf update -y
 # Install repo.
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 # Install drivers and CUDA.
-dnf install -y xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-cuda
+dnf install -y xorg-x11-drv-nvidia akmod-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs vulkan vdpauinfo libva-vdpau-driver libva-utils
 # Autoremove any unneeded dependancies.
 dnf autoremove -y
 
