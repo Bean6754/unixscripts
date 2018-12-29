@@ -12,6 +12,7 @@ sudo dnf update -y
 dnf groupinstall -y "Development Tools" "C Development Tools and Libraries" "Security Lab"
 
 sudo dnf install -y chromium vlc vlc-extras wireshark wireshark-cli nmap
+sudo usermod -a -G wireshark $USER
 
 # Themes.
 sudo dnf install -y gnome-tweaks chrome-gnome-shell arc-theme dmz-cursor-themes papirus-icon-theme
