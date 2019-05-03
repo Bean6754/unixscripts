@@ -1,5 +1,7 @@
 ## animations.sh
 
+### Taken from: (https://apple.stackexchange.com/questions/14001/how-to-turn-off-all-animations-on-os-x)
+
 opening and closing windows and popovers
 
 ``defaults write -g NSAutomaticWindowAnimationsEnabled -bool false``
