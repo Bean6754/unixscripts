@@ -1,12 +1,15 @@
-## This script would not be made possible if it weren't for the article over at "https://javapipe.com/iptables-ddos-protection" and for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html".
+## This script would not be made possible if it weren't for the article over at "https://javapipe.com/iptables-ddos-protection", for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html" and for part3 "https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html".
 
 #!/bin/bash
 
 # iptables and ssh server hardening
 
-# Flush all rules.
+# Flush all rules and reset iptables.
 /sbin/iptables -F
 /sbin/iptables -X
+/sbin/iptables -P INPUT ACCEPT
+/sbin/iptables -P FORWARD ACCEPT
+/sbin/iptables -P OUTPUT ACCEPT
 
 echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
 echo
@@ -126,16 +129,13 @@ echo "Now for part 3."
 # sport = source port
 #iptables -A INPUT -p tcp -s 0/0 -d $SERVER_IP --sport 513:65535 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 #iptables -A OUTPUT -p tcp -s $SERVER_IP -d 0/0 --sport 22 --dport 513:65535 -m state --state ESTABLISHED -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+/sbin/iptables -A INPUT -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
 
-/sbin/iptables -P INPUT DROP
-/sbin/iptables -P OUTPUT DROP
-/sbin/iptables -P FORWARD DROP
 /sbin/iptables -A INPUT -i lo -j ACCEPT
 /sbin/iptables -A OUTPUT -o lo -j ACCEPT
 
 /sbin/iptables -A INPUT -j DROP
-/sbin/iptables -A OUTPUT -j DROP
+/sbin/iptables -A OUTPUT -j ACCEPT
 
 echo "Done part 3."
 echo "Done altogether."
