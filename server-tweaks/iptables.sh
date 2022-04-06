@@ -1,6 +1,57 @@
-## This script would not be made possible if it weren't for the article over at "https://javapipe.com/iptables-ddos-protection", for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html" and for part3 "https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html".
+## This script would not be made possible if it weren't for the article over at "https://security.stackexchange.com/q/4603", "https://javapipe.com/iptables-ddos-protection", for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html" and for part3 "https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html".
 
 #!/bin/bash
+
+echo "This script would not be made possible if it weren't for the articles over at 'https://security.stackexchange.com/q/4603', 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
+sleep 2
+echo
+
+# Kernel parameters.
+# https://security.stackexchange.com/q/4603
+
+cat <<EOF >/usr/local/bin/iptables-kernel.sh
+#!/bin/bash
+
+# PREVENT YOU SYSTEM FROM ANSWERING ICMP ECHO REQUESTS
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+# DROP ICMP ECHO-REQUEST MESSAGES SENT TO BROADCAST OR MULTICAST ADDRESSES
+echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+
+# DONT ACCEPT ICMP REDIRECT MESSAGES
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_redirects
+
+# DONT SEND ICMP REDIRECT MESSAGES
+echo 0 > /proc/sys/net/ipv4/conf/all/send_redirects
+
+# DROP SOURCE ROUTED PACKETS
+echo 0 > /proc/sys/net/ipv4/conf/all/accept_source_route
+
+# ENABLE TCP SYN COOKIE PROTECTION FROM SYN FLOODS
+echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+
+# ENABLE SOURCE ADDRESS SPOOFING PROTECTION
+echo 1 > /proc/sys/net/ipv4/conf/all/rp_filter
+
+# LOG PACKETS WITH IMPOSSIBLE ADDRESSES (DUE TO WRONG ROUTES) ON YOUR NETWORK
+echo 1 > /proc/sys/net/ipv4/conf/all/log_martians
+
+# DISABLE IPV4 FORWARDING
+echo 0 > /proc/sys/net/ipv4/ip_forward
+EOF
+chmod a+x /usr/local/bin/iptables-kernel.sh
+
+cat <<EOF >/etc/systemd/system/iptables-kernel.service
+[Unit]
+Description=iptables kernel paramters.
+
+[Service]
+ExecStart=/usr/local/bin/iptables-kernel.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+systemctl enable --now iptables-kernel.service
 
 # iptables and ssh server hardening
 
@@ -12,8 +63,6 @@
 #/sbin/iptables -P FORWARD ACCEPT
 #/sbin/iptables -P OUTPUT ACCEPT
 
-echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
-echo
 echo "Part 1."
 
 /sbin/iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
