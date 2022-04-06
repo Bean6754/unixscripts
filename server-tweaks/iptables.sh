@@ -4,7 +4,11 @@
 
 # iptables and ssh server hardening
 
-echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection' and for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html'."
+# Flush all rules.
+/sbin/iptables -F
+/sbin/iptables -X
+
+echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
 echo
 echo "Part 1."
 
@@ -113,4 +117,23 @@ echo "Added rule 3. Drop incoming malformed NULL packets."
 echo
 
 echo "Done part 2."
+
+echo "Now for part 3."
+# https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html
+# dport = destination port
+# sport = source port
+#iptables -A INPUT -p tcp -s 0/0 -d $SERVER_IP --sport 513:65535 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+#iptables -A OUTPUT -p tcp -s $SERVER_IP -d 0/0 --sport 22 --dport 513:65535 -m state --state ESTABLISHED -j ACCEPT
+/sbin/iptables -A INPUT -p tcp --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+
+/sbin/iptables -P INPUT DROP
+/sbin/iptables -P OUTPUT DROP
+/sbin/iptables -P FORWARD DROP
+/sbin/iptables -A INPUT -i lo -j ACCEPT
+/sbin/iptables -A OUTPUT -o lo -j ACCEPT
+
+/sbin/iptables -A INPUT -j DROP
+/sbin/iptables -A OUTPUT -j DROP
+
+echo "Done part 3."
 echo "Done altogether."
