@@ -54,7 +54,7 @@ echo "Added rule: 4. Block packets with bogus TCP flags."
 echo
 
 # IMPORTANT: Replace your network interface, ip address and ip range here!
-/sbin/iptables -A INPUT -i eth0 -s 172.16.1.10 -j
+/sbin/iptables -A INPUT -i eth0 -s 172.16.1.10 -j DROP
 /sbin/iptables -t mangle -A PREROUTING -s 224.0.0.0/3 -j DROP
 /sbin/iptables -t mangle -A PREROUTING -s 169.254.0.0/16 -j DROP
 #/sbin/iptables -t mangle -A PREROUTING -s 172.16.0.0/12 -j DROP
