@@ -4,12 +4,13 @@
 
 # iptables and ssh server hardening
 
-# Flush all rules and reset iptables.
+# Flush all rules.
 /sbin/iptables -F
 /sbin/iptables -X
-/sbin/iptables -P INPUT ACCEPT
-/sbin/iptables -P FORWARD ACCEPT
-/sbin/iptables -P OUTPUT ACCEPT
+# Default ruleset.
+#/sbin/iptables -P INPUT ACCEPT
+#/sbin/iptables -P FORWARD ACCEPT
+#/sbin/iptables -P OUTPUT ACCEPT
 
 echo "This script would not be made possible if it weren't for the article over at 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
 echo
