@@ -140,3 +140,8 @@ echo "Now for part 3."
 
 echo "Done part 3."
 echo "Done altogether."
+
+echo "Saving rules.."
+/sbin/iptables-save > /etc/iptables/rules.v4
+/sbin/ip6tables-save > /etc/iptables/rules.v6
+echo "Rules saved."
