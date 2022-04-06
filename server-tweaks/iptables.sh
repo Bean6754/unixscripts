@@ -185,7 +185,10 @@ echo "Now for part 3."
 # sport = source port
 #iptables -A INPUT -p tcp -s 0/0 -d $SERVER_IP --sport 513:65535 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
 #iptables -A OUTPUT -p tcp -s $SERVER_IP -d 0/0 --sport 22 --dport 513:65535 -m state --state ESTABLISHED -j ACCEPT
-/sbin/iptables -A INPUT -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+# SSH (TCP).
+/sbin/iptables -A INPUT -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+# HTTP and HTTPS (TCP).
+/sbin/iptables -A INPUT -p tcp -m multiport --dports 80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
 
 /sbin/iptables -A INPUT -i lo -j ACCEPT
 /sbin/iptables -A OUTPUT -o lo -j ACCEPT
