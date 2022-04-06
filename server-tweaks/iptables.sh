@@ -2,6 +2,12 @@
 
 #!/bin/bash
 
+# Make sure only root can run our script.
+if [[ $EUID -ne 0 ]]; then
+  echo "This script must be run as root" 1>&2
+  exit 1
+fi
+
 echo "This script would not be made possible if it weren't for the articles over at 'https://security.stackexchange.com/q/4603', 'https://javapipe.com/iptables-ddos-protection', for part2 'https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html' and for part3 'https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html'."
 sleep 2
 echo
