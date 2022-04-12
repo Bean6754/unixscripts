@@ -10,6 +10,10 @@ fi
 cd /var/www/log/
 mkdir -p rsyslog-backups
 
+# Backup with appending the date and time to the folder
+# whilst running the argument to check if there are
+# more than 5 folders/files in the directory, if so
+# then delete the oldest folder/file.
 if [[ $(ls -l /var/www/log/rsyslog-backups/ | wc -l) -ge 6 ]]; then
   pushd /var/www/log/rsyslog-backups/
   rm -rf $(ls -t /var/www/log/rsyslog-backups/ | tail -1)
