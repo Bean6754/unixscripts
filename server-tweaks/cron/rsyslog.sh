@@ -20,9 +20,13 @@ if [[ $(ls -l /var/www/log/rsyslog-backups/ | wc -l) -ge 6 ]]; then
   popd
   mv rsyslog rsyslog-backups/rsyslog+$(date +"%Y-%m-%d_%H-%M-%S")
   mkdir -p rsyslog
+  # Restart the rsyslog service.
+  systemctl restart rsyslog
 elif [[ $(ls -l /var/www/log/rsyslog-backups/ | wc -l) -le 5 ]]; then
   mv rsyslog rsyslog-backups/rsyslog+$(date +"%Y-%m-%d_%H-%M-%S")
   mkdir -p rsyslog
+  # Restart the rsyslog service.
+  systemctl restart rsyslog
 else
   exit 1
 fi
