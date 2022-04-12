@@ -22,6 +22,11 @@ echo
 #/sbin/iptables -P FORWARD ACCEPT
 #/sbin/iptables -P OUTPUT ACCEPT
 
+# Log iptables.
+/sbin/iptables -A INPUT -j LOG --log-prefix "[iptables-input] " --log-level 4
+/sbin/iptables -A FORWARD -j LOG --log-prefix "[iptables-forward] " --log-level 4
+/sbin/iptables -A OUTPUT -j LOG --log-prefix "[iptables-output] " --log-level 4
+
 echo "Part 1."
 
 /sbin/iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
@@ -148,6 +153,9 @@ echo "Now for part 3."
 
 /sbin/iptables -A INPUT -j DROP
 /sbin/iptables -A OUTPUT -j ACCEPT
+
+# Enable apt.
+/sbin/iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 echo "Done part 3."
 echo "Done altogether."
