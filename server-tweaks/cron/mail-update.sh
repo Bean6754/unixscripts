@@ -33,6 +33,10 @@ mail_func() {
   rm -rf $logpath/update_$datevar.txt2
 }
 
+# Log with appending the date and time to the file
+# whilst running the argument to check if there are
+# more than 35 folders/files in the directory, if so
+# then delete the oldest folder/file.
 if [[ $(ls -l /var/log/mail-update/ | wc -l) -ge 36 ]]; then
   pushd /var/log/mail-update/
   rm -rf $(ls -t /var/log/mail-update/ | tail -1)
