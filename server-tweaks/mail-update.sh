@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## Dependencies: apt (auto-installed), s-nail and perl (auto-installed)
+
 # Make sure only root can run our script.
 if [[ $EUID -ne 0 ]]; then
   echo "This script must be run as root." 1>&2
