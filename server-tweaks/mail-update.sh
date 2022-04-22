@@ -26,7 +26,7 @@ update_func() {
 }
 
 mail_func() {
-  (echo "Please find attached the daily update output for $hostnamevar at $datevar:" ; echo ""; echo "" ; cat $logpath/update_$datevar.txt) | s-nail -v -s "Server Daily Update for $hostnamevar at $datevar" -a "$logpath/update_$datevar.txt" -S mta="smtp://mydomain.net:25" -r "$hostnamevar@mydomain.net" -c "cc1@example.org" -c "cc2@example.org" email@example.org
+  (echo "Please find attached the daily update output for $hostnamevar at $datevar:" ; echo "" ; echo "" ; cat $logpath/update_$datevar.txt) | s-nail -v -s "Server Daily Update for $hostnamevar at $datevar" -a "$logpath/update_$datevar.txt" -S mta="smtp://mydomain.net:25" -r "$hostnamevar@mydomain.net" -c "cc1@example.org" -c "cc2@example.org" email@example.org
   rm -rf $logpath/update_$datevar.txt2
 }
 
