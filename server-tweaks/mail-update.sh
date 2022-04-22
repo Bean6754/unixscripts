@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Dependencies: apt (auto-installed), s-nail and perl (auto-installed)
+## Dependencies: apt (auto-installed), s-nail and perl (auto-installed).
 
 # Make sure only root can run our script.
 if [[ $EUID -ne 0 ]]; then
@@ -8,12 +8,13 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
+# Variables.
 datevar=$(date +"%Y-%m-%d_%H-%M-%S")
 hostnamevar=$(hostname)
 mkdir -p /var/log/mail-update
 logpath="/var/log/mail-update"
 
-
+# Functions.
 update_func() {
   echo "-------- apt-get update --------" > $logpath/update_$datevar.txt2
   update=$(apt-get update >> $logpath/update_$datevar.txt2)
