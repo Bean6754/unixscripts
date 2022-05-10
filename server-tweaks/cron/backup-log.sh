@@ -33,13 +33,13 @@ host3_name="nas-vm-host3" # Host 3.
 cd /share/
 # pre-make directories if needed for rsync.
 ## Localhost.
-mkdir -p config-backups/$datevar/$hostnamevar/var/log
+mkdir -p log-backups/$datevar/$hostnamevar/var/log
 ## Host 1.
-mkdir -p config-backups/$datevar/$host1_name/var/log
+mkdir -p log-backups/$datevar/$host1_name/var/log
 ## Host 2.
-mkdir -p config-backups/$datevar/$host2_name/var/log
+mkdir -p log-backups/$datevar/$host2_name/var/log
 ## Host 3.
-mkdir -p config-backups/$datevar/$host3_name/var/log
+mkdir -p log-backups/$datevar/$host3_name/var/log
 
 # Backup with appending the date and time to the folder
 # whilst running the argument to check if there are
@@ -52,25 +52,25 @@ if [[ $(ls -l /share/log-backups | wc -l) -ge 6 ]]; then
 
   ## Localhost.
   # /var/log
-  rsync -avP /var/log/* config-backups/$datevar/$hostnamevar/var/log
+  rsync -avP /var/log/* log-backups/$datevar/$hostnamevar/var/log
   # Fix /var/log from getting too large.
   rm -rf /var/log/*
 
   ## Host 1.
   # /var/log
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* config-backups/$datevar/$host1_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* log-backups/$datevar/$host1_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host1 'rm -rf /var/log/*'
 
   ## Host 2.
   # /var/log
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* config-backups/$datevar/$host2_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* log-backups/$datevar/$host2_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host2 'rm -rf /var/log/*'
 
   ## Host 3.
   # /var/log
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* config-backups/$datevar/$host3_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* log-backups/$datevar/$host3_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host3 'rm -rf /var/log/*'
 
@@ -81,25 +81,25 @@ elif [[ $(ls -l /share/log-backups | wc -l) -le 5 ]]; then
 
   ## Localhost.
   # /var/log
-  rsync -avP /var/log/* config-backups/$datevar/$hostnamevar/var/log
+  rsync -avP /var/log/* log-backups/$datevar/$hostnamevar/var/log
   # Fix /var/log from getting too large.
   rm -rf /var/log/*
 
   ## Host 1.
   # /var/log
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* config-backups/$datevar/$host1_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* log-backups/$datevar/$host1_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host1 'rm -rf /var/log/*'
 
   ## Host 2.
   # /usr/local/bin
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* config-backups/$datevar/$host2_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* log-backups/$datevar/$host2_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host2 'rm -rf /var/log/*'
 
   ## Host 3.
   # /usr/local/bin
-  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* config-backups/$datevar/$host3_name/var/log
+  rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* log-backups/$datevar/$host3_name/var/log
   # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host3 'rm -rf /var/log/*'
 
