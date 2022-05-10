@@ -1,5 +1,19 @@
 #!/bin/bash
 
+## README.
+# For cron support:
+# Add a supersudo group and a NOPASSWD option to sudo.
+#
+# Otherwise the script will fail because sudo
+# will wait for a password request and stall.
+#
+# For example:
+# groupadd supersudo
+# usermod -a -G supersudo user
+# Add to /etc/sudoers:
+# %supersudo ALL=(ALL:ALL) NOPASSWD:ALL
+
+
 # Make sure only root can run our script.
 if [[ $EUID -ne 0 ]]; then
   echo "This script must be run as root." 1>&2
@@ -39,24 +53,25 @@ if [[ $(ls -l /share/log-backups | wc -l) -ge 6 ]]; then
   ## Localhost.
   # /var/log
   rsync -avP /var/log/* config-backups/$datevar/$hostnamevar/var/log
+  # Fix /var/log from getting too large.
   rm -rf /var/log/*
 
   ## Host 1.
   # /var/log
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* config-backups/$datevar/$host1_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host1 'rm -rf /var/log/*'
 
   ## Host 2.
   # /var/log
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* config-backups/$datevar/$host2_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host2 'rm -rf /var/log/*'
 
   ## Host 3.
   # /var/log
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* config-backups/$datevar/$host3_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host3 'rm -rf /var/log/*'
 
 
@@ -67,24 +82,25 @@ elif [[ $(ls -l /share/log-backups | wc -l) -le 5 ]]; then
   ## Localhost.
   # /var/log
   rsync -avP /var/log/* config-backups/$datevar/$hostnamevar/var/log
+  # Fix /var/log from getting too large.
   rm -rf /var/log/*
 
   ## Host 1.
   # /var/log
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host1:/var/log/* config-backups/$datevar/$host1_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host1 'rm -rf /var/log/*'
 
   ## Host 2.
   # /usr/local/bin
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host2:/var/log/* config-backups/$datevar/$host2_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host2 'rm -rf /var/log/*'
 
   ## Host 3.
   # /usr/local/bin
   rsync -avP -e "ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no" isabella@$host3:/var/log/* config-backups/$datevar/$host3_name/var/log
-  # Fix /var/log from getting too large - supersudo nopasswd group is needed for cron support.
+  # Fix /var/log from getting too large.
   ssh -i /root/.ssh/sshkey-nopass -o StrictHostKeyChecking=no isabella@host3 'rm -rf /var/log/*'
 
 
