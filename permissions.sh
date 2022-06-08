@@ -44,10 +44,10 @@ ln -s /home/<user2>/.bash_history /var/log/nomail-update/bash_<user2>
 
 ## .bash_profile
 cat <<EOF >/home/<user2>/.bash_profile
-PATH=/home/<user2>/.bin/
-export PATH
-TMOUT=600
-HISTSIZE=2000
+export PATH=/home/<user2>/.bin/
+export TMOUT=600
+export HISTSIZE=2000
+export HISTTIMEFORMAT="%T %F  "
 alias update="sudo /usr/local/bin/update.sh"
 clear
 cat ~/README.txt
