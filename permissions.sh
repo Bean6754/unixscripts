@@ -35,7 +35,6 @@ ln -s /usr/local/bin/update.sh /home/<user2>/.bin/update.sh
 chsh -s /home/<user2>/.bin/rbash <user2>
 
 rm -rf /home/<user2>/.bashrc
-rm -rf /home/<user2>/.bash_profile
 mkdir -p /var/log/nomail-update
 touch /home/<user2>/.bash_history
 chown <user2>:<user2> /home/<user2>/.bash_history
