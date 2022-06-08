@@ -20,6 +20,9 @@ chmod 500 /home/<user2>/.ssh/
 chmod 444 /home/<user2>/.ssh/authorized_keys
 #chmod 600 ~/.ssh/id_rsa
 
+
+# <user2> restrictions.
+
 rm -rf /home/<user2>/.bin
 mkdir -p /home/<user2>/.bin
 
@@ -40,10 +43,23 @@ chmod 500 /home/<user2>/.bash_history
 rm -f /var/log/nomail-update/bash_<user2>
 ln -s /home/<user2>/.bash_history /var/log/nomail-update/bash_<user2>
 
-echo "PATH=/home/<user2>/.bin/" > /home/<user2>/.bash_profile
-echo "export PATH" >> /home/<user2>/.bash_profile
-echo "TMOUT=600" >> /home/<user2>/.bash_profile
-echo "HISTSIZE=2000" >> /home/<user2>/.bash_profile
-echo 'alias update="sudo /usr/local/bin/update.sh"' >> /home/<user2>/.bash_profile
-echo "clear" >> /home/<user2>/.bash_profile
-echo "cat ~/README.txt" >> /home/<user2>/.bash_profile
+## .bash_profile
+cat <<EOF >/home/<user2>/.bash_profile
+PATH=/home/<user2>/.bin/
+export PATH
+TMOUT=600
+HISTSIZE=2000
+alias update="sudo /usr/local/bin/update.sh"
+clear
+cat ~/README.txt
+EOF
+
+## README.txt
+cat <<EOF > /home/<user2>/README.txt
+_
+  +--------------------------------------+
+  |  Run 'update' to update the system.  |
+  |     Auto logout in 10 minutes.       |
+  +--------------------------------------+
+_
+EOF
