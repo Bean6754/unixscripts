@@ -38,7 +38,7 @@ rm -rf /home/<user2>/.bashrc
 mkdir -p /var/log/nomail-update
 touch /home/<user2>/.bash_history
 chown <user2>:<user2> /home/<user2>/.bash_history
-chmod 500 /home/<user2>/.bash_history
+chmod 600 /home/<user2>/.bash_history
 rm -f /var/log/nomail-update/bash_<user2>
 ln -s /home/<user2>/.bash_history /var/log/nomail-update/bash_<user2>
 
