@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 chown -R isabella:isabella /home/isabella/
-chown -R <user2>:<user2> /home/<user2>
+chown -R <user2>:<user2> /home/<user2>/
 
 chmod -R 700 /home/isabella/
 chmod -R 500 /home/<user2>/
@@ -33,9 +33,17 @@ chsh -s /home/<user2>/.bin/rbash <user2>
 
 rm -rf /home/<user2>/.bashrc
 rm -rf /home/<user2>/.bash_profile
+mkdir -p /var/log/nomail-update
+touch /home/<user2>/.bash_history
+chown <user2>:<user2> /home/<user2>/.bash_history
+chmod 500 /home/<user2>/.bash_history
+rm -f /var/log/nomail-update/bash_<user2>
+ln -s /home/<user2>/.bash_history /var/log/nomail-update/bash_<user2>
+
 echo "PATH=/home/<user2>/.bin/" > /home/<user2>/.bash_profile
 echo "export PATH" >> /home/<user2>/.bash_profile
 echo "TMOUT=600" >> /home/<user2>/.bash_profile
+echo "HISTSIZE=2000" >> /home/<user2>/.bash_profile
 echo 'alias update="sudo /usr/local/bin/update.sh"' >> /home/<user2>/.bash_profile
 echo "clear" >> /home/<user2>/.bash_profile
 echo "cat ~/README.txt" >> /home/<user2>/.bash_profile
