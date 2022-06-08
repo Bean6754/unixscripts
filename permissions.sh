@@ -23,9 +23,9 @@ chmod 444 /home/<user2>/.ssh/authorized_keys
 
 # <user2> restrictions.
 
+## .bin/
 rm -rf /home/<user2>/.bin
 mkdir -p /home/<user2>/.bin
-
 ln -s /bin/cat /home/<user2>/.bin/cat
 ln -s /usr/bin/clear /home/<user2>/.bin/clear
 ln -s /bin/ls /home/<user2>/.bin/ls
