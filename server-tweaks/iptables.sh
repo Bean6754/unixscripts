@@ -23,9 +23,9 @@ echo
 #/sbin/iptables -P OUTPUT ACCEPT
 
 # Log iptables.
-/sbin/iptables -A INPUT -j LOG --log-prefix "iptables-input: " --log-level 4
-/sbin/iptables -A FORWARD -j LOG --log-prefix "iptables-forward: " --log-level 4
-/sbin/iptables -A OUTPUT -j LOG --log-prefix "iptables-output: " --log-level 4
+/sbin/iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables-input: " --log-level 4
+/sbin/iptables -A FORWARD -m limit --limit 5/min -j LOG --log-prefix "iptables-forward: " --log-level 4
+/sbin/iptables -A OUTPUT -m limit --limit 5/min -j LOG --log-prefix "iptables-output: " --log-level 4
 
 echo "Part 1."
 
