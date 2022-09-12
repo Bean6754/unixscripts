@@ -22,19 +22,19 @@ ufw default deny incoming
 ufw default allow outgoing
 
 # SSH.
-ufw allow 22/tcp
+ufw limit 22/tcp
 # HTTP.
-ufw allow 80/tcp
-ufw allow 8080/tcp
+ufw limit 80/tcp
+ufw limit 8080/tcp
 # HTTPS.
-ufw allow 443/tcp
+ufw limit 443/tcp
 # Samba.
-ufw allow 139/tcp
-ufw allow 445/tcp
-ufw allow 137/udp
-ufw allow 138/udp
+ufw limit 139/tcp
+ufw limit 445/tcp
+ufw limit 137/udp
+ufw limit 138/udp
 # Transmission daemon/web interface.
-ufw allow 9091/tcp
+ufw limit 9091/tcp
 
 # Disable ICMP.
 sed -i '/ufw-before-input.*icmp/s/ACCEPT/DROP/g' /etc/ufw/before.rules
