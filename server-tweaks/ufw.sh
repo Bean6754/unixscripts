@@ -7,10 +7,12 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Enable then start service at boot.
-# systemctl enable ufw
-# systemctl start ufw
-update-rc.d ufw defaults
-service ufw start
+systemctl enable -- now ufw.service
+#update-rc.d ufw defaults
+#service ufw start
+
+# Reset UFW.
+ufw reset
 
 # Enable firewall.
 ufw enable
@@ -33,6 +35,9 @@ ufw allow 137/udp
 ufw allow 138/udp
 # Transmission daemon/web interface.
 ufw allow 9091/tcp
+
+# Disable ICMP.
+sed -i '/ufw-before-input.*icmp/s/ACCEPT/DROP/g' /etc/ufw/before.rules
 
 # Reload firewall.
 ufw reload
