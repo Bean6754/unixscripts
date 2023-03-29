@@ -149,10 +149,10 @@ echo "Now for part 3." # Managed by firewalld!
 #iptables -A OUTPUT -p tcp -s $SERVER_IP -d 0/0 --sport 22 --dport 513:65535 -m state --state ESTABLISHED -j ACCEPT
 ## Managed by Firewalld
 # SSH (TCP).
-#firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -p tcp --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
-firewall-cmd --permanent --zone=public --permanent --add-service=ssh
+firewall-cmd --permanent --zone=public --add-service=ssh
 # HTTP and HTTPS (TCP).
-#firewall-cmd --permanent --direct --add-rule ipv4 filter IN_public_allow 0 -A INPUT -p tcp -m multiport --dports 80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
+#firewall-cmd --permanent --zone=public --add-service=http
+#firewall-cmd --permanent --zone=public --add-service=https
 
 #firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -i lo -j ACCEPT
 #firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -o lo -j ACCEPT
