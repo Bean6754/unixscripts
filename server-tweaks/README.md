@@ -17,3 +17,5 @@ nmcli net on
 ### Create `/etc/sysctl.d/custom.conf` from `server-tweaks - etc/sysctl.d/custom.conf`
 
 ### Run `# bash /root/firewalld.sh`
+
+### Install and enable fail2ban.
