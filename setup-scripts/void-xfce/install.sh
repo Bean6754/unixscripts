@@ -41,3 +41,6 @@ xbps-install $(/usr/bin/cat pkg_term.txt)
 xbps-install -S
 
 xbps-install $(/usr/bin/cat pkg_get_iplayer.txt pkg_kvm.txt pkg_desktop.txt pkg_hotspot.txt pkg_fonts.txt pkg_steam.txt)
+
+# Update font-cache.
+fc-cache -f
