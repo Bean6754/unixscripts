@@ -19,3 +19,4 @@ void-repo-multilib-nonfree
 void-repo-nonfree
 wget
 yt-dlp
+xtools
