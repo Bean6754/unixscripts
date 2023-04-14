@@ -1,5 +1,5 @@
 font-liberation-narrow-ttf
-font-liberation-ttf
+liberation-fonts-ttf
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-ttf
