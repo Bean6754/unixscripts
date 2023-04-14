@@ -14,6 +14,8 @@ qdirstat
 qt5ct
 qt6ct
 remmina
+slim
+slim-void-theme
 snes9x-gtk
 steam
 strawberry
