@@ -1,4 +1,4 @@
-## Recommended actions when first setting up server/LXC-container.
+## Recommended actions when first setting up server/KVM-VM.
 ### Set static-IP
 
 ### Create `/etc/ssh/sshd_config` and `/etc/ssh/banner` from `server-tweaks - etc/ssh/sshd_config` from `server-tweaks - etc/ssh/banner`
