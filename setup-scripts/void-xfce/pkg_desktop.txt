@@ -7,6 +7,7 @@ lutris
 mpv
 mugshot
 obs
+olive
 qdirstat
 qt5ct
 qt6ct
