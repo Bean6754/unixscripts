@@ -4,6 +4,7 @@ dolphin-emu
 file-roller
 filezilla
 gparted
+greybird-themes
 lutris
 mpv
 mugshot
