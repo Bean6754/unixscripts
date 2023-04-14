@@ -8,3 +8,4 @@ mesa-dri-32bit
 mesa-vulkan-intel-32bit
 steam
 wine
+wine-32bit
