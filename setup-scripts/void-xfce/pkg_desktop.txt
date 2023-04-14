@@ -1,4 +1,5 @@
 audacity
+cura
 dolphin-emu
 file-roller
 filezilla
