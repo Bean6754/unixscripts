@@ -1,3 +1,4 @@
+audacity
 dolphin-emu
 file-roller
 filezilla
