@@ -7,6 +7,8 @@ htop
 nmap
 p7zip
 p7zip-unrar
+pfetch
+python3-mutagen
 rsync
 sshuttle
 transmission
@@ -16,4 +18,3 @@ void-repo-multilib-nonfree
 void-repo-nonfree
 wget
 yt-dlp
-python3-mutagen
