@@ -4,6 +4,7 @@ libgcc-32bit
 libglvnd-32bit
 libglvnd-32bit
 libstdc++-32bit
+libwine-32bit
 mesa-dri-32bit
 mesa-vulkan-intel-32bit
 steam
