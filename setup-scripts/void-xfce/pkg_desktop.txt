@@ -1,6 +1,8 @@
+alsa-pipewire
 audacity
 cura
 dolphin-emu
+easyeffects
 file-roller
 filezilla
 gparted
@@ -10,6 +12,7 @@ mpv
 mugshot
 obs
 olive
+pipewire
 qdirstat
 qt5ct
 qt6ct
