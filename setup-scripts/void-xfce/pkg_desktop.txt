@@ -12,6 +12,7 @@ mpv
 mugshot
 obs
 olive
+openscad
 pipewire
 qdirstat
 qt5ct
