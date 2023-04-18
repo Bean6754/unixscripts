@@ -8,6 +8,7 @@ filezilla
 gparted
 greybird-themes
 lutris
+menulibre
 mpv
 mugshot
 obs
