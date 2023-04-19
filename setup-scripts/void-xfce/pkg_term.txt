@@ -1,6 +1,7 @@
 asciinema
 base-devel
 clamav
+cronie
 curl
 fail2ban
 git
