@@ -7,7 +7,6 @@ file-roller
 filezilla
 gparted
 greybird-themes
-lutris
 menulibre
 mpv
 mugshot
@@ -15,6 +14,7 @@ obs
 olive
 openscad
 pipewire
+playonlinux
 qdirstat
 qt5ct
 qt6ct
