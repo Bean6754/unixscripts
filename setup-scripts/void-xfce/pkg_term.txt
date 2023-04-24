@@ -14,6 +14,7 @@ python3-mutagen
 rsync
 sshuttle
 transmission
+unrar
 vim
 void-repo-multilib
 void-repo-multilib-nonfree
