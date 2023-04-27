@@ -16,6 +16,7 @@ rsync
 sshuttle
 transmission
 unrar
+unzip
 vim
 void-repo-multilib
 void-repo-multilib-nonfree
@@ -23,3 +24,4 @@ void-repo-nonfree
 wget
 yt-dlp
 xtools
+zip
