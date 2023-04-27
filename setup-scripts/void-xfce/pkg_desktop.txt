@@ -1,4 +1,5 @@
 audacity
+cheese
 cura
 dolphin-emu
 file-roller
