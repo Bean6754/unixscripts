@@ -152,8 +152,9 @@ echo "Now for part 3."
 /sbin/iptables -A INPUT -i lo -j ACCEPT
 /sbin/iptables -A OUTPUT -o lo -j ACCEPT
 
-# Set 'INPUT' to 'ACCEPT' instead of 'DROP' if you are setting-up a router.
+# Set 'INPUT' to 'ACCEPT' instead of 'DROP' and enable FORWARD to 'ACCEPT' if you are setting-up a router.
 /sbin/iptables -A INPUT -j DROP
+#/sbin/iptables -A FORWARD -j ACCEPT
 /sbin/iptables -A OUTPUT -j ACCEPT
 
 # Enable apt.
