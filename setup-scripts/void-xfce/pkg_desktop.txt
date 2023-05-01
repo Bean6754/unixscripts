@@ -25,6 +25,7 @@ strawberry
 timeshift
 torbrowser-launcher
 transmission-gtk
+v4l2loopback
 vba-m
 virt-manager
 wireshark-qt
