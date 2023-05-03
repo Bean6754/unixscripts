@@ -4,6 +4,7 @@ cura
 dolphin-emu
 file-roller
 filezilla
+gimp
 gparted
 greybird-themes
 menulibre
