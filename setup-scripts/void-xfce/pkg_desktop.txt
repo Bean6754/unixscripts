@@ -1,4 +1,3 @@
-PrismLauncher
 android-tools
 android-udev-rules
 audacity
