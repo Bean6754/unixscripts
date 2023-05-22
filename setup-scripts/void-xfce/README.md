@@ -1,8 +1,8 @@
 ## pkg_extdeps.txt
 
 __BetaCraft__
-xrandr
+. xrandr
 
 __DroidCam__
-libappindicator
-v4l2loopback
+. libappindicator
+. v4l2loopback
