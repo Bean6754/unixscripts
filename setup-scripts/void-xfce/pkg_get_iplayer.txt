@@ -1,4 +1,0 @@
-perl-HTML-Form
-perl-LWP-Protocol-https
-perl-Mojolicious
-perl-XML-LibXML
