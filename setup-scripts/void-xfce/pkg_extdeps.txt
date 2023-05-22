@@ -1,0 +1,3 @@
+libappindicator
+v4l2loopback
+xrandr
