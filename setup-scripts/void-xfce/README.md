@@ -12,3 +12,6 @@ __get_iplayer__
 - perl-LWP-Protocol-https
 - perl-Mojolicious
 - perl-XML-LibXML
+
+__Linux WiFi Hotspot__
+- hostapd
