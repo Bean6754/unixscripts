@@ -1,3 +1,7 @@
 libappindicator
+perl-HTML-Form
+perl-LWP-Protocol-https
+perl-Mojolicious
+perl-XML-LibXML
 v4l2loopback
 xrandr
