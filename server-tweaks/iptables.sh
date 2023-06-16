@@ -14,6 +14,9 @@ echo
 
 # iptables and ssh server hardening
 
+# Delete current ruleset.
+rm -rf /etc/iptables/rules.*
+
 # Flush all rules.
 /sbin/iptables -F
 /sbin/iptables -X
