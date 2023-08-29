@@ -161,7 +161,7 @@ firewall-cmd --permanent --zone=public --add-service=ssh
 #firewall-cmd --permanent --direct --add-rule ipv4 filter OUTPUT 0 -j ACCEPT
 
 # Enable apt.
-#firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+firewall-cmd --permanent --direct --add-rule ipv4 filter INPUT 0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 echo "Done part 3."
 echo "Done altogether."
