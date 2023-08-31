@@ -1,4 +1,4 @@
-## This script would not be made possible if it weren't for the articles over at "https://javapipe.com/iptables-ddos-protection", for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html" and for part3 "https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html".
+## This script would not be made possible if it wasn't for the articles over at "https://javapipe.com/iptables-ddos-protection", for part2 "https://www.cyberciti.biz/tips/linux-iptables-10-how-to-block-common-attack.html" and for part3 "https://www.cyberciti.biz/tips/linux-iptables-4-block-all-incoming-traffic-but-allow-ssh.html".
 
 #!/bin/bash
 
