@@ -1,0 +1,9 @@
+[Unit]
+Description=Firewall boot-up script.
+
+[Service]
+ExecStart=/bin/bash /usr/local/bin/bean6754/firewall.sh
+User=root
+
+[Install]
+WantedBy=multi-user.target
