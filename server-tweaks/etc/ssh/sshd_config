@@ -31,7 +31,7 @@ Port 22
 #RekeyLimit default none
 
 # Logging
-SyslogFacility AUTH
+SyslogFacility local3
 LogLevel INFO
 
 # Authentication:
