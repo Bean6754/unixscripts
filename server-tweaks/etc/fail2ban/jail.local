@@ -1,10 +1,14 @@
 [DEFAULT]
 ignoreip = 127.0.0.1
+maxretry = 10
+findtime = 5m
+bantime = 10m
 destemail = isabella@house.local
-sender = rpi-01@house.local
-sendername = rpi-01
+sender = rpi-admin@house.local
+sendername = rpi-admin
 mta = sendmail
 action = %(action_mwl)s
+banaction = iptables-custom
 
 [sshd]
 logpath = /var/log/sshd.log
