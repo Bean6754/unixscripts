@@ -5,3 +5,6 @@ sender = rpi-01@house.local
 sendername = rpi-01
 mta = sendmail
 action = %(action_mwl)s
+
+[sshd]
+logpath = /var/log/sshd.log
