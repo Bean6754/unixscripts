@@ -1,0 +1,7 @@
+[DEFAULT]
+ignoreip = 127.0.0.1
+destemail = isabella@house.local
+sender = rpi-01@house.local
+sendername = rpi-01
+mta = sendmail
+action = %(action_mwl)s
