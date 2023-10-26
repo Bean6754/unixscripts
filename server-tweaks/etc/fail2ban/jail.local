@@ -12,3 +12,4 @@ banaction = iptables-custom
 
 [sshd]
 logpath = /var/log/sshd.log
+mode = aggressive
