@@ -1,0 +1,3 @@
+%sudo   ALL=(ALL:ALL) ALL
+%sudo_super ALL=(ALL:ALL) NOPASSWD:ALL
+%sudo_low   ALL=(root) NOPASSWD: /usr/local/bin/update.sh
