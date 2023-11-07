@@ -77,7 +77,7 @@ echo "Added rule: 5. Block spoofed packets."
 echo
 
 #/sbin/iptables -t mangle -A PREROUTING -p icmp -j DROP
-/sbin/iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/second --limit-burst 20 -j ACCEPT
+/sbin/iptables -A INPUT -p icmp --icmp-type echo-request -m limit --limit 1/s --limit-burst 2 -j ACCEPT
 /sbin/iptables -A INPUT -p icmp -j DROP
 echo "Added rule: 6. Limit ICMP. You usually do not need this protocol."
 echo
