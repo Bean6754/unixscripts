@@ -18,10 +18,24 @@ echo
 rm -rf /etc/nftables.conf
 
 # Flush all rules.
-nft flush table ip filter
-nft delete chain ip filter (null)
+#nft flush table ip filter
+#nft delete chain ip filter (null)
 # Default ruleset.
 #nft flush ruleset
+
+# Add default tables and chains.
+nft 'add table ip filter'
+nft 'add chain ip filter INPUT { type filter hook input priority 0; }'
+nft 'add chain ip filter FORWARD { type filter hook forward priority 0; }'
+nft 'add chain ip filter OUTPUT { type filter hook output priority 0; }'
+nft 'add table ip nat'
+nft 'add chain nat POSTROUTING { type nat hook postrouting priority 100; }'
+nft 'add chain nat PREROUTING { type nat hook prerouting priority 100; }'
+nft 'add table mangle'
+nft 'add chain mangle POSTROUTING { type route hook output priority -150; }'
+nft 'add rule mangle POSTROUTING tcp sport 80 meta priority set 1'
+nft 'add chain mangle PREROUTING { type route hook output priority -150; }'
+nft 'add rule mangle PREROUTING tcp sport 80 meta priority set 1'
 
 # Log nftables.
 nft 'add rule ip filter INPUT limit rate 5/minute burst 5 packets counter log prefix "nftables-input: "'
