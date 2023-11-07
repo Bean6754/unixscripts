@@ -108,8 +108,8 @@ echo "Added rule: 11. Use SYNPROXY on all ports. Disables connection limiting ru
 echo
 
 # Extras.
-nft # -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --set
-nft # -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
+#nft # -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --set
+#nft # -A INPUT -p tcp --dport ssh -m conntrack --ctstate NEW -m recent --update --seconds 60 --hitcount 10 -j DROP
 echo "Added rule: Extra. SSH brute-force protection."
 echo
 
