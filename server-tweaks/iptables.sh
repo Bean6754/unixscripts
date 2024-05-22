@@ -9,7 +9,7 @@ fi
 # Source: https://wiki.gentoo.org/wiki/Security_Handbook/Firewalls_and_Network_Security
 echo "Source: https://wiki.gentoo.org/wiki/Security_Handbook/Firewalls_and_Network_Security"
 IPTABLES=/sbin/iptables
-IP6TABLES=/bin/ip6tables
+IP6TABLES=/sbin/ip6tables
 IPTABLESSAVE=/sbin/iptables-save
 IPTABLESRESTORE=/sbin/iptables-restore
 FIREWALL=/etc/firewall.rules
@@ -166,6 +166,11 @@ LOCAL_NETWORK=10.44.100.0/22
   $IPTABLES -A allow-www-traffic-out -p tcp --dport www -j ACCEPT
   $IPTABLES -A allow-www-traffic-out -p tcp --dport https -j ACCEPT
 
+  echo "Creating outgoing rsync traffic chain"
+  $IPTABLES -N allow-rsync-traffic-out
+  $IPTABLES -F allow-rsync-traffic-out
+  $IPTABLES -A allow-rsync-traffic-out -p tcp --dport 873 -j ACCEPT
+
   #Catch portscanners
   echo "Creating portscan detection chain"
   $IPTABLES -N check-flags
@@ -202,14 +207,15 @@ LOCAL_NETWORK=10.44.100.0/22
   $IPTABLES -A INPUT -j allow-syslog-traffic-in
   $IPTABLES -A INPUT -j allowed-connection
 
-  echo "Applying chains to FORWARD"
-  $IPTABLES -A FORWARD -m state --state INVALID -j DROP
-  $IPTABLES -A FORWARD -p icmp -j icmp_allowed
-  $IPTABLES -A FORWARD -j check-flags
-  $IPTABLES -A FORWARD -o lo -j ACCEPT
-  $IPTABLES -A FORWARD -j allow-ssh-traffic-in
-  $IPTABLES -A FORWARD -j allow-www-traffic-out
-  $IPTABLES -A FORWARD -j allowed-connection
+  # For router.
+  #echo "Applying chains to FORWARD"
+  #$IPTABLES -A FORWARD -m state --state INVALID -j DROP
+  #$IPTABLES -A FORWARD -p icmp -j icmp_allowed
+  #$IPTABLES -A FORWARD -j check-flags
+  #$IPTABLES -A FORWARD -o lo -j ACCEPT
+  #$IPTABLES -A FORWARD -j allow-ssh-traffic-in
+  #$IPTABLES -A FORWARD -j allow-www-traffic-out
+  #$IPTABLES -A FORWARD -j allowed-connection
 
   echo "Applying chains to OUTPUT"
   $IPTABLES -A OUTPUT -m state --state INVALID -j DROP
@@ -219,6 +225,7 @@ LOCAL_NETWORK=10.44.100.0/22
   $IPTABLES -A OUTPUT -j allow-ssh-traffic-out
   $IPTABLES -A OUTPUT -j allow-dns-traffic-out
   $IPTABLES -A OUTPUT -j allow-www-traffic-out
+  $IPTABLES -A OUTPUT -j allow-rsync-traffic-out
   $IPTABLES -A OUTPUT -j allowed-connection
 
   #Allow client to route through via NAT (Network Address Translation)
