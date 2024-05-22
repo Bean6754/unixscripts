@@ -9,6 +9,7 @@ fi
 # Source: https://wiki.gentoo.org/wiki/Security_Handbook/Firewalls_and_Network_Security
 echo "Source: https://wiki.gentoo.org/wiki/Security_Handbook/Firewalls_and_Network_Security"
 IPTABLES=/sbin/iptables
+IP6TABLES=/bin/ip6tables
 IPTABLESSAVE=/sbin/iptables-save
 IPTABLESRESTORE=/sbin/iptables-restore
 FIREWALL=/etc/firewall.rules
@@ -38,6 +39,14 @@ LOCAL_NETWORK=10.44.100.0/22
   $IPTABLES -Z
   $IPTABLES -F
   $IPTABLES -X
+
+  echo "Disable IPv6"
+  $IP6TABLES -Z
+  $IP6TABLES -F
+  $IP6TABLES -X
+  $IP6TABLES -P INPUT DROP
+  $IP6TABLES -P FORWARD DROP
+  $IP6TABLES -P OUTPUT DROP
 
   echo "Logging"
   # Log iptables.
