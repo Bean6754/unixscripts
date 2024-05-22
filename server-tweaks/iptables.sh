@@ -231,3 +231,30 @@ LOCAL_NETWORK=192.168.5.0/24
   #Allow client to route through via NAT (Network Address Translation)
   # For router.
   #$IPTABLES -t nat -A POSTROUTING -o $OINTERFACE -j MASQUERADE
+
+# ## Router stuff.
+# #/sbin/iptables -t nat -A POSTROUTING -o enu1u2c2 -j MASQUERADE
+# #export LAN=enu1u2c2
+# export LAN=bridge0
+# export WAN=enu1u1
+# #$IPTABLES -P INPUT ACCEPT
+# #$IPTABLES -P OUTPUT ACCEPT
+# #$IPTABLES -P FORWARD DROP
+# $IPTABLES -I INPUT 1 -i ${LAN} -j ACCEPT
+# $IPTABLES -I INPUT 1 -i lo -j ACCEPT
+# $IPTABLES -A INPUT -p UDP --dport bootps ! -i ${LAN} -j REJECT
+# $IPTABLES -A INPUT -p UDP --dport domain ! -i ${LAN} -j REJECT
+# $IPTABLES -A INPUT -p TCP --dport ssh -i ${WAN} -j ACCEPT
+# $IPTABLES -A INPUT -p TCP ! -i ${LAN} -d 0/0 --dport 0:1023 -j DROP
+# $IPTABLES -A INPUT -p UDP ! -i ${LAN} -d 0/0 --dport 0:1023 -j DROP
+# $IPTABLES -I FORWARD -i ${LAN} -d 192.168.5.0/24 -j DROP
+# $IPTABLES -I FORWARD -i ${LAN} -s 192.168.5.0/24 -j ACCEPT
+# $IPTABLES -I FORWARD -i ${WAN} -d 192.168.5.0/24 -j ACCEPT
+# $IPTABLES -t nat -A POSTROUTING -o ${WAN} -j MASQUERADE
+# # Port forwarding.
+# $IPTABLES -t nat -A PREROUTING -p tcp --dport 22 -i ${WAN} -j DNAT --to 192.168.5.2
+# $IPTABLES -A INPUT -p TCP --dport 22 -i ${WAN} -j ACCEPT
+# $IPTABLES -t nat -A PREROUTING -p tcp --dport 80 -i ${WAN} -j DNAT --to 192.168.5.21
+# $IPTABLES -A INPUT -p TCP --dport 80 -i ${WAN} -j ACCEPT
+# $IPTABLES -t nat -A PREROUTING -p tcp --dport 443 -i ${WAN} -j DNAT --to 192.168.5.21
+# $IPTABLES -A INPUT -p TCP --dport 443 -i ${WAN} -j ACCEPT
