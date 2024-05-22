@@ -171,6 +171,12 @@ LOCAL_NETWORK=192.168.5.0/24
   $IPTABLES -F allow-rsync-traffic-out
   $IPTABLES -A allow-rsync-traffic-out -p tcp --dport 873 -j ACCEPT
 
+  echo "Creating outgoing vpn traffic chain"
+  $IPTABLES -N allow-vpn-traffic-out
+  $IPTABLES -F allow-vpn-traffic-out
+  $IPTABLES -A allow-vpn-traffic-out -p udp --dport 51820 -j ACCEPT
+  $IPTABLES -I OUTPUT 1 -o wg0-mullvad -j ACCEPT
+
   #Catch portscanners
   echo "Creating portscan detection chain"
   $IPTABLES -N check-flags
@@ -226,6 +232,7 @@ LOCAL_NETWORK=192.168.5.0/24
   $IPTABLES -A OUTPUT -j allow-dns-traffic-out
   $IPTABLES -A OUTPUT -j allow-www-traffic-out
   $IPTABLES -A OUTPUT -j allow-rsync-traffic-out
+  $IPTABLES -A OUTPUT -j allow-vpn-traffic-out
   $IPTABLES -A OUTPUT -j allowed-connection
 
   #Allow client to route through via NAT (Network Address Translation)
