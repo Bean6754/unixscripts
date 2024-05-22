@@ -13,15 +13,15 @@ IP6TABLES=/sbin/ip6tables
 IPTABLESSAVE=/sbin/iptables-save
 IPTABLESRESTORE=/sbin/iptables-restore
 FIREWALL=/etc/firewall.rules
-DNS1=10.44.100.10
-DNS2=10.44.100.18
+DNS1=192.168.5.1
+#DNS2=10.44.100.18
 #inside
-IIP=10.44.103.180
-IINTERFACE=eth0
-LOCAL_NETWORK=10.44.100.0/22
+IIP=192.168.5.1
+IINTERFACE=bridge0
+LOCAL_NETWORK=192.168.5.0/24
 #outside
-#OIP=217.157.156.144
-#OINTERFACE=eth1
+#OIP=172.16.0.3
+#OINTERFACE=enu1u1
 
   # Reset entire ruleset before running script.
   # Flush all rules.
@@ -157,8 +157,8 @@ LOCAL_NETWORK=10.44.100.0/22
   $IPTABLES -F allow-dns-traffic-out
   $IPTABLES -A allow-dns-traffic-out -p udp -d $DNS1 --dport domain \
       -j ACCEPT
-  $IPTABLES -A allow-dns-traffic-out -p udp -d $DNS2 --dport domain \
-     -j ACCEPT
+  #$IPTABLES -A allow-dns-traffic-out -p udp -d $DNS2 --dport domain \
+  #   -j ACCEPT
 
   echo "Creating outgoing http/https traffic chain"
   $IPTABLES -N allow-www-traffic-out
