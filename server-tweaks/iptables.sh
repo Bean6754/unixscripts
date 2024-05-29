@@ -171,6 +171,11 @@ LOCAL_NETWORK=192.168.5.0/24
   $IPTABLES -F allow-rsync-traffic-out
   $IPTABLES -A allow-rsync-traffic-out -p tcp --dport 873 -j ACCEPT
 
+  echo "Creating outgoing ntp traffic chain" 
+  $IPTABLES -N allow-ntp-traffic-out
+  $IPTABLES -F allow-ntp-traffic-out 
+  $IPTABLES -A allow-ntp-traffic-out -p udp --dport 123 -j ACCEPT
+
   echo "Creating outgoing vpn traffic chain"
   $IPTABLES -N allow-vpn-traffic-out
   $IPTABLES -F allow-vpn-traffic-out
@@ -232,6 +237,7 @@ LOCAL_NETWORK=192.168.5.0/24
   $IPTABLES -A OUTPUT -j allow-dns-traffic-out
   $IPTABLES -A OUTPUT -j allow-www-traffic-out
   $IPTABLES -A OUTPUT -j allow-rsync-traffic-out
+  $IPTABLES -A OUTPUT -j allow-ntp-traffic-out
   $IPTABLES -A OUTPUT -j allow-vpn-traffic-out
   $IPTABLES -A OUTPUT -j allowed-connection
 
