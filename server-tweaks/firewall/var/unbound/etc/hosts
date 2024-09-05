@@ -1,0 +1,30 @@
+local-zone: "firewall" redirect
+local-data: "firewall       IN A   192.168.5.1"
+local-data: "firewall.lan   IN A   192.168.5.1"
+
+local-zone: "firewall-vm-ssh" redirect
+local-data: "firewall-vm-ssh       IN A   192.168.5.2"
+local-data: "firewall-vm-ssh.lan   IN A   192.168.5.2"
+
+local-zone: "nas" redirect
+local-data: "nas       IN A   192.168.5.10"
+local-data: "nas.lan   IN A   192.168.5.10"
+
+local-zone: "nas-vm-nas" redirect
+local-data: "nas-vm-nas       IN A   192.168.5.20"
+local-data: "nas-vm-nas.lan   IN A   192.168.5.20"
+
+local-zone: "nas-vm-web" redirect
+local-data: "nas-vm-web       IN A   192.168.5.21"
+local-data: "nas-vm-web.lan   IN A   192.168.5.21"
+
+local-zone: "pub.isabelladean.com" redirect
+local-data: "pub.isabelladean.com   IN A   192.168.5.21"
+
+local-zone: "desktop" redirect
+local-data: "desktop       IN A   192.168.5.50"
+local-data: "desktop.lan   IN A   192.168.5.50"
+
+local-zone: "laptop" redirect
+local-data: "laptop       IN A   192.168.5.51"
+local-data: "laptop.lan   IN A   192.168.5.51"
