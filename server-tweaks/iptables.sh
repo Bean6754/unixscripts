@@ -11,8 +11,10 @@ echo "Source: https://wiki.gentoo.org/wiki/Security_Handbook/Firewalls_and_Netwo
 IPTABLES=/sbin/iptables
 IP6TABLES=/sbin/ip6tables
 IPTABLESSAVE=/sbin/iptables-save
-IPTABLESRESTORE=/sbin/iptables-restore
-FIREWALL=/etc/firewall.rules
+IP6TABLESSAVE=/sbin/ip6tables-save
+IP6TABLESRESTORE=/sbin/ip6tables-restore
+IPTABLESRULES=/etc/iptables/rules.v4
+IP6TABLESRULES=/etc/iptables/rules.v6
 DNS1=192.168.5.1
 #DNS2=10.44.100.18
 #inside
@@ -23,6 +25,7 @@ LOCAL_NETWORK=192.168.5.0/24
 #OIP=172.16.0.3
 #OINTERFACE=enu1u1
 
+  ### IPv4.
   # Reset entire ruleset before running script.
   # Flush all rules.
   $IPTABLES -Z
@@ -39,14 +42,6 @@ LOCAL_NETWORK=192.168.5.0/24
   $IPTABLES -Z
   $IPTABLES -F
   $IPTABLES -X
-
-  echo "Disable IPv6"
-  $IP6TABLES -Z
-  $IP6TABLES -F
-  $IP6TABLES -X
-  $IP6TABLES -P INPUT DROP
-  $IP6TABLES -P FORWARD DROP
-  $IP6TABLES -P OUTPUT DROP
 
   echo "Logging"
   # Log iptables.
@@ -271,3 +266,16 @@ LOCAL_NETWORK=192.168.5.0/24
 # $IPTABLES -A INPUT -p TCP --dport 80 -i ${WAN} -j ACCEPT
 # $IPTABLES -t nat -A PREROUTING -p tcp --dport 443 -i ${WAN} -j DNAT --to 192.168.5.21
 # $IPTABLES -A INPUT -p TCP --dport 443 -i ${WAN} -j ACCEPT
+
+  ### IPv6.
+  echo "Disable IPv6"
+  $IP6TABLES -Z
+  $IP6TABLES -F
+  $IP6TABLES -X
+  $IP6TABLES -P INPUT DROP
+  $IP6TABLES -P FORWARD DROP
+  $IP6TABLES -P OUTPUT DROP
+
+### Save rules.
+$IPTABLESSAVE > $IPTABLESRULES
+$IP6TABLESSAVE > $IP6TABLESRULES
