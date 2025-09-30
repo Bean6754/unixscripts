@@ -45,12 +45,13 @@ $IPTABLES -A OUTPUT -m limit --limit 5/min -j LOG --log-prefix "iptables-output:
 echo "Creating icmp chain"
 $IPTABLES -N icmp_allowed
 $IPTABLES -F icmp_allowed
-$IPTABLES -A icmp_allowed -m state --state NEW -p icmp --icmp-type \
-    time-exceeded -j ACCEPT
-$IPTABLES -A icmp_allowed -m state --state NEW -p icmp --icmp-type \
-    destination-unreachable -j ACCEPT
-$IPTABLES -A icmp_allowed -p icmp -j LOG --log-prefix "Bad ICMP traffic:"
-$IPTABLES -A icmp_allowed -p icmp -j DROP
+$IPTABLES -A icmp_allowed -m limit --limit 5/min -m state --state ESTABLISHED,RELATED -p icmp --icmp-type any -j ACCEPT
+$IPTABLES -A icmp_allowed -p icmp --icmp-type \
+  time-exceeded -j DROP
+$IPTABLES -A icmp_allowed -p icmp --icmp-type \
+  destination-unreachable -j DROP
+$IPTABLES -A icmp_allowed -p icmp -j LOG --log-prefix "ICMP traffic:"
+$IPTABLES -A icmp_allowed -p icmp -j ACCEPT
 
 
 #Catch portscanners
