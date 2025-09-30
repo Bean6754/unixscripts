@@ -59,22 +59,22 @@ echo "Creating portscan detection chain"
 $IPTABLES -N check-flags
 $IPTABLES -F check-flags
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL FIN,URG,PSH -m limit \
-    --limit 5/minute -j LOG --log-level alert --log-prefix "NMAP-XMAS:"
+  --limit 5/minute -j LOG --log-level alert --log-prefix "NMAP-XMAS:"
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL ALL -m limit --limit \
-    5/minute -j LOG --log-level 1 --log-prefix "XMAS:"
+  5/minute -j LOG --log-level 1 --log-prefix "XMAS:"
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL ALL -j DROP
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG \
-    -m limit --limit 5/minute -j LOG --log-level 1 --log-prefix "XMAS-PSH:"
+  -m limit --limit 5/minute -j LOG --log-level 1 --log-prefix "XMAS-PSH:"
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL NONE -m limit \
-    --limit 5/minute -j LOG --log-level 1 --log-prefix "NULL_SCAN:"
+  --limit 5/minute -j LOG --log-level 1 --log-prefix "NULL_SCAN:"
 $IPTABLES -A check-flags -p tcp --tcp-flags ALL NONE -j DROP
 $IPTABLES -A check-flags -p tcp --tcp-flags SYN,RST SYN,RST -m limit \
-    --limit 5/minute -j LOG --log-level 5 --log-prefix "SYN/RST:"
+  --limit 5/minute -j LOG --log-level 5 --log-prefix "SYN/RST:"
 $IPTABLES -A check-flags -p tcp --tcp-flags SYN,RST SYN,RST -j DROP
 $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit \
-    --limit 5/minute -j LOG --log-level 5 --log-prefix "SYN/FIN:"
+  --limit 5/minute -j LOG --log-level 5 --log-prefix "SYN/FIN:"
 $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 
 
