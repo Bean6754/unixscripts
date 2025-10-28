@@ -1,0 +1,13 @@
+adcli
+krb5-user
+oddjob
+oddjob-mkhomedir
+realmd
+libpam-mount
+libsasl2-modules-ldap
+libsss-sudo
+packagekit
+samba-common
+sssd
+sssd-tools
+sudo
