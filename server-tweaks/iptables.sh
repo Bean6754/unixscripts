@@ -10,12 +10,12 @@ fi
 # This firewall will allow all traffic in, forward and out.
 # But will rate-limit, log traffic, allow only minimal ICMP and block port-scanning.
 
-IPTABLES=/sbin/iptables
-IP6TABLES=/sbin/ip6tables
-IPTABLESSAVE=/sbin/iptables-save
-IP6TABLESSAVE=/sbin/ip6tables-save
-IPTABLESRESTORE=/sbin/iptables-restore
-IP6TABLESRESTORE=/sbin/ip6tables-restore
+IPTABLES=/usr/sbin/iptables
+IP6TABLES=/usr/sbin/ip6tables
+IPTABLESSAVE=/usr/sbin/iptables-save
+IP6TABLESSAVE=/usr/sbin/ip6tables-save
+IPTABLESRESTORE=/usr/sbin/iptables-restore
+IP6TABLESRESTORE=/usr/sbin/ip6tables-restore
 IPTABLESRULES=/etc/iptables/rules.v4
 IP6TABLESRULES=/etc/iptables/rules.v6
 
@@ -27,7 +27,7 @@ $IPTABLES -F
 $IPTABLES -X
 # Default ruleset.
 $IPTABLES -P INPUT DROP
-$IPTABLES -P FORWARD ACCEPT
+$IPTABLES -P FORWARD DROP
 $IPTABLES -P OUTPUT ACCEPT
 # Default tableset.
 $IPTABLES -t nat -F
