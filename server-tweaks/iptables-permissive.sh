@@ -26,7 +26,7 @@ $IPTABLES -Z
 $IPTABLES -F
 $IPTABLES -X
 # Default ruleset.
-$IPTABLES -P INPUT ACCEPT
+$IPTABLES -P INPUT DROP
 $IPTABLES -P FORWARD ACCEPT
 $IPTABLES -P OUTPUT ACCEPT
 # Default tableset.
@@ -78,8 +78,20 @@ $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit \
 $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 
 
+#Port forwarding
+echo "Creating port-forwarding chain"
+#SSH
+$IPTABLES -N sshd
+$IPTABLES -F sshd
+$IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL RST --dport ssh -j ACCEPT
+$IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL FIN --dport ssh -j ACCEPT
+$IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL SYN --dport ssh -j ACCEPT
+$IPTABLES -A sshd -m state --state RELATED,ESTABLISHED -p tcp --dport ssh -j ACCEPT
+
+
 $IPTABLES -A INPUT -p icmp -j icmp_allowed
 $IPTABLES -A INPUT -j check-flags
+$IPTABLES -A INPUT -j sshd
 $IPTABLES -A INPUT -i lo -j ACCEPT
 
 $IPTABLES -A FORWARD -p icmp -j icmp_allowed
