@@ -45,7 +45,7 @@ $IPTABLES -A OUTPUT -m limit --limit 5/min -j LOG --log-prefix "iptables-output:
 echo "Creating icmp chain"
 $IPTABLES -N icmp_allowed
 $IPTABLES -F icmp_allowed
-$IPTABLES -A icmp_allowed -m limit --limit 5/min -m state --state ESTABLISHED,RELATED -p icmp --icmp-type any -j ACCEPT
+$IPTABLES -A icmp_allowed -m limit --limit 5/min -m conntrack --ctstate ESTABLISHED,RELATED -p icmp --icmp-type any -j ACCEPT
 $IPTABLES -A icmp_allowed -p icmp --icmp-type \
   time-exceeded -j DROP
 $IPTABLES -A icmp_allowed -p icmp --icmp-type \
@@ -80,17 +80,22 @@ $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 
 #Port forwarding
 echo "Creating port-forwarding chain"
+#Fix DNS
+$IPTABLES -N dns
+$IPTABLES -F dns
+$IPTABLES -A dns -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 #SSH
 $IPTABLES -N sshd
 $IPTABLES -F sshd
 $IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL RST --dport ssh -j ACCEPT
 $IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL FIN --dport ssh -j ACCEPT
 $IPTABLES -A sshd -m limit --limit 1/second -p tcp --tcp-flags ALL SYN --dport ssh -j ACCEPT
-$IPTABLES -A sshd -m state --state RELATED,ESTABLISHED -p tcp --dport ssh -j ACCEPT
+$IPTABLES -A sshd -m conntrack --ctstate ESTABLISHED,RELATED -p tcp --dport ssh -j ACCEPT
 
 
 $IPTABLES -A INPUT -p icmp -j icmp_allowed
 $IPTABLES -A INPUT -j check-flags
+$IPTABLES -A INPUT -j dns
 $IPTABLES -A INPUT -j sshd
 $IPTABLES -A INPUT -i lo -j ACCEPT
 
