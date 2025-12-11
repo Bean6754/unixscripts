@@ -80,10 +80,8 @@ $IPTABLES -A check-flags -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 
 #Port forwarding
 echo "Creating port-forwarding chain"
-#Fix DNS
-$IPTABLES -N dns
-$IPTABLES -F dns
-$IPTABLES -A dns -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+#Allow open ports
+$IPTABLES -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 #SSH
 $IPTABLES -N sshd
 $IPTABLES -F sshd
@@ -95,7 +93,6 @@ $IPTABLES -A sshd -m conntrack --ctstate ESTABLISHED,RELATED -p tcp --dport ssh 
 
 $IPTABLES -A INPUT -p icmp -j icmp_allowed
 $IPTABLES -A INPUT -j check-flags
-$IPTABLES -A INPUT -j dns
 $IPTABLES -A INPUT -j sshd
 $IPTABLES -A INPUT -i lo -j ACCEPT
 
