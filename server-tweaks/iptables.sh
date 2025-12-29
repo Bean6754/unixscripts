@@ -7,7 +7,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 ## INFORMATION ##
-# This firewall will allow all traffic in, forward and out.
+# This firewall will only allow traffic out.
 # But will rate-limit, log traffic, allow only minimal ICMP and block port-scanning.
 
 IPTABLES=/usr/sbin/iptables
